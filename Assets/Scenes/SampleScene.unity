@@ -423,6 +423,7 @@ MonoBehaviour:
   optionPanel: {fileID: 1703534280}
   background: {fileID: 0}
   charact: {fileID: 0}
+  endingSceneName: Ending Screen
 --- !u!4 &2042215266
 Transform:
   m_ObjectHideFlags: 0
@@ -478,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833623808453682226, guid: 341ad52d12a15b142b0a79f56aa42baa, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 130.4914
+      value: 177.9314
       objectReference: {fileID: 0}
     - target: {fileID: 833623808453682226, guid: 341ad52d12a15b142b0a79f56aa42baa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -514,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833623808453682226, guid: 341ad52d12a15b142b0a79f56aa42baa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5
+      value: 28.720001
       objectReference: {fileID: 0}
     - target: {fileID: 833623808453682226, guid: 341ad52d12a15b142b0a79f56aa42baa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

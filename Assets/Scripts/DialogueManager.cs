@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     Text message;
     List<string> tags;
     static Choice choiceSelected;
+    public string endingSceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class DialogueManager : MonoBehaviour
         story = new Story(inkFile.text);
         //nametag = textBox.transform.GetChild(0).GetComponent<Text>();
         message = textBox.transform.GetChild(0).GetComponent<Text>();
-        tags = new List<string>();
+        //tags = new List<string>();
         choiceSelected = null;
     }
 
@@ -62,7 +63,7 @@ public class DialogueManager : MonoBehaviour
     private void FinishDialogue()
     {
         Debug.Log("End Scene!");
-        SceneManager.LoadScene("Start_Menu");
+        SceneManager.LoadScene(endingSceneName);
     }
 
     // Advance through the story 
@@ -96,21 +97,8 @@ public class DialogueManager : MonoBehaviour
         {
             GameObject temp = Instantiate(customButton, optionPanel.transform);
 
-            if (i == 0)
-            {
-                Vector2 newPos = new Vector2(960f, 833f);
-                temp.transform.position = newPos;
-            }
-            else if (i == 1)
-            {
-                Vector2 newPos = new Vector2(960f, 633f);
-                temp.transform.position = newPos;
-            }
-            else if (i == 2)
-            {
-                Vector2 newPos = new Vector2(960f, 433f);
-                temp.transform.position = newPos;
-            }
+            //temp.transform.SetParent(optionPanel.transform); 
+
             temp.transform.GetChild(0).GetComponent<Text>().text = _choices[i].text;
             temp.AddComponent<Selectable>();
             temp.GetComponent<Selectable>().element = _choices[i];
