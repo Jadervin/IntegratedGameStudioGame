@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     List<string> tags;
     static Choice choiceSelected;
     public string endingSceneName;
+    public bool isSpaceDisabled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && isSpaceDisabled == false)
         {
 
             //source.Play;
@@ -63,6 +64,8 @@ public class DialogueManager : MonoBehaviour
     private void FinishDialogue()
     {
         Debug.Log("End Scene!");
+        //Goes to the battle scene
+
         SceneManager.LoadScene(endingSceneName);
     }
 
@@ -91,7 +94,10 @@ public class DialogueManager : MonoBehaviour
     IEnumerator ShowChoices()
     {
         Debug.Log("There are choices need to be made here!");
+        isSpaceDisabled = true;
         List<Choice> _choices = story.currentChoices;
+
+
 
         for (int i = 0; i < _choices.Count; i++)
         {
@@ -128,6 +134,8 @@ public class DialogueManager : MonoBehaviour
             Destroy(optionPanel.transform.GetChild(i).gameObject);
         }
         choiceSelected = null; // Forgot to reset the choiceSelected. Otherwise, it would select an option without player intervention.
+        
+        isSpaceDisabled = false;
         AdvanceDialogue();
     }
 

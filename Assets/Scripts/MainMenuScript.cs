@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour
     public string StartSceneName;
     public string CreditsSceneName;
     public string TitleMenuSceneName;
+    public string ReferencesSceneName;
 
     [Header("Sound Sources")]
     public AudioSource soundSource;
@@ -42,6 +43,18 @@ public class MainMenuScript : MonoBehaviour
         Cursor.visible = true;
         soundSource.PlayOneShot(menuClick);
         StartCoroutine(WaitforTitleMenuButton(clickTimer));
+
+
+
+
+    }
+
+    public void ReferencesButtonPressed()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        soundSource.PlayOneShot(menuClick);
+        StartCoroutine(WaitforReferencesButton(clickTimer));
 
 
 
@@ -86,7 +99,12 @@ public class MainMenuScript : MonoBehaviour
 
     }
 
+    IEnumerator WaitforReferencesButton(float duration)
+    {
 
+        yield return new WaitForSeconds(duration);   //Wait
+        SceneManager.LoadScene(ReferencesSceneName);
+    }
 
 
 
