@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     Text message;
     List<string> tags;
     static Choice choiceSelected;
-    public string endingSceneName;
+    public string nextSceneName;
     public bool isSpaceDisabled = false;
 
     // Start is called before the first frame update
@@ -66,7 +66,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End Scene!");
         //Goes to the battle scene
 
-        SceneManager.LoadScene(endingSceneName);
+        SceneManager.LoadScene(nextSceneName);
     }
 
     // Advance through the story 
