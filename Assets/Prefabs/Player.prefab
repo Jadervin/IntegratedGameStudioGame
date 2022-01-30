@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Player
   damage: 10
+  fireDamage: 25
+  healamount: 5
   maxHP: 50
   currentHP: 50
 --- !u!1 &5345406751869297549

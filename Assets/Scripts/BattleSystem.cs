@@ -15,11 +15,13 @@ public class BattleSystem : MonoBehaviour
     public GameObject enemyPrefab;
     Unit playerUnit;
     Unit enemyUnit;
+
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
 
     public Text dialogueText;
     public GameObject optionsPanel;
+    public GameObject magicOptionsPanel;
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -48,11 +50,56 @@ public class BattleSystem : MonoBehaviour
         enemyHUD.SetHUD(enemyUnit);
 
 
+
         yield return new WaitForSeconds(3f);
 
         state = BattleState.PLAYERTURN;
         playerTurn();
 
+    }
+    void playerTurn()
+    {
+        optionsPanel.SetActive(true);
+    }
+
+    public void OnAttackButton()
+    {
+        if(state!= BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        StartCoroutine(PlayerAttack());
+    }
+
+    public void OnMagicButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        magicOptionsPanel.SetActive(true);
+    }
+
+    public void OnFireMagicButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        StartCoroutine(PlayerFireAttack());
+    }
+
+    public void OnHealMagicButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        StartCoroutine(PlayerHeal());
     }
 
     IEnumerator PlayerAttack()
@@ -60,9 +107,10 @@ public class BattleSystem : MonoBehaviour
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
         optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
         enemyHUD.SetHP(enemyUnit.currentHP);
 
-        dialogueText.text = "Attack successful.";
+        dialogueText.text = playerUnit.unitName + " Attacks " + enemyUnit.unitName + ".";
 
         yield return new WaitForSeconds(3f);
 
@@ -78,30 +126,49 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator EndBattle()
+    IEnumerator PlayerFireAttack()
     {
-        if(state==BattleState.WON)
+        bool isDead = enemyUnit.TakeDamage(playerUnit.fireDamage);
+
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+        enemyHUD.SetHP(enemyUnit.currentHP);
+
+        dialogueText.text = playerUnit.unitName + " Uses Fire Magic on " + enemyUnit.unitName + ".";
+
+        yield return new WaitForSeconds(3f);
+
+        if (isDead == true)
         {
-            dialogueText.text = "You win!";
-            yield return new WaitForSeconds(3f);
-            SceneManager.LoadScene(endingSceneName);
-
+            state = BattleState.WON;
+            StartCoroutine(EndBattle());
         }
-
-        else if(state == BattleState.LOST)
+        else
         {
-            dialogueText.text = "You Lost";
-            yield return new WaitForSeconds(3f);
-            SceneManager.LoadScene(endingSceneName);
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
         }
-
-
     }
+
+    IEnumerator PlayerHeal()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        playerUnit.Heal(playerUnit.healamount);
+        playerHUD.SetHP(playerUnit.currentHP);
+        dialogueText.text = playerUnit.unitName + " Uses Healing Magic.";
+
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine(EnemyTurn());
+    }
+
     IEnumerator EnemyTurn()
     {
-        dialogueText.text = enemyUnit.unitName + " attacks.";
+        dialogueText.text = enemyUnit.unitName + " attacks " + playerUnit.unitName + ".";
 
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
 
@@ -121,21 +188,26 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    void playerTurn()
-    {
-        
-        optionsPanel.SetActive(true);
-    }
 
-   
 
-    public void OnAttackButton()
+    IEnumerator EndBattle()
     {
-        if(state!= BattleState.PLAYERTURN)
+        if(state == BattleState.WON)
         {
-            return;
+            dialogueText.text = "You win!";
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene(endingSceneName);
+
         }
 
-        StartCoroutine(PlayerAttack());
+        else if(state == BattleState.LOST)
+        {
+            dialogueText.text = "You Lost!";
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene(endingSceneName);
+        }
+
+
     }
+
 }
