@@ -278,7 +278,10 @@ PrefabInstance:
 
         Link:
 
-        https://hungry-dragon.fandom.com/wiki/Draconis'
+        https://hungry-dragon.fandom.com/wiki/Draconis
+
+        -Sound
+        Effects made with Bfxr'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33bcb941cde08a440a2997c25643dcff, type: 3}
