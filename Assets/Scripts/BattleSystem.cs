@@ -9,24 +9,35 @@ public enum BattleState {START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
+    [Header("Battle States")]
     public BattleState state;
 
+    [Header("Game Object Components")]
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
     Unit playerUnit;
     Unit enemyUnit;
 
+    [Header("HUDs")]
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
 
+    [Header("Texts and Panels")]
     public Text dialogueText;
     public GameObject optionsPanel;
     public GameObject magicOptionsPanel;
 
+    [Header("Battle Stations")]
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
+    [Header("Scenes")]
     public string endingSceneName;
+
+    //[Header("SFX")]
+    //public AudioSource sfxSource;
+    //public SoundEffects soundResource;
+
 
     // Start is called before the first frame update
     void Start()
@@ -131,6 +142,17 @@ public class BattleSystem : MonoBehaviour
 
         StartCoroutine(PlayerDefend());
     }
+
+    public void OnRunButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        StartCoroutine(PlayerRan());
+    }
+
 
     IEnumerator MagicInsufficiency()
     {
@@ -265,6 +287,24 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
+
+
+    IEnumerator PlayerRan()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        dialogueText.text = playerUnit.unitName + " ran away.";
+        yield return new WaitForSeconds(2f);
+
+        dialogueText.text = "Apparently, the Hero was not brave enough.";
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.LOST;
+        StartCoroutine(EndBattle());
+
+    }
+
 
     IEnumerator EnemyTurn()
     {
@@ -416,6 +456,7 @@ public class BattleSystem : MonoBehaviour
     {
         if(state == BattleState.WON)
         {
+            
             dialogueText.text = "You win!";
             yield return new WaitForSeconds(3f);
             SceneManager.LoadScene(endingSceneName);
