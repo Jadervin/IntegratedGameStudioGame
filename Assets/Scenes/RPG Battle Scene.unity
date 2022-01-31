@@ -425,7 +425,7 @@ MonoBehaviour:
     m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -821,7 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1074170990}
   m_Layer: 5
-  m_Name: Health Numbers Enemy
+  m_Name: Health Text Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,8 +847,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: -68}
-  m_SizeDelta: {x: 241.09, y: 65.057}
+  m_AnchoredPosition: {x: -9.130005, y: -57.1061}
+  m_SizeDelta: {x: 241.09, y: 45.2693}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1100585290
 GameObject:
@@ -1045,8 +1045,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 356, y: 334}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 348.13, y: 333}
+  m_SizeDelta: {x: 181.75, y: 65.053}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115445754
 MonoBehaviour:
@@ -1788,7 +1788,7 @@ MonoBehaviour:
     m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -1812,7 +1812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1570809940}
   m_Layer: 5
-  m_Name: Health Numbers
+  m_Name: Health Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2089,7 +2089,7 @@ MonoBehaviour:
     m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -2196,11 +2196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1436985033956383156, guid: 2c9ddeade32f8b34fa1ae8168c1f3058, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1436985033956383156, guid: 2c9ddeade32f8b34fa1ae8168c1f3058, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1436985033956383156, guid: 2c9ddeade32f8b34fa1ae8168c1f3058, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2208,11 +2208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1436985033956383156, guid: 2c9ddeade32f8b34fa1ae8168c1f3058, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -65
+      value: -57.130005
       objectReference: {fileID: 0}
     - target: {fileID: 1436985033956383156, guid: 2c9ddeade32f8b34fa1ae8168c1f3058, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -62
+      value: -61
       objectReference: {fileID: 0}
     - target: {fileID: 1436985033956383156, guid: 2c9ddeade32f8b34fa1ae8168c1f3058, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2309,7 +2309,7 @@ MonoBehaviour:
     m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -2436,7 +2436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: -1}
+  m_AnchoredPosition: {x: -1.1300049, y: 0}
   m_SizeDelta: {x: 184, y: 65.0567}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783565590
@@ -2511,7 +2511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: -1}
+  m_AnchoredPosition: {x: -1.1300049, y: 0}
   m_SizeDelta: {x: 179.5, y: 65.057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859061868
