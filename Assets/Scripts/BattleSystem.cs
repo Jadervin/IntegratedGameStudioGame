@@ -46,6 +46,11 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = "The " + enemyUnit.unitName + 
             " approaches the " + playerUnit.unitName + ".";
 
+        playerUnit.currentHP = playerUnit.maxHP;
+        playerUnit.currentMP = playerUnit.maxMP;
+        enemyUnit.currentHP = enemyUnit.maxHP;
+        enemyUnit.currentMP = enemyUnit.maxMP;
+
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
 
@@ -62,7 +67,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
-        if(state!= BattleState.PLAYERTURN)
+        if(state != BattleState.PLAYERTURN)
         {
             return;
         }
@@ -72,12 +77,19 @@ public class BattleSystem : MonoBehaviour
 
     public void OnMagicButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (playerUnit.currentMP > 0)
         {
-            return;
-        }
+            if (state != BattleState.PLAYERTURN)
+            {
+                return;
+            }
 
-        magicOptionsPanel.SetActive(true);
+            magicOptionsPanel.SetActive(true);
+        }
+        else
+        {
+            StartCoroutine(MagicInsufficiency());
+        }
     }
 
     public void OnFireMagicButton()
@@ -120,6 +132,21 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerDefend());
     }
 
+    IEnumerator MagicInsufficiency()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        dialogueText.text = playerUnit.unitName + " has no more magic left.";
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.PLAYERTURN;
+        playerTurn();
+
+    }
+
+
     IEnumerator PlayerAttack()
     {
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
@@ -154,6 +181,10 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = playerUnit.unitName + " uses Fire Magic on " + enemyUnit.unitName + ".";
 
+        
+        playerUnit.MPDecrease(playerUnit.magicCost);
+        playerHUD.SetMP(playerUnit.currentMP);
+
         yield return new WaitForSeconds(2f);
 
         if (isDead == true)
@@ -163,6 +194,7 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
+            
             state = BattleState.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
@@ -177,8 +209,12 @@ public class BattleSystem : MonoBehaviour
         playerHUD.SetHP(playerUnit.currentHP);
         dialogueText.text = playerUnit.unitName + " uses Healing Magic.";
 
+        playerUnit.MPDecrease(playerUnit.magicCost);
+        playerHUD.SetMP(playerUnit.currentMP);
+
         yield return new WaitForSeconds(2f);
 
+        
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }

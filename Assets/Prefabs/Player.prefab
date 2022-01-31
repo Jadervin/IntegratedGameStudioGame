@@ -46,10 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Player
   damage: 10
-  fireDamage: 25
+  largeDamage: 0
+  fireDamage: 20
   healamount: 5
   maxHP: 50
-  currentHP: 50
+  currentHP: 0
+  maxMP: 2
+  currentMP: 0
+  isDefending: 0
+  maxTurnUntilLargeAtck: 0
+  currentTurnUntilLargeAtck: 0
+  isBuildingUp: 0
 --- !u!1 &5345406751869297549
 GameObject:
   m_ObjectHideFlags: 0

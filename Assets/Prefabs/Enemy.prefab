@@ -51,8 +51,8 @@ MonoBehaviour:
   fireDamage: 0
   healamount: 0
   maxHP: 50
-  currentHP: 50
-  maxMP: 0
+  currentHP: 0
+  maxMP: 2
   currentMP: 0
   isDefending: 0
   maxTurnUntilLargeAtck: 3

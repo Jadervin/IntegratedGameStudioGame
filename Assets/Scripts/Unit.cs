@@ -11,6 +11,7 @@ public class Unit : MonoBehaviour
     public int largeDamage;
 
     public int fireDamage;
+    public int magicCost = 1;
     public int healamount;
 
     public int maxHP;
@@ -53,6 +54,6 @@ public class Unit : MonoBehaviour
 
     public void MPDecrease(int mp)
     {
-        
+        currentMP -= mp;
     }
 }
