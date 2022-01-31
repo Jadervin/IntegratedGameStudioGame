@@ -345,6 +345,8 @@ MonoBehaviour:
   playerBattleStation: {fileID: 863390282}
   enemyBattleStation: {fileID: 866387645}
   endingSceneName: Ending Screen
+  sfxSource: {fileID: 838872169}
+  soundResource: {fileID: 399301927}
 --- !u!4 &178554532
 Transform:
   m_ObjectHideFlags: 0
@@ -517,6 +519,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354929854}
   m_CullTransparentMesh: 1
+--- !u!1 &399301926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399301928}
+  - component: {fileID: 399301927}
+  m_Layer: 0
+  m_Name: Sound Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &399301927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399301926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2579eda7ff1f8a341acc99ba75603868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireSound: {fileID: 8300000, guid: eb8e6e75ef47d2048834bd1a4e9fa634, type: 3}
+  healSound: {fileID: 8300000, guid: a97d14f6d5c33bf44af441d320be2cc2, type: 3}
+  attackSound: {fileID: 8300000, guid: e11f24d1d9d0a524ca51b66dce6dbb68, type: 3}
+  largeAttackSound: {fileID: 8300000, guid: 368fc9d7113f751409b4470d724d5d84, type: 3}
+  deathSound: {fileID: 8300000, guid: b7f1b26e73d120640af646e944483fc8, type: 3}
+  runSound: {fileID: 8300000, guid: 6ee2e4c98e5dbb44fa4c4dc0d6c3fa44, type: 3}
+  defendSound: {fileID: 8300000, guid: 5f2a0043dd4e552448b24560cbe125d3, type: 3}
+  largeDefendSound: {fileID: 8300000, guid: 368fc9d7113f751409b4470d724d5d84, type: 3}
+--- !u!4 &399301928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399301926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -344.63965, y: 581.7264, z: -411.22742}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &689253528
 GameObject:
   m_ObjectHideFlags: 0

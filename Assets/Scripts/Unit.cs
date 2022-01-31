@@ -10,8 +10,9 @@ public class Unit : MonoBehaviour
     public int damage; 
     public int largeDamage;
 
-    public int fireDamage;
     public int magicCost = 1;
+    public int fireDamage;
+    
     public int healamount;
 
     public int maxHP;

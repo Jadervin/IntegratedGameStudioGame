@@ -34,9 +34,9 @@ public class BattleSystem : MonoBehaviour
     [Header("Scenes")]
     public string endingSceneName;
 
-    //[Header("SFX")]
-    //public AudioSource sfxSource;
-    //public SoundEffects soundResource;
+    [Header("SFX")]
+    public AudioSource sfxSource;
+    public SoundEffects soundResource;
 
 
     // Start is called before the first frame update
@@ -175,8 +175,11 @@ public class BattleSystem : MonoBehaviour
 
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
-        enemyHUD.SetHP(enemyUnit.currentHP);
 
+
+        sfxSource.PlayOneShot(soundResource.attackSound);
+        enemyHUD.SetHP(enemyUnit.currentHP);
+        
         dialogueText.text = playerUnit.unitName + " Attacks " + enemyUnit.unitName + ".";
 
         yield return new WaitForSeconds(2f);
@@ -199,6 +202,8 @@ public class BattleSystem : MonoBehaviour
 
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
+
+        sfxSource.PlayOneShot(soundResource.fireSound);
         enemyHUD.SetHP(enemyUnit.currentHP);
 
         dialogueText.text = playerUnit.unitName + " uses Fire Magic on " + enemyUnit.unitName + ".";
@@ -226,6 +231,8 @@ public class BattleSystem : MonoBehaviour
     {
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
+
+        sfxSource.PlayOneShot(soundResource.healSound);
 
         playerUnit.Heal(playerUnit.healamount);
         playerHUD.SetHP(playerUnit.currentHP);
@@ -294,6 +301,8 @@ public class BattleSystem : MonoBehaviour
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
+        sfxSource.PlayOneShot(soundResource.runSound);
+
         dialogueText.text = playerUnit.unitName + " ran away.";
         yield return new WaitForSeconds(2f);
 
@@ -314,6 +323,8 @@ public class BattleSystem : MonoBehaviour
         {
             if (playerUnit.isDefending == false)
             {
+                sfxSource.PlayOneShot(soundResource.attackSound);
+
                 dialogueText.text = enemyUnit.unitName + " attacks " + playerUnit.unitName + ".";
 
                 //yield return new WaitForSeconds(2f);
@@ -343,6 +354,8 @@ public class BattleSystem : MonoBehaviour
                 dialogueText.text = enemyUnit.unitName + " attacks " + playerUnit.unitName + ".";
 
                 yield return new WaitForSeconds(2f);
+
+                sfxSource.PlayOneShot(soundResource.defendSound);
 
                 dialogueText.text = "But, " + playerUnit.unitName + " defended the attack.";
 
@@ -394,6 +407,7 @@ public class BattleSystem : MonoBehaviour
 
         if (playerUnit.isDefending == false)
         {
+            sfxSource.PlayOneShot(soundResource.largeAttackSound);
             dialogueText.text = enemyUnit.unitName + " attacks " +
             playerUnit.unitName + " with Large Attack.";
 
@@ -426,6 +440,8 @@ public class BattleSystem : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
 
+            sfxSource.PlayOneShot(soundResource.largeDefendSound);
+
             dialogueText.text = "But, " + playerUnit.unitName + " defended the attack.";
 
             bool isDead = playerUnit.TakeDamage((enemyUnit.largeDamage / 2));
@@ -456,7 +472,7 @@ public class BattleSystem : MonoBehaviour
     {
         if(state == BattleState.WON)
         {
-            
+            sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You win!";
             yield return new WaitForSeconds(3f);
             SceneManager.LoadScene(endingSceneName);
@@ -465,6 +481,7 @@ public class BattleSystem : MonoBehaviour
 
         else if(state == BattleState.LOST)
         {
+            sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You Lost!";
             yield return new WaitForSeconds(3f);
             SceneManager.LoadScene(endingSceneName);
