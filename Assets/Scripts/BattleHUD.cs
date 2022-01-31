@@ -36,7 +36,7 @@ public class BattleHUD : MonoBehaviour
 
     public void SetMP(int mp)
     {
-        //HPSlider.value = hp;
+        
         curMPText.text = mp.ToString();
     }
 
