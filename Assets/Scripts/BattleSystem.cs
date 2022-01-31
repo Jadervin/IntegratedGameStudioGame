@@ -102,6 +102,26 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerHeal());
     }
 
+    public void OnInvestigateButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        StartCoroutine(PlayerInvestigate());
+    }
+
+    public void OnDefendButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        StartCoroutine(PlayerDefend());
+    }
+
     IEnumerator PlayerAttack()
     {
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
@@ -112,7 +132,7 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = playerUnit.unitName + " Attacks " + enemyUnit.unitName + ".";
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         if(isDead == true)
         {
@@ -134,9 +154,9 @@ public class BattleSystem : MonoBehaviour
         magicOptionsPanel.SetActive(false);
         enemyHUD.SetHP(enemyUnit.currentHP);
 
-        dialogueText.text = playerUnit.unitName + " Uses Fire Magic on " + enemyUnit.unitName + ".";
+        dialogueText.text = playerUnit.unitName + " uses Fire Magic on " + enemyUnit.unitName + ".";
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         if (isDead == true)
         {
@@ -157,38 +177,206 @@ public class BattleSystem : MonoBehaviour
 
         playerUnit.Heal(playerUnit.healamount);
         playerHUD.SetHP(playerUnit.currentHP);
-        dialogueText.text = playerUnit.unitName + " Uses Healing Magic.";
+        dialogueText.text = playerUnit.unitName + " uses Healing Magic.";
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+    }
+
+
+    IEnumerator PlayerInvestigate()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        dialogueText.text = playerUnit.unitName + " investigates " + enemyUnit.unitName + ".";
+
+
+        yield return new WaitForSeconds(2f);
+
+        if (enemyUnit.currentTurnUntilLargeAtck < 3)
+        {
+            dialogueText.text = enemyUnit.unitName + " has " +
+                (enemyUnit.maxTurnUntilLargeAtck - enemyUnit.currentTurnUntilLargeAtck) +
+                " turn until it uses its Large Attack.";
+        }
+        else if (enemyUnit.currentTurnUntilLargeAtck == 3 && enemyUnit.isBuildingUp == false)
+        {
+            dialogueText.text = enemyUnit.unitName + " is building up.";
+        }
+        else
+        {
+            dialogueText.text = enemyUnit.unitName + " will use its Large Attack on their turn.";
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+    }
+
+
+    IEnumerator PlayerDefend()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        playerUnit.isDefending = true;
+        dialogueText.text = playerUnit.unitName + " is defending.";
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
 
     IEnumerator EnemyTurn()
     {
-        dialogueText.text = enemyUnit.unitName + " attacks " + playerUnit.unitName + ".";
-
-        //yield return new WaitForSeconds(2f);
-
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
-
-        playerHUD.SetHP(playerUnit.currentHP);
-
-        yield return new WaitForSeconds(1f);
-
-        if (isDead == true)
+        //Have an if statement for when the number of turns until the enemy can build up power 
+        //for a large attack is reached
+        if (enemyUnit.currentTurnUntilLargeAtck < enemyUnit.maxTurnUntilLargeAtck)
         {
-            state = BattleState.LOST;
-            StartCoroutine(EndBattle());
+            if (playerUnit.isDefending == false)
+            {
+                dialogueText.text = enemyUnit.unitName + " attacks " + playerUnit.unitName + ".";
+
+                //yield return new WaitForSeconds(2f);
+
+                bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+
+                playerHUD.SetHP(playerUnit.currentHP);
+
+                yield return new WaitForSeconds(2f);
+
+
+                if (isDead == true)
+                {
+                    state = BattleState.LOST;
+                    StartCoroutine(EndBattle());
+                }
+                else
+                {
+                    enemyUnit.currentTurnUntilLargeAtck++;
+                    state = BattleState.PLAYERTURN;
+                    playerTurn();
+                }
+            }
+
+            else
+            {
+                dialogueText.text = enemyUnit.unitName + " attacks " + playerUnit.unitName + ".";
+
+                yield return new WaitForSeconds(2f);
+
+                dialogueText.text = "But, " + playerUnit.unitName + " defended the attack.";
+
+                bool isDead = playerUnit.TakeDamage((enemyUnit.damage/2));
+
+                playerHUD.SetHP(playerUnit.currentHP);
+
+                yield return new WaitForSeconds(2f);
+
+
+                if (isDead == true)
+                {
+                    state = BattleState.LOST;
+                    StartCoroutine(EndBattle());
+                }
+                else
+                {
+                    playerUnit.isDefending = false;
+                    enemyUnit.currentTurnUntilLargeAtck++;
+                    state = BattleState.PLAYERTURN;
+                    playerTurn();
+                }
+            }
+        }
+
+        else if (enemyUnit.currentTurnUntilLargeAtck == enemyUnit.maxTurnUntilLargeAtck
+            && enemyUnit.isBuildingUp == false)
+        {
+            enemyUnit.isBuildingUp = true;
+            dialogueText.text = enemyUnit.unitName + " is building up for a Large Attack.";
+            yield return new WaitForSeconds(2f);
+
+            state = BattleState.PLAYERTURN;
+            playerTurn();
+
+        }
+
+        else if (enemyUnit.currentTurnUntilLargeAtck == enemyUnit.maxTurnUntilLargeAtck
+            && enemyUnit.isBuildingUp == true)
+        {
+            StartCoroutine(EnemyLargeAttack());
+        }
+
+
+    }
+
+    IEnumerator EnemyLargeAttack()
+    {
+
+        if (playerUnit.isDefending == false)
+        {
+            dialogueText.text = enemyUnit.unitName + " attacks " +
+            playerUnit.unitName + " with Large Attack.";
+
+
+            bool isDead = playerUnit.TakeDamage(enemyUnit.largeDamage);
+
+            playerHUD.SetHP(playerUnit.currentHP);
+
+            yield return new WaitForSeconds(2f);
+
+
+            if (isDead == true)
+            {
+                state = BattleState.LOST;
+                StartCoroutine(EndBattle());
+            }
+            else
+            {
+                enemyUnit.isBuildingUp = false;
+                enemyUnit.currentTurnUntilLargeAtck = 0;
+                state = BattleState.PLAYERTURN;
+                playerTurn();
+            }
+
         }
         else
         {
-            state = BattleState.PLAYERTURN;
-            playerTurn();
+            dialogueText.text = enemyUnit.unitName + " attacks " +
+            playerUnit.unitName + " with Large Attack.";
+
+            yield return new WaitForSeconds(2f);
+
+            dialogueText.text = "But, " + playerUnit.unitName + " defended the attack.";
+
+            bool isDead = playerUnit.TakeDamage((enemyUnit.largeDamage / 2));
+
+            playerHUD.SetHP(playerUnit.currentHP);
+
+            yield return new WaitForSeconds(2f);
+
+
+            if (isDead == true)
+            {
+                state = BattleState.LOST;
+                StartCoroutine(EndBattle());
+            }
+            else
+            {
+                playerUnit.isDefending = false;
+                enemyUnit.isBuildingUp = false;
+                enemyUnit.currentTurnUntilLargeAtck = 0;
+                state = BattleState.PLAYERTURN;
+                playerTurn();
+            }
         }
+
     }
-
-
 
     IEnumerator EndBattle()
     {

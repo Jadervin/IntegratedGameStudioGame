@@ -7,7 +7,9 @@ public class Unit : MonoBehaviour
 {
     public string unitName;
 
-    public int damage;
+    public int damage; 
+    public int largeDamage;
+
     public int fireDamage;
     public int healamount;
 
@@ -16,11 +18,19 @@ public class Unit : MonoBehaviour
     public int maxMP;
     public int currentMP;
 
+    //For player defending
+    public bool isDefending = false;
 
+    //For enemy for large attacks
+    public int maxTurnUntilLargeAtck;
+    public int currentTurnUntilLargeAtck = 0;
+    public bool isBuildingUp = false;
+   
 
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;
+
         if(currentHP <= 0)
         {
             return true;

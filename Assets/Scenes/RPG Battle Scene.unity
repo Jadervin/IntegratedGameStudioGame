@@ -1801,34 +1801,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1267049975}
     m_Modifications:
-    - target: {fileID: 511899916919800506, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 604288000303955131, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 178554531}
-    - target: {fileID: 604288000303955131, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnMagicButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 604288000303955131, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 1904195917398296764, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 178554531}
-    - target: {fileID: 1904195917398296764, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnAttackButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 1904195917398296764, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 5314248314907465103, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1913,18 +1893,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6580456949293160669, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6580456949293160670, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 307
-      objectReference: {fileID: 0}
+    - target: {fileID: 7352089721227868046, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 178554531}
     - target: {fileID: 7658954426113077868, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
       propertyPath: m_Name
       value: Buttons
       objectReference: {fileID: 0}
+    - target: {fileID: 8417087786602579925, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 178554531}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
 --- !u!224 &6996818798507555245 stripped

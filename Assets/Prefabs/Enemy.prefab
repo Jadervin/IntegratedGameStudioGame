@@ -47,8 +47,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Dragon
   damage: 5
+  largeDamage: 15
+  fireDamage: 0
+  healamount: 0
   maxHP: 50
   currentHP: 50
+  maxMP: 0
+  currentMP: 0
+  isDefending: 0
+  maxTurnUntilLargeAtck: 3
+  currentTurnUntilLargeAtck: 0
+  isBuildingUp: 0
 --- !u!1 &1642976865755426524
 GameObject:
   m_ObjectHideFlags: 0

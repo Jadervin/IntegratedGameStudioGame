@@ -32,6 +32,7 @@ RectTransform:
   - {fileID: 604288000303955130}
   - {fileID: 6580456949293160670}
   - {fileID: 511899916919800505}
+  - {fileID: 8417087786602579924}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,6 +48,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5314248314907465103}
     m_Modifications:
+    - target: {fileID: 1573499129612542656, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnAttackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542656, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -215,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -307
+      value: -107
       objectReference: {fileID: 0}
     - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -237,6 +246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Run Buttons
       objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542658, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1573499130012835064, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_Text
       value: Run
@@ -255,6 +268,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5314248314907465103}
     m_Modifications:
+    - target: {fileID: 1573499129612542656, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMagicButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542656, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -427,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 314
+      value: 307
       objectReference: {fileID: 0}
     - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -449,6 +470,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Magic Call Buttons
       objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542658, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1573499130012835064, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_Text
       value: Magic Call
@@ -460,6 +485,136 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
   m_PrefabInstance: {fileID: 5657730200313510431}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6996818797542302997
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5314248314907465103}
+    m_Modifications:
+    - target: {fileID: 1573499129612542656, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542656, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnInvestigateButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542656, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 152.2496
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 71.4639
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -307
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542658, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_Name
+      value: 'Investigate Buttons '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499130012835064, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_Text
+      value: Investigate
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+--- !u!224 &8417087786602579924 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+  m_PrefabInstance: {fileID: 6996818797542302997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8345715170334954830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -467,6 +622,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5314248314907465103}
     m_Modifications:
+    - target: {fileID: 1573499129612542656, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDefendButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542656, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1573499129612542657, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
