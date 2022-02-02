@@ -43,6 +43,7 @@ public class DialogueManager : MonoBehaviour
             //Is there more to the story?
             if(story.canContinue)
             {
+                nametag.text = "";
                 AdvanceDialogue();
                 //Are there any choices?
                 if (story.currentChoices.Count != 0)
@@ -152,15 +153,24 @@ public class DialogueManager : MonoBehaviour
 
             switch (prefix.ToLower())
             {
-                case "Name":
-                    SetName(param);
-                    break;
-                case "Sprite":
-                    SetSprite(param);
-                    break;
-                case "BG":
-                    SetBG(param);
-                    break;
+                case "name":
+                {
+                   SetName(param);
+                   break;
+                }
+                    
+                case "sprite":
+                {
+                   SetSprite(param);
+                   break;
+                }
+                    
+                case "bg":
+                {
+                  SetBG(param);
+                  break;
+                }
+                    
             }
         }
     }

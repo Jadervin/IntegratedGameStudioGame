@@ -385,7 +385,7 @@ public class BattleSystem : MonoBehaviour
             && enemyUnit.isBuildingUp == false)
         {
             enemyUnit.isBuildingUp = true;
-            dialogueText.text = enemyUnit.unitName + " is building up for a Large Attack.";
+            dialogueText.text = enemyUnit.unitName + " is still.";
             yield return new WaitForSeconds(2f);
 
             state = BattleState.PLAYERTURN;
