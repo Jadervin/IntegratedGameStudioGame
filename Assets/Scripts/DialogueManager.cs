@@ -28,9 +28,9 @@ public class DialogueManager : MonoBehaviour
 
        
         story = new Story(inkFile.text);
-        //nametag = textBox.transform.GetChild(0).GetComponent<Text>();
-        message = textBox.transform.GetChild(0).GetComponent<Text>();
-        //tags = new List<string>();
+        nametag = textBox.transform.GetChild(0).GetComponent<Text>();
+        message = textBox.transform.GetChild(1).GetComponent<Text>();
+        tags = new List<string>();
         choiceSelected = null;
     }
 
@@ -73,7 +73,7 @@ public class DialogueManager : MonoBehaviour
     void AdvanceDialogue()
     {
         string currentSentence = story.Continue();
-        //ParseTags();
+        ParseTags();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(currentSentence));
     }
@@ -142,28 +142,28 @@ public class DialogueManager : MonoBehaviour
     /*** Tag Parser ***/
     /// In Inky, you can use tags which can be used to cue stuff in a game.
     /// This is just one way of doing it. Not the only method on how to trigger events. 
-    //void ParseTags()
-    //{
-    //    tags = story.currentTags;
-    //    foreach (string t in tags)
-    //    {
-    //        string prefix = t.Split(' ')[0];
-    //        string param = t.Split(' ')[1];
+    void ParseTags()
+    {
+        tags = story.currentTags;
+        foreach (string t in tags)
+        {
+            string prefix = t.Split(' ')[0];
+            string param = t.Split(' ')[1];
 
-    //        switch(prefix.ToLower())
-    //        {
-    //            case "name":
-    //                SetName(param);
-    //                break;
-    //            case "sprite":
-    //                SetSprite(param);
-    //                break;
-    //            case "bg":
-    //                SetBG(param);
-    //                break;
-    //        }
-    //    }
-    //}
+            switch (prefix.ToLower())
+            {
+                case "Name":
+                    SetName(param);
+                    break;
+                case "Sprite":
+                    SetSprite(param);
+                    break;
+                case "BG":
+                    SetBG(param);
+                    break;
+            }
+        }
+    }
     void SetName(string _name)
     {
         nametag.text = _name;
