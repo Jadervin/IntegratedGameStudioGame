@@ -94,19 +94,15 @@ public class Scene2BattleSystem : MonoBehaviour
     public void OnAttackButton()
     {
         
-        if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
+        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
 
         else if (state == BattleState.FIRSTTURN)
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "They're strong. I'll have to use a Magic Attack.";
-            firstTurn();
+            StartCoroutine(HavetoUseMagic());
+            
 
         }
 
@@ -117,12 +113,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         if (isTimeForMagicCall == true)
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t"+playerUnit.unitName+"\n" +
-            "I should use my magic energy to call for Ariar.";
-            playerTurn();
+            StartCoroutine(HavetoUseMagicCall());
 
         }
 
@@ -134,34 +125,30 @@ public class Scene2BattleSystem : MonoBehaviour
     {
         if (playerUnit.currentMP > 0)
         {
-            if (state != BattleState.PLAYERTURN)
+            if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
             {
                 return;
             }
 
             magicOptionsPanel.SetActive(true);
         }
-
-        if (isTimeForMagicCall == true)
-        {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "I should use my magic energy to call for Ariar.";
-            playerTurn();
-
-        }
-
         else
         {
             StartCoroutine(MagicInsufficiency());
         }
+
+        if (isTimeForMagicCall == true)
+        {
+            StartCoroutine(HavetoUseMagicCall());
+
+        }
+
+        
     }
 
     public void OnFireMagicButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
@@ -171,53 +158,43 @@ public class Scene2BattleSystem : MonoBehaviour
 
     public void OnHealMagicButton()
     {
-        if (state != BattleState.PLAYERTURN)
-        {
-            return;
-        }
-
-        if (state == BattleState.FIRSTTURN)
-        {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "I do not need to heal.";
-            firstTurn();
-
-        }
-
-        if (playerUnit.currentHP == playerUnit.maxHP)
-        {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "I do not need to heal.";
-            playerTurn();
-        }
-
-
-        StartCoroutine(PlayerHeal());
-    }
-
-    public void OnInvestigateButton()
-    {
-        
-
-        if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
+        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
 
         else if (state == BattleState.FIRSTTURN)
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
+            StartCoroutine(CannotHealonFirstTurn());
 
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "They're strong. I'll have to use a Magic Attack.";
-            firstTurn();
+        }
+
+        else
+        {
+            StartCoroutine(PlayerHeal());
+        }
+
+        if (playerUnit.currentHP == playerUnit.maxHP)
+        {
+            StartCoroutine(CannotHeal());
+        }
+
+
+        
+    }
+
+    public void OnInvestigateButton()
+    {
+        
+
+        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
+        {
+            return;
+        }
+
+        else if (state == BattleState.FIRSTTURN)
+        {
+            StartCoroutine(HavetoUseMagic());
 
         }
 
@@ -228,12 +205,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         if (isTimeForMagicCall == true)
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "I should use my magic energy to call for Ariar.";
-            playerTurn();
+            StartCoroutine(HavetoUseMagicCall());
 
         }
 
@@ -242,20 +214,14 @@ public class Scene2BattleSystem : MonoBehaviour
 
     public void OnDefendButton()
     {
-        if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
+        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
 
         else if (state == BattleState.FIRSTTURN)
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "They're strong. I'll have to use a Magic Attack.";
-            firstTurn();
-
+            StartCoroutine(HavetoUseMagic());
         }
         else
         {
@@ -263,12 +229,7 @@ public class Scene2BattleSystem : MonoBehaviour
         }
         if (isTimeForMagicCall == true)
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "I should use my magic energy to call for Ariar.";
-            playerTurn();
+            StartCoroutine(HavetoUseMagicCall());
 
         }
 
@@ -277,19 +238,14 @@ public class Scene2BattleSystem : MonoBehaviour
 
     public void OnRunButton()
     {
-        if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
+        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
 
         else if (state == BattleState.FIRSTTURN)
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "They're strong. I'll have to use a Magic Attack.";
-            firstTurn();
+            StartCoroutine(HavetoUseMagic());
 
         }
 
@@ -300,12 +256,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         if (isTimeForMagicCall == true)
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
-
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "I should use my magic energy to call for Ariar.";
-            playerTurn();
+            StartCoroutine(HavetoUseMagicCall());
 
         }
 
@@ -316,19 +267,14 @@ public class Scene2BattleSystem : MonoBehaviour
     {
         if (playerUnit.currentMP > 0)
         {
-            if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
+            if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
             {
                 return;
             }
 
             else if (state == BattleState.FIRSTTURN)
             {
-                optionsPanel.SetActive(false);
-                magicOptionsPanel.SetActive(false);
-
-                dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-                "They're strong. I'll have to use a Magic Attack.";
-                firstTurn();
+                StartCoroutine(HavetoUseMagic());
 
             }
             else
@@ -815,4 +761,57 @@ public class Scene2BattleSystem : MonoBehaviour
 
     }
 
+    IEnumerator HavetoUseMagic()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        "They're strong. I'll have to use a Magic Attack.";
+        
+        yield return new WaitForSeconds(2f);
+
+        firstTurn();
+    }
+
+    IEnumerator HavetoUseMagicCall()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        "I should use my magic energy to call for Ariar.";
+        
+        yield return new WaitForSeconds(2f);
+
+        playerTurn();
+    }
+
+
+    IEnumerator CannotHealonFirstTurn()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        "I do not need to heal.";
+
+        yield return new WaitForSeconds(2f);
+
+        firstTurn();
+    }
+
+
+    IEnumerator CannotHeal()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        "I do not need to heal.";
+
+        yield return new WaitForSeconds(2f);
+
+        playerTurn();
+    }
 }
