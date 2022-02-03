@@ -46,12 +46,14 @@ public class Scene2BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         state = BattleState.START;
         StartCoroutine(setUpBattle());
     }
 
     IEnumerator setUpBattle()
     {
+        //Spawns in the Player and Enemy and the Gets the unit components
         GameObject playerGameObj = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGameObj.GetComponent<Unit>();
 
@@ -74,6 +76,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
+
         state = BattleState.FIRSTTURN;
         firstTurn();
         //playerTurn();
@@ -82,23 +85,29 @@ public class Scene2BattleSystem : MonoBehaviour
 
     void firstTurn()
     {
+        //turns on the options panel
         optionsPanel.SetActive(true);
 
     }
 
     void playerTurn()
     {
+        //turns on the options panel
         optionsPanel.SetActive(true);
     }
 
     public void OnAttackButton()
     {
-        
+        //if it is not the first turn or player turn,
+        //the button will not work
         if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
 
+        //if it is the first turn,
+        //the button will take the player to dialogue prompt
+        //to let them know to use magic.
         else if (state == BattleState.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagic());
@@ -106,12 +115,17 @@ public class Scene2BattleSystem : MonoBehaviour
 
         }
 
+        //if it is the player turn,
+        //the button will work as normal.
         else
         {
             StartCoroutine(PlayerAttack());
         }
 
-        if (isTimeForMagicCall == true)
+        //if the dialogue for using a magic call has been shown,
+        //the button will take the player to dialogue prompt
+        //to let them know to use magic call.
+        if (isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagicCall());
 
@@ -123,21 +137,35 @@ public class Scene2BattleSystem : MonoBehaviour
 
     public void OnMagicButton()
     {
+        //if, the MP is greater than 0,
+        //then the player can activate magic attacks.
+
+        //else, it will take the player to a dialogue prompt
+        //to tell them they have no more magic left
         if (playerUnit.currentMP > 0)
         {
+            //if it is not the first turn or player turn,
+            //the button will not work
             if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
             {
                 return;
             }
-
-            magicOptionsPanel.SetActive(true);
+            else
+            {
+                magicOptionsPanel.SetActive(true);
+            }
+           
         }
         else
         {
             StartCoroutine(MagicInsufficiency());
         }
 
-        if (isTimeForMagicCall == true)
+
+        //if the dialogue for using a magic call has been shown,
+        //the button will take the player to dialogue prompt
+        //to let them know to use magic call.
+        if (isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagicCall());
 
@@ -148,32 +176,47 @@ public class Scene2BattleSystem : MonoBehaviour
 
     public void OnFireMagicButton()
     {
+        //if it is not the first turn or player turn,
+        //the button will not work
         if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
-
-        StartCoroutine(PlayerFireAttack());
+        else
+        {
+            StartCoroutine(PlayerFireAttack());
+        }
+        
     }
 
     public void OnHealMagicButton()
     {
+        //if it is not the first turn or player turn,
+        //the button will not work
         if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
 
+        //if it is the first turn,
+        //the button will take the player to dialogue prompt
+        //to let them know that they are already at full health.
         else if (state == BattleState.FIRSTTURN)
         {
             StartCoroutine(CannotHealonFirstTurn());
 
         }
 
+
         else
         {
             StartCoroutine(PlayerHeal());
         }
 
+
+        //if the player is at max health,
+        //the button will take the player to dialogue prompt
+        //to let them know that they are already at full health.
         if (playerUnit.currentHP == playerUnit.maxHP)
         {
             StartCoroutine(CannotHeal());
@@ -185,13 +228,17 @@ public class Scene2BattleSystem : MonoBehaviour
 
     public void OnInvestigateButton()
     {
-        
 
+        //if it is not the first turn or player turn,
+        //the button will not work
         if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
 
+        //if it is the first turn,
+        //the button will take the player to dialogue prompt
+        //to let them know to use magic.
         else if (state == BattleState.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagic());
@@ -203,7 +250,11 @@ public class Scene2BattleSystem : MonoBehaviour
             StartCoroutine(PlayerInvestigate());
         }
 
-        if (isTimeForMagicCall == true)
+
+        //if the dialogue for using a magic call has been shown,
+        //the button will take the player to dialogue prompt
+        //to let them know to use magic call.
+        if (isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagicCall());
 
@@ -214,11 +265,17 @@ public class Scene2BattleSystem : MonoBehaviour
 
     public void OnDefendButton()
     {
+
+        //if it is not the first turn or player turn,
+        //the button will not work
         if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
 
+        //if it is the first turn,
+        //the button will take the player to dialogue prompt
+        //to let them know to use magic.
         else if (state == BattleState.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagic());
@@ -227,7 +284,12 @@ public class Scene2BattleSystem : MonoBehaviour
         {
             StartCoroutine(PlayerDefend());
         }
-        if (isTimeForMagicCall == true)
+
+
+        //if the dialogue for using a magic call has been shown,
+        //the button will take the player to dialogue prompt
+        //to let them know to use magic call.
+        if (isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagicCall());
 
@@ -238,11 +300,17 @@ public class Scene2BattleSystem : MonoBehaviour
 
     public void OnRunButton()
     {
+
+        //if it is not the first turn or player turn,
+        //the button will not work
         if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
         {
             return;
         }
 
+        //if it is the first turn,
+        //the button will take the player to dialogue prompt
+        //to let them know to use magic.
         else if (state == BattleState.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagic());
@@ -254,7 +322,10 @@ public class Scene2BattleSystem : MonoBehaviour
             StartCoroutine(PlayerRan());
         }
 
-        if (isTimeForMagicCall == true)
+        //if the dialogue for using a magic call has been shown,
+        //the button will take the player to dialogue prompt
+        //to let them know to use magic call.
+        if (isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagicCall());
 
@@ -265,13 +336,23 @@ public class Scene2BattleSystem : MonoBehaviour
 
     public void OnMagicCallButton()
     {
+        //if, the MP is greater than 0,
+        //then the player can activate magic attacks.
+
+        //else, it will take the player to a dialogue prompt
+        //to tell them they have no more magic left
         if (playerUnit.currentMP > 0)
         {
+            //if it is not the first turn or player turn,
+            //the button will not work
             if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
             {
                 return;
             }
 
+            //if it is the first turn,
+            //the button will take the player to dialogue prompt
+            //to let them know to use magic.
             else if (state == BattleState.FIRSTTURN)
             {
                 StartCoroutine(HavetoUseMagic());
@@ -292,6 +373,8 @@ public class Scene2BattleSystem : MonoBehaviour
     }
     IEnumerator MagicInsufficiency()
     {
+        //Turns off the option panels
+        //and tells the player there is no more magic left
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
@@ -559,7 +642,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
                     //For magic Call
                     if(playerUnit.MagicCallState==true && 
-                        playerUnit.currentTurnUntilMagicCall< playerUnit.maxTurnUntilMagicCall)
+                        playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
                     {
                         playerUnit.currentTurnUntilMagicCall++;
                     }
@@ -581,6 +664,8 @@ public class Scene2BattleSystem : MonoBehaviour
                         dialogueText.text = " \t" + playerUnit.unitName + "\n" +
                         "That's... strange. My magic seems weaker now. " +
                         "I'm so, tired. Perhaps I have just enough magic energy to call for Ariar.";
+
+                        yield return new WaitForSeconds(2f);
 
                         state = BattleState.PLAYERTURN;
                         playerTurn();
