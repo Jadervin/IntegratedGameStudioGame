@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum BattleState {START, FIRSTTURN, PLAYERTURN, ENEMYTURN, WON, LOST }
+
+//public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 
-public class BattleSystem : MonoBehaviour
+public class Scene2BattleSystem : MonoBehaviour
 {
+    //From the other BattleSystem Script
     [Header("Battle States")]
     public BattleState state;
 
@@ -39,6 +41,8 @@ public class BattleSystem : MonoBehaviour
     public SoundEffects soundResource;
 
 
+    public bool isTimeForMagicCall = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +58,11 @@ public class BattleSystem : MonoBehaviour
         GameObject enemyGameObj = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGameObj.GetComponent<Unit>();
 
-        dialogueText.text = "The " + enemyUnit.unitName + 
-            " approaches the " + playerUnit.unitName + ".";
+        //dialogueText.text = "The " + enemyUnit.unitName +
+        //" approaches the " + playerUnit.unitName + ".";
+
+        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+         "They're strong. I'll have to use a Magic Attack.";
 
         playerUnit.currentHP = playerUnit.maxHP;
         playerUnit.currentMP = playerUnit.maxMP;
@@ -67,10 +74,18 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        state = BattleState.PLAYERTURN;
-        playerTurn();
+        state = BattleState.FIRSTTURN;
+        firstTurn();
+        //playerTurn();
 
     }
+
+    void firstTurn()
+    {
+        optionsPanel.SetActive(true);
+
+    }
+
     void playerTurn()
     {
         optionsPanel.SetActive(true);
@@ -78,12 +93,41 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
-        if(state != BattleState.PLAYERTURN)
+        
+        if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
         {
             return;
         }
 
-        StartCoroutine(PlayerAttack());
+        else if (state == BattleState.FIRSTTURN)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "They're strong. I'll have to use a Magic Attack.";
+            firstTurn();
+
+        }
+
+        else
+        {
+            StartCoroutine(PlayerAttack());
+        }
+
+        if (isTimeForMagicCall == true)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t"+playerUnit.unitName+"\n" +
+            "I should use my magic energy to call for Ariar.";
+            playerTurn();
+
+        }
+
+
+        
     }
 
     public void OnMagicButton()
@@ -97,6 +141,18 @@ public class BattleSystem : MonoBehaviour
 
             magicOptionsPanel.SetActive(true);
         }
+
+        if (isTimeForMagicCall == true)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "I should use my magic energy to call for Ariar.";
+            playerTurn();
+
+        }
+
         else
         {
             StartCoroutine(MagicInsufficiency());
@@ -120,40 +176,174 @@ public class BattleSystem : MonoBehaviour
             return;
         }
 
+        if (state == BattleState.FIRSTTURN)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "I do not need to heal.";
+            firstTurn();
+
+        }
+
+        if (playerUnit.currentHP == playerUnit.maxHP)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "I do not need to heal.";
+            playerTurn();
+        }
+
+
         StartCoroutine(PlayerHeal());
     }
 
     public void OnInvestigateButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        
+
+        if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
         {
             return;
         }
 
-        StartCoroutine(PlayerInvestigate());
+        else if (state == BattleState.FIRSTTURN)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "They're strong. I'll have to use a Magic Attack.";
+            firstTurn();
+
+        }
+
+        else
+        {
+            StartCoroutine(PlayerInvestigate());
+        }
+
+        if (isTimeForMagicCall == true)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "I should use my magic energy to call for Ariar.";
+            playerTurn();
+
+        }
+
+        
     }
 
     public void OnDefendButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
         {
             return;
         }
 
-        StartCoroutine(PlayerDefend());
+        else if (state == BattleState.FIRSTTURN)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "They're strong. I'll have to use a Magic Attack.";
+            firstTurn();
+
+        }
+        else
+        {
+            StartCoroutine(PlayerDefend());
+        }
+        if (isTimeForMagicCall == true)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "I should use my magic energy to call for Ariar.";
+            playerTurn();
+
+        }
+
+        
     }
 
     public void OnRunButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
         {
             return;
         }
 
-        StartCoroutine(PlayerRan());
+        else if (state == BattleState.FIRSTTURN)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "They're strong. I'll have to use a Magic Attack.";
+            firstTurn();
+
+        }
+
+        else
+        {
+            StartCoroutine(PlayerRan());
+        }
+
+        if (isTimeForMagicCall == true)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "I should use my magic energy to call for Ariar.";
+            playerTurn();
+
+        }
+
+        
     }
 
+    public void OnMagicCallButton()
+    {
+        if (playerUnit.currentMP > 0)
+        {
+            if (state != BattleState.PLAYERTURN || state != BattleState.FIRSTTURN)
+            {
+                return;
+            }
 
+            else if (state == BattleState.FIRSTTURN)
+            {
+                optionsPanel.SetActive(false);
+                magicOptionsPanel.SetActive(false);
+
+                dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                "They're strong. I'll have to use a Magic Attack.";
+                firstTurn();
+
+            }
+            else
+            {
+                StartCoroutine(PlayerMagicCall());
+            }
+            
+
+           
+        }
+        else
+        {
+            StartCoroutine(MagicInsufficiency());
+        }
+    }
     IEnumerator MagicInsufficiency()
     {
         optionsPanel.SetActive(false);
@@ -179,12 +369,12 @@ public class BattleSystem : MonoBehaviour
 
         sfxSource.PlayOneShot(soundResource.attackSound);
         enemyHUD.SetHP(enemyUnit.currentHP);
-        
+
         dialogueText.text = playerUnit.unitName + " Attacks " + enemyUnit.unitName + ".";
 
         yield return new WaitForSeconds(2f);
 
-        if(isDead == true)
+        if (isDead == true)
         {
             state = BattleState.WON;
             StartCoroutine(EndBattle());
@@ -198,22 +388,26 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerFireAttack()
     {
-        bool isDead = enemyUnit.TakeDamage(playerUnit.fireDamage);
-
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
         sfxSource.PlayOneShot(soundResource.fireSound);
+        bool isDead = enemyUnit.TakeDamage(playerUnit.fireDamage);
+       
+        
         enemyHUD.SetHP(enemyUnit.currentHP);
 
         dialogueText.text = playerUnit.unitName + " uses Fire Magic on " + enemyUnit.unitName + ".";
 
-        
+
         playerUnit.MPDecrease(playerUnit.magicCost);
         playerHUD.SetMP(playerUnit.currentMP);
 
         yield return new WaitForSeconds(2f);
 
+
+
+      
         if (isDead == true)
         {
             state = BattleState.WON;
@@ -221,9 +415,19 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
-            
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(EnemyTurn());
+            if (state == BattleState.FIRSTTURN)
+            {
+                //Allows the Magic Call dialogue to play
+                isTimeForMagicCall = true;
+
+                state = BattleState.ENEMYTURN;
+                StartCoroutine(EnemyTurn());
+            }
+            else
+            {
+                state = BattleState.ENEMYTURN;
+                StartCoroutine(EnemyTurn());
+            }
         }
     }
 
@@ -243,11 +447,10 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        
+
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
-
 
     IEnumerator PlayerInvestigate()
     {
@@ -315,6 +518,68 @@ public class BattleSystem : MonoBehaviour
     }
 
 
+    IEnumerator PlayerMagicCall()
+    {
+        if (playerUnit.MagicCallState == false)
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+            dialogueText.text = playerUnit.unitName + " uses Magic Call.";
+
+
+            playerUnit.MPDecrease(playerUnit.magicCost);
+            playerHUD.SetMP(playerUnit.currentMP);
+            yield return new WaitForSeconds(2f);
+
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "Now I just have to hold out until he gets here.";
+
+            playerUnit.MagicCallState = true;
+
+            yield return new WaitForSeconds(2f);
+
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+        else
+        {
+            optionsPanel.SetActive(false);
+            magicOptionsPanel.SetActive(false);
+            dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+
+            yield return new WaitForSeconds(2f);
+
+            dialogueText.text = " \tAriar\n" +
+            "I've got this.";
+            yield return new WaitForSeconds(1f);
+
+            bool isDead = enemyUnit.TakeDamage(playerUnit.magicCallDamage);
+
+            enemyHUD.SetHP(enemyUnit.currentHP);
+
+            playerUnit.MPDecrease(playerUnit.magicCost);
+            playerHUD.SetMP(playerUnit.currentMP);
+
+            yield return new WaitForSeconds(2f);
+
+            playerUnit.MagicCallState = true;
+
+            if (isDead == true)
+            {
+                state = BattleState.WON;
+                StartCoroutine(EndBattle());
+            }
+            else
+            {
+
+                state = BattleState.ENEMYTURN;
+                StartCoroutine(EnemyTurn());
+            }
+
+        }
+
+    }
+
     IEnumerator EnemyTurn()
     {
         //Have an if statement for when the number of turns until the enemy can build up power 
@@ -335,7 +600,6 @@ public class BattleSystem : MonoBehaviour
 
                 yield return new WaitForSeconds(2f);
 
-
                 if (isDead == true)
                 {
                     state = BattleState.LOST;
@@ -343,9 +607,38 @@ public class BattleSystem : MonoBehaviour
                 }
                 else
                 {
+
                     enemyUnit.currentTurnUntilLargeAtck++;
-                    state = BattleState.PLAYERTURN;
-                    playerTurn();
+                    
+
+                    //For magic Call
+                    if(playerUnit.MagicCallState==true && 
+                        playerUnit.currentTurnUntilMagicCall< playerUnit.maxTurnUntilMagicCall)
+                    {
+                        playerUnit.currentTurnUntilMagicCall++;
+                    }
+
+                    if(playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
+                    {
+
+                        state = BattleState.PLAYERTURN;
+                        StartCoroutine(PlayerMagicCall());
+                    }
+
+                    if(isTimeForMagicCall == false)
+                    {
+                        state = BattleState.PLAYERTURN;
+                        playerTurn();
+                    }
+                    else
+                    {
+                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        "That's... strange. My magic seems weaker now. " +
+                        "I'm so, tired. Perhaps I have just enough magic energy to call for Ariar.";
+
+                        state = BattleState.PLAYERTURN;
+                        playerTurn();
+                    }
                 }
             }
 
@@ -359,7 +652,7 @@ public class BattleSystem : MonoBehaviour
 
                 dialogueText.text = "But, " + playerUnit.unitName + " defended the attack.";
 
-                bool isDead = playerUnit.TakeDamage((enemyUnit.damage/2));
+                bool isDead = playerUnit.TakeDamage((enemyUnit.damage / 2));
 
                 playerHUD.SetHP(playerUnit.currentHP);
 
@@ -373,8 +666,26 @@ public class BattleSystem : MonoBehaviour
                 }
                 else
                 {
+
+
                     playerUnit.isDefending = false;
                     enemyUnit.currentTurnUntilLargeAtck++;
+
+                    if (playerUnit.MagicCallState == true &&
+                        playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
+                    {
+                        playerUnit.currentTurnUntilMagicCall++;
+                    }
+
+                    if (playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
+                    {
+
+                        state = BattleState.PLAYERTURN;
+                        StartCoroutine(PlayerMagicCall());
+                    }
+
+
+
                     state = BattleState.PLAYERTURN;
                     playerTurn();
                 }
@@ -387,6 +698,20 @@ public class BattleSystem : MonoBehaviour
             enemyUnit.isBuildingUp = true;
             dialogueText.text = enemyUnit.unitName + " is still.";
             yield return new WaitForSeconds(2f);
+
+            if (playerUnit.MagicCallState == true &&
+                        playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
+            {
+                playerUnit.currentTurnUntilMagicCall++;
+            }
+
+            if (playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
+            {
+
+                state = BattleState.PLAYERTURN;
+                StartCoroutine(PlayerMagicCall());
+            }
+
 
             state = BattleState.PLAYERTURN;
             playerTurn();
@@ -470,7 +795,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EndBattle()
     {
-        if(state == BattleState.WON)
+        if (state == BattleState.WON)
         {
             sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You win!";
@@ -479,7 +804,7 @@ public class BattleSystem : MonoBehaviour
 
         }
 
-        else if(state == BattleState.LOST)
+        else if (state == BattleState.LOST)
         {
             sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You Lost!";

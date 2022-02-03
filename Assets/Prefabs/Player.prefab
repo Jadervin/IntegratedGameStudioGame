@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1b88e99ab8ee145920825500b96b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Hero
-  damage: 10
+  unitName: MC
+  damage: 5
   largeDamage: 0
   magicCost: 1
-  fireDamage: 20
+  fireDamage: 2
   healamount: 5
   maxHP: 50
   currentHP: 0
@@ -58,6 +58,10 @@ MonoBehaviour:
   maxTurnUntilLargeAtck: 0
   currentTurnUntilLargeAtck: 0
   isBuildingUp: 0
+  maxTurnUntilMagicCall: 2
+  currentTurnUntilMagicCall: 0
+  MagicCallState: 0
+  magicCallDamage: 30
 --- !u!1 &5345406751869297549
 GameObject:
   m_ObjectHideFlags: 0

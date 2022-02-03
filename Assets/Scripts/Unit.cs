@@ -27,7 +27,12 @@ public class Unit : MonoBehaviour
     public int maxTurnUntilLargeAtck;
     public int currentTurnUntilLargeAtck = 0;
     public bool isBuildingUp = false;
-   
+
+    //Turns Until Magic Call
+    public int maxTurnUntilMagicCall;
+    public int currentTurnUntilMagicCall = 0;
+    public bool MagicCallState = false;
+    public int magicCallDamage;
 
     public bool TakeDamage(int dmg)
     {
