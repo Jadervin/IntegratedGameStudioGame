@@ -35,6 +35,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
     [Header("Scenes")]
     public string endingSceneName;
+    public string losingSceneName;
 
     [Header("SFX")]
     public AudioSource sfxSource;
@@ -996,7 +997,7 @@ public class Scene2BattleSystem : MonoBehaviour
             sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You Lost!";
             yield return new WaitForSeconds(3f);
-            SceneManager.LoadScene(endingSceneName);
+            SceneManager.LoadScene(losingSceneName);
         }
 
 

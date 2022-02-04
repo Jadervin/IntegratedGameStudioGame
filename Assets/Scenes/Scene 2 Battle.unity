@@ -2944,7 +2944,8 @@ MonoBehaviour:
   magicOptionsPanel: {fileID: 540355387}
   playerBattleStation: {fileID: 84399455}
   enemyBattleStation: {fileID: 1659286502}
-  endingSceneName: Ending Screen
+  endingSceneName: Scene 2 After Battle
+  losingSceneName: Ending Screen
   sfxSource: {fileID: 1197034409}
   soundResource: {fileID: 223975892}
   isTimeForMagicCall: 0
