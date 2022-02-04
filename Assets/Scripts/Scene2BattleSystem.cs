@@ -40,7 +40,6 @@ public class Scene2BattleSystem : MonoBehaviour
     public AudioSource sfxSource;
     public SoundEffects soundResource;
 
-
     public bool isTimeForMagicCall = false;
 
     // Start is called before the first frame update
@@ -345,14 +344,17 @@ public class Scene2BattleSystem : MonoBehaviour
         {
             //if it is not the first turn or player turn,
             //the button will not work
+
+            //else if it is the first turn,
+            //the button will take the player to dialogue prompt
+            //to let them know to use magic.
+
+            //else, go to the function PlayerMagicCall
             if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
             {
                 return;
             }
 
-            //if it is the first turn,
-            //the button will take the player to dialogue prompt
-            //to let them know to use magic.
             else if (state == BattleState.FIRSTTURN)
             {
                 StartCoroutine(HavetoUseMagic());
@@ -370,7 +372,16 @@ public class Scene2BattleSystem : MonoBehaviour
         {
             StartCoroutine(MagicInsufficiency());
         }
+
+        //if, the magic call state bool is true, 
+        //then, go to the function CannotUseMagicCall.
+        if (playerUnit.MagicCallState == true)
+        {
+            StartCoroutine(CannotUseMagicCall());
+
+        }
     }
+
     IEnumerator MagicInsufficiency()
     {
         //Turns off the option panels
@@ -378,8 +389,10 @@ public class Scene2BattleSystem : MonoBehaviour
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
+
         dialogueText.text = playerUnit.unitName + " has no more magic left.";
 
+        //Waits for 2 seconds for the dialogue
         yield return new WaitForSeconds(2f);
 
         state = BattleState.PLAYERTURN;
@@ -387,22 +400,35 @@ public class Scene2BattleSystem : MonoBehaviour
 
     }
 
-
     IEnumerator PlayerAttack()
     {
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
-
+        //Turns off the option panels
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
-
+        //Plays a sound effect
         sfxSource.PlayOneShot(soundResource.attackSound);
+
+        //Checks to see if the enemy dies from the attack.
+        //Also calls the function to damage the enemy
+        //based on the player's damage amount from the Unit script
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+
+
+        
+        //Changes the enemy HP text based on the current HP
         enemyHUD.SetHP(enemyUnit.currentHP);
 
         dialogueText.text = playerUnit.unitName + " Attacks " + enemyUnit.unitName + ".";
 
+        //Waits for 2 seconds for the dialogue
         yield return new WaitForSeconds(2f);
 
+
+        //Checks to see if the enemy is dead.
+        //if, the enemy is dead, then the battle state changes to win
+
+        //else, it goes to the enemy's turn.
         if (isDead == true)
         {
             state = BattleState.WON;
@@ -417,26 +443,39 @@ public class Scene2BattleSystem : MonoBehaviour
 
     IEnumerator PlayerFireAttack()
     {
+        //Turns off the option panels
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
+        //Plays a sound effect
         sfxSource.PlayOneShot(soundResource.fireSound);
+
+        //Checks to see if the enemy dies from the attack.
+        //Also calls the function to damage the enemy
+        //based on the player's damage amount from the Unit script
         bool isDead = enemyUnit.TakeDamage(playerUnit.fireDamage);
-       
-        
+
+        //Changes the enemy HP based on the current HP
         enemyHUD.SetHP(enemyUnit.currentHP);
 
         dialogueText.text = playerUnit.unitName + " uses Fire Magic on " + enemyUnit.unitName + ".";
 
-
+        //Calls a function in the Unit Script to Decrease the current MP
+        //by sending the MP cost of the magic move
         playerUnit.MPDecrease(playerUnit.magicCost);
+
+        //Calls a function in the BattleHUD script to
+        //change the player MP text based on the current MP
         playerHUD.SetMP(playerUnit.currentMP);
 
+        //Waits for 2 seconds for the dialogue
         yield return new WaitForSeconds(2f);
 
 
+        //Checks to see if the enemy is dead.
+        //if, the enemy is dead, then the battle state changes to win
 
-      
+        //else, it goes to the enemy's turn.
         if (isDead == true)
         {
             state = BattleState.WON;
@@ -444,6 +483,11 @@ public class Scene2BattleSystem : MonoBehaviour
         }
         else
         {
+
+            //if, it is the first turn, then turn the bool on 
+            //for the Magic Call dialogue
+
+            //else, it just goes to the enemy's turn and changes to enemy state.
             if (state == BattleState.FIRSTTURN)
             {
                 //Allows the Magic Call dialogue to play
@@ -462,27 +506,41 @@ public class Scene2BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
+        //Turns off the option panels
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
+        //Plays a sound effect
         sfxSource.PlayOneShot(soundResource.healSound);
 
+        //Calls a function in the Unit Script to increase the current HP
+        //by sending the heal amount of the healing move
         playerUnit.Heal(playerUnit.healamount);
+
+        //Calls a function in the BattleHUD script to
+        //change the player HP text based on the current HP
         playerHUD.SetHP(playerUnit.currentHP);
         dialogueText.text = playerUnit.unitName + " uses Healing Magic.";
 
+
+        //Calls a function in the Unit Script to Decrease the current MP
+        //by sending the MP cost of the magic move
         playerUnit.MPDecrease(playerUnit.magicCost);
+
+        //Calls a function in the BattleHUD script to
+        //change the player MP text based on the current MP
         playerHUD.SetMP(playerUnit.currentMP);
 
         yield return new WaitForSeconds(2f);
 
-
+        //it goes to the enemy's turn and changes to enemy state.
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
 
     IEnumerator PlayerInvestigate()
     {
+        //Turns off the option panels
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
@@ -491,8 +549,17 @@ public class Scene2BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
+
+        //if, the enemy's current attack is less than 3,
+        //then it will show the turns until Large Attack
+
+        //else if, the enemy's current attack is 3 and the enemy is not building up,
+        //then it will say the enemy is building up
+
+        //else, it will say the enemy is going to attack
         if (enemyUnit.currentTurnUntilLargeAtck < 3)
         {
+
             dialogueText.text = enemyUnit.unitName + " has " +
                 (enemyUnit.maxTurnUntilLargeAtck - enemyUnit.currentTurnUntilLargeAtck) +
                 " turn until it uses its Large Attack.";
@@ -515,9 +582,11 @@ public class Scene2BattleSystem : MonoBehaviour
 
     IEnumerator PlayerDefend()
     {
+        //Turns off the option panels
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
+        //set the bool of the player is defending to true
         playerUnit.isDefending = true;
         dialogueText.text = playerUnit.unitName + " is defending.";
 
@@ -530,10 +599,13 @@ public class Scene2BattleSystem : MonoBehaviour
 
     IEnumerator PlayerRan()
     {
+        //Turns off the option panels
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
+        //Plays a sound effect
         sfxSource.PlayOneShot(soundResource.runSound);
+
 
         dialogueText.text = playerUnit.unitName + " ran away.";
         yield return new WaitForSeconds(2f);
@@ -541,6 +613,7 @@ public class Scene2BattleSystem : MonoBehaviour
         dialogueText.text = "Apparently, the Hero was not brave enough.";
         yield return new WaitForSeconds(2f);
 
+        //the battle state changes to lost and changes the scene
         state = BattleState.LOST;
         StartCoroutine(EndBattle());
 
@@ -549,31 +622,46 @@ public class Scene2BattleSystem : MonoBehaviour
 
     IEnumerator PlayerMagicCall()
     {
+        //Turns off the option panels
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        //if, the Magic Call State bool is false,
+        //then activate the magic call state to true
+
+        //else, activate the magic call attack
+        //and disable the bool
         if (playerUnit.MagicCallState == false)
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
+            
             dialogueText.text = playerUnit.unitName + " uses Magic Call.";
 
-
+            //Calls a function in the Unit Script to Decrease the current MP
+            //by sending the MP cost of the magic move
             playerUnit.MPDecrease(playerUnit.magicCost);
+
+            //Calls a function in the BattleHUD script to
+            //change the player MP text based on the current MP
             playerHUD.SetMP(playerUnit.currentMP);
+
+            //Waits for 2 seconds for the dialogue
             yield return new WaitForSeconds(2f);
 
             dialogueText.text = " \t" + playerUnit.unitName + "\n" +
             "Now I just have to hold out until he gets here.";
 
+            //activate the magic call state to true
             playerUnit.MagicCallState = true;
 
             yield return new WaitForSeconds(2f);
 
+            //it goes to the enemy's turn and changes to enemy state.
             state = BattleState.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
         else
         {
-            optionsPanel.SetActive(false);
-            magicOptionsPanel.SetActive(false);
+           
             dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
 
             yield return new WaitForSeconds(2f);
@@ -582,17 +670,31 @@ public class Scene2BattleSystem : MonoBehaviour
             "I've got this.";
             yield return new WaitForSeconds(1f);
 
+            //Checks to see if the enemy dies from the attack.
+            //Also calls the function to damage the enemy
+            //based on the player's damage amount from the Unit script
             bool isDead = enemyUnit.TakeDamage(playerUnit.magicCallDamage);
 
+            //Changes the enemy HP based on the current HP
             enemyHUD.SetHP(enemyUnit.currentHP);
 
+            //Calls a function in the Unit Script to Decrease the current MP
+            //by sending the MP cost of the magic move
             playerUnit.MPDecrease(playerUnit.magicCost);
+
+            //Calls a function in the BattleHUD script to
+            //change the player MP text based on the current MP
             playerHUD.SetMP(playerUnit.currentMP);
 
             yield return new WaitForSeconds(2f);
 
-            playerUnit.MagicCallState = true;
+            //set the magic call state to false
+            playerUnit.MagicCallState = false;
 
+            //Checks to see if the enemy is dead.
+            //if, the enemy is dead, then the battle state changes to win
+
+            //else, it goes to the enemy's turn.
             if (isDead == true)
             {
                 state = BattleState.WON;
@@ -899,4 +1001,18 @@ public class Scene2BattleSystem : MonoBehaviour
 
         playerTurn();
     }
+
+    IEnumerator CannotUseMagicCall()
+    {
+        optionsPanel.SetActive(false);
+        magicOptionsPanel.SetActive(false);
+
+        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        "Now I just have to hold out until he gets here.";
+
+        yield return new WaitForSeconds(2f);
+
+        playerTurn();
+    }
+
 }
