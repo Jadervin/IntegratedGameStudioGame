@@ -15,11 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/References Scene.unity
     guid: 5277b1062e6ef38429ed347d96faa78e
   - enabled: 1
-    path: Assets/Scenes/Dialogue Scene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Scene 1.unity
+    guid: 027cbf2d715bf90419eafdaffa62a6da
   - enabled: 1
-    path: Assets/Scenes/RPG Battle Scene.unity
-    guid: 3751cda5207430e4d86ca8705682a63a
+    path: Assets/Scenes/Scene 2.unity
+    guid: f848b90b7f1b67944bcf7154c3fb1793
+  - enabled: 1
+    path: Assets/Scenes/Scene 2 Battle.unity
+    guid: 55603d3569f863b4fb3b830535d9ecfb
+  - enabled: 1
+    path: Assets/Scenes/Scene 2 After Battle.unity
+    guid: ddcec4be3457b754296d12736a0e0fd3
   - enabled: 1
     path: Assets/Scenes/Ending Screen.unity
     guid: 7795ea0dcfe15ee4ea29e93675be5e4d

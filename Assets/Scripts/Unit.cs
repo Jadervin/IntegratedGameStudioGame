@@ -61,5 +61,9 @@ public class Unit : MonoBehaviour
     public void MPDecrease(int mp)
     {
         currentMP -= mp;
+        if (currentMP < 0)
+        {
+            currentMP = 0;
+        }
     }
 }

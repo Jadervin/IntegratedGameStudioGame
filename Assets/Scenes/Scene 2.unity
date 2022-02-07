@@ -518,13 +518,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f1a33a20214434aadca06f85e76ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 0a1c4cfed8ea5de4aa0e6ee9735024aa, type: 3}
+  inkFile: {fileID: 4900000, guid: 589b6392381630648a7d8c4ab46ecc11, type: 3}
   textBox: {fileID: 815624434}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 470212753}
   background: {fileID: 0}
   charact: {fileID: 0}
-  nextSceneName: Scene 2
+  nextSceneName: Scene 2 Battle
   isSpaceDisabled: 0
 --- !u!4 &876313044
 Transform:
@@ -677,7 +677,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.49056602, g: 0.15580866, b: 0.43664557, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

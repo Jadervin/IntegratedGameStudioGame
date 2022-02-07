@@ -676,7 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef87e14d00927c41834606f0cbc5e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartSceneName: Dialogue Scene
+  StartSceneName: Scene 1
   CreditsSceneName: Credits Screen
   TitleMenuSceneName: Title Screen
   ReferencesSceneName: References Scene

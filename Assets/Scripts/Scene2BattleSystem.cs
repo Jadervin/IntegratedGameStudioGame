@@ -350,7 +350,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         //else, it will take the player to a dialogue prompt
         //to tell them they have no more magic left
-        if (playerUnit.currentMP > 0)
+        if (playerUnit.currentMP > 0 || playerUnit.MagicCallState == false)
         {
             //if it is not the first turn or player turn,
             //the button will not work
@@ -768,11 +768,11 @@ public class Scene2BattleSystem : MonoBehaviour
                     
 
                     //For magic Call
-                    if(playerUnit.MagicCallState == true && 
-                        playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
-                    {
-                        playerUnit.currentTurnUntilMagicCall++;
-                    }
+                    //if(playerUnit.MagicCallState == true && 
+                    //    playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
+                    //{
+                    //    playerUnit.currentTurnUntilMagicCall++;
+                    //}
 
                     if(playerUnit.MagicCallState == true &&
                         playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
@@ -780,6 +780,10 @@ public class Scene2BattleSystem : MonoBehaviour
 
                         state = BattleState.PLAYERTURN;
                         StartCoroutine(PlayerMagicCall());
+                    }
+                    else
+                    {
+                        playerUnit.currentTurnUntilMagicCall++;
                     }
 
                     if (isTimeForMagicCall == false)
@@ -831,17 +835,17 @@ public class Scene2BattleSystem : MonoBehaviour
                     playerUnit.isDefending = false;
                     enemyUnit.currentTurnUntilLargeAtck++;
 
+                    //For magic Call
                     if (playerUnit.MagicCallState == true &&
-                        playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
-                    {
-                        playerUnit.currentTurnUntilMagicCall++;
-                    }
-
-                    if (playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
+                        playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                     {
 
                         state = BattleState.PLAYERTURN;
                         StartCoroutine(PlayerMagicCall());
+                    }
+                    else
+                    {
+                        playerUnit.currentTurnUntilMagicCall++;
                     }
 
 
@@ -859,17 +863,17 @@ public class Scene2BattleSystem : MonoBehaviour
             dialogueText.text = enemyUnit.unitName + " is still.";
             yield return new WaitForSeconds(2f);
 
+            //For magic Call
             if (playerUnit.MagicCallState == true &&
-                        playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
-            {
-                playerUnit.currentTurnUntilMagicCall++;
-            }
-
-            if (playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
+                playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
             {
 
                 state = BattleState.PLAYERTURN;
                 StartCoroutine(PlayerMagicCall());
+            }
+            else
+            {
+                playerUnit.currentTurnUntilMagicCall++;
             }
 
 
@@ -914,17 +918,17 @@ public class Scene2BattleSystem : MonoBehaviour
                 enemyUnit.isBuildingUp = false;
                 enemyUnit.currentTurnUntilLargeAtck = 0;
 
+                //For magic Call
                 if (playerUnit.MagicCallState == true &&
-                       playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
-                {
-                    playerUnit.currentTurnUntilMagicCall++;
-                }
-
-                if (playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
+                    playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                 {
 
                     state = BattleState.PLAYERTURN;
                     StartCoroutine(PlayerMagicCall());
+                }
+                else
+                {
+                    playerUnit.currentTurnUntilMagicCall++;
                 }
 
                 state = BattleState.PLAYERTURN;
@@ -961,18 +965,35 @@ public class Scene2BattleSystem : MonoBehaviour
                 enemyUnit.isBuildingUp = false;
                 enemyUnit.currentTurnUntilLargeAtck = 0;
 
-                if (playerUnit.MagicCallState == true &&
-                       playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
-                {
-                    playerUnit.currentTurnUntilMagicCall++;
-                }
+                //For Magic Call 
+                //Old code
+                //if (playerUnit.MagicCallState == true &&
+                //       playerUnit.currentTurnUntilMagicCall < playerUnit.maxTurnUntilMagicCall)
+                //{
+                //    playerUnit.currentTurnUntilMagicCall++;
+                //}
 
-                if (playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
+                //if (playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
+                //{
+
+                //    state = BattleState.PLAYERTURN;
+                //    StartCoroutine(PlayerMagicCall());
+                //}
+
+
+                //For magic Call
+                if (playerUnit.MagicCallState == true &&
+                    playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                 {
 
                     state = BattleState.PLAYERTURN;
                     StartCoroutine(PlayerMagicCall());
                 }
+                else
+                {
+                    playerUnit.currentTurnUntilMagicCall++;
+                }
+
 
                 state = BattleState.PLAYERTURN;
                 playerTurn();

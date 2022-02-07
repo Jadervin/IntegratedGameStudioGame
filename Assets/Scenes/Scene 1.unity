@@ -259,13 +259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f1a33a20214434aadca06f85e76ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 8f0f042a82ee80a4994e4cb8f721b864, type: 3}
+  inkFile: {fileID: 4900000, guid: 677e7654c5414df498e65d4f6ffb60be, type: 3}
   textBox: {fileID: 115157998}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 1316612077}
   background: {fileID: 0}
   charact: {fileID: 0}
-  nextSceneName: Ending Screen
+  nextSceneName: Scene 2
   isSpaceDisabled: 0
 --- !u!4 &627901681
 Transform:
