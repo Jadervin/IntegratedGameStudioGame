@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     List<string> tags;
     static Choice choiceSelected;
     public string nextSceneName;
+
     public bool isSpaceDisabled = false;
     public bool textFinished = false;
 
@@ -48,6 +49,7 @@ public class DialogueManager : MonoBehaviour
             //Is there more to the story?
             if(story.canContinue)
             {
+                isSpaceDisabled = true;
                 nametag.text = "";
                 AdvanceDialogue();
                 //Are there any choices?
@@ -101,8 +103,8 @@ public class DialogueManager : MonoBehaviour
            if (Input.GetKey(KeyCode.S))
            {
                 message.text = sentence;
-                textFinished = true;
-           }
+                
+            }
            else 
            {
                 yield return new WaitForSeconds(letterSpeed);
@@ -110,7 +112,7 @@ public class DialogueManager : MonoBehaviour
                 yield return null;
            }
         }
-        
+        isSpaceDisabled = false;
         yield return null;
     }
 
@@ -157,7 +159,9 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(optionPanel.transform.GetChild(i).gameObject);
         }
-        choiceSelected = null; // Forgot to reset the choiceSelected. Otherwise, it would select an option without player intervention.
+        choiceSelected = null; 
+        // Forgot to reset the choiceSelected.
+        // Otherwise, it would select an option without player intervention.
         
         isSpaceDisabled = false;
         AdvanceDialogue();

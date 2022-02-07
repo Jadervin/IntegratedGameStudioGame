@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundEffects : MonoBehaviour
+public class SoundEffects
 {
     public AudioClip fireSound;
     public AudioClip healSound;
