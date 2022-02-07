@@ -374,6 +374,12 @@ PrefabInstance:
       value: -15.6386
       objectReference: {fileID: 0}
     - target: {fileID: 5771636039321569095, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+      propertyPath: m_Text
+      value: 'Start with Space Button
+
+        Press S to Skip'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771636039321569095, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 0
       objectReference: {fileID: 0}
@@ -526,6 +532,7 @@ MonoBehaviour:
   charact: {fileID: 0}
   nextSceneName: Scene 2 Battle
   isSpaceDisabled: 0
+  letterSpeed: 0.05
 --- !u!4 &876313044
 Transform:
   m_ObjectHideFlags: 0

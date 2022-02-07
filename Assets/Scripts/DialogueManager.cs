@@ -21,6 +21,11 @@ public class DialogueManager : MonoBehaviour
     static Choice choiceSelected;
     public string nextSceneName;
     public bool isSpaceDisabled = false;
+    public bool textFinished = false;
+
+
+    [Range(0, 0.1f)]
+    public float letterSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -76,18 +81,36 @@ public class DialogueManager : MonoBehaviour
         string currentSentence = story.Continue();
         ParseTags();
         StopAllCoroutines();
+
         StartCoroutine(TypeSentence(currentSentence));
+
+        
+        
     }
 
     // Type out the sentence letter by letter and make character idle if they were talking
     IEnumerator TypeSentence(string sentence)
     {
         message.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        //isSpaceDisabled = true;
+       
+        foreach (char letter in sentence.ToCharArray())
         {
-            message.text += letter;
-            yield return null;
+           message.text += letter;
+            
+           if (Input.GetKey(KeyCode.S))
+           {
+                message.text = sentence;
+                textFinished = true;
+           }
+           else 
+           {
+                yield return new WaitForSeconds(letterSpeed);
+
+                yield return null;
+           }
         }
+        
         yield return null;
     }
 
@@ -176,7 +199,15 @@ public class DialogueManager : MonoBehaviour
     }
     void SetName(string _name)
     {
-        nametag.text = _name;
+        if(_name == "MC")
+        {
+            nametag.text = CharacterNameScript.characterName;
+        }
+        else
+        {
+            nametag.text = _name;
+        }
+        
     }
     void SetSprite(string _ch)
     {

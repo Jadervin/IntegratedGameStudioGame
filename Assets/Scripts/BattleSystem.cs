@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum BattleState {START, FIRSTTURN, PLAYERTURN, ENEMYTURN, WON, LOST }
+//public enum BattleState {START, FIRSTTURN, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 
 public class BattleSystem : MonoBehaviour
 {
     [Header("Battle States")]
-    public BattleState state;
+    public BattleState.State state;
 
     [Header("Game Object Components")]
     public GameObject playerPrefab;
@@ -42,7 +42,7 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        state = BattleState.START;
+        state = BattleState.State.START;
         StartCoroutine(setUpBattle());
     }
 
@@ -67,7 +67,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        state = BattleState.PLAYERTURN;
+        state = BattleState.State.PLAYERTURN;
         playerTurn();
 
     }
@@ -78,7 +78,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
-        if(state != BattleState.PLAYERTURN)
+        if(state != BattleState.State.PLAYERTURN)
         {
             return;
         }
@@ -90,7 +90,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (playerUnit.currentMP > 0)
         {
-            if (state != BattleState.PLAYERTURN)
+            if (state != BattleState.State.PLAYERTURN)
             {
                 return;
             }
@@ -105,7 +105,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnFireMagicButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state != BattleState.State.PLAYERTURN)
         {
             return;
         }
@@ -115,7 +115,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnHealMagicButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state != BattleState.State.PLAYERTURN)
         {
             return;
         }
@@ -125,7 +125,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnInvestigateButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state != BattleState.State.PLAYERTURN)
         {
             return;
         }
@@ -135,7 +135,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnDefendButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state != BattleState.State.PLAYERTURN)
         {
             return;
         }
@@ -145,7 +145,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnRunButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state != BattleState.State.PLAYERTURN)
         {
             return;
         }
@@ -163,7 +163,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.PLAYERTURN;
+        state = BattleState.State.PLAYERTURN;
         playerTurn();
 
     }
@@ -186,12 +186,12 @@ public class BattleSystem : MonoBehaviour
 
         if(isDead == true)
         {
-            state = BattleState.WON;
+            state = BattleState.State.WON;
             StartCoroutine(EndBattle());
         }
         else
         {
-            state = BattleState.ENEMYTURN;
+            state = BattleState.State.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
     }
@@ -216,13 +216,13 @@ public class BattleSystem : MonoBehaviour
 
         if (isDead == true)
         {
-            state = BattleState.WON;
+            state = BattleState.State.WON;
             StartCoroutine(EndBattle());
         }
         else
         {
             
-            state = BattleState.ENEMYTURN;
+            state = BattleState.State.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
     }
@@ -244,7 +244,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         
-        state = BattleState.ENEMYTURN;
+        state = BattleState.State.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
 
@@ -276,7 +276,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.ENEMYTURN;
+        state = BattleState.State.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
 
@@ -291,7 +291,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.ENEMYTURN;
+        state = BattleState.State.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
 
@@ -309,7 +309,7 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = "Apparently, the Hero was not brave enough.";
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.LOST;
+        state = BattleState.State.LOST;
         StartCoroutine(EndBattle());
 
     }
@@ -338,13 +338,13 @@ public class BattleSystem : MonoBehaviour
 
                 if (isDead == true)
                 {
-                    state = BattleState.LOST;
+                    state = BattleState.State.LOST;
                     StartCoroutine(EndBattle());
                 }
                 else
                 {
                     enemyUnit.currentTurnUntilLargeAtck++;
-                    state = BattleState.PLAYERTURN;
+                    state = BattleState.State.PLAYERTURN;
                     playerTurn();
                 }
             }
@@ -368,14 +368,14 @@ public class BattleSystem : MonoBehaviour
 
                 if (isDead == true)
                 {
-                    state = BattleState.LOST;
+                    state = BattleState.State.LOST;
                     StartCoroutine(EndBattle());
                 }
                 else
                 {
                     playerUnit.isDefending = false;
                     enemyUnit.currentTurnUntilLargeAtck++;
-                    state = BattleState.PLAYERTURN;
+                    state = BattleState.State.PLAYERTURN;
                     playerTurn();
                 }
             }
@@ -388,7 +388,7 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = enemyUnit.unitName + " is still.";
             yield return new WaitForSeconds(2f);
 
-            state = BattleState.PLAYERTURN;
+            state = BattleState.State.PLAYERTURN;
             playerTurn();
 
         }
@@ -421,14 +421,14 @@ public class BattleSystem : MonoBehaviour
 
             if (isDead == true)
             {
-                state = BattleState.LOST;
+                state = BattleState.State.LOST;
                 StartCoroutine(EndBattle());
             }
             else
             {
                 enemyUnit.isBuildingUp = false;
                 enemyUnit.currentTurnUntilLargeAtck = 0;
-                state = BattleState.PLAYERTURN;
+                state = BattleState.State.PLAYERTURN;
                 playerTurn();
             }
 
@@ -453,7 +453,7 @@ public class BattleSystem : MonoBehaviour
 
             if (isDead == true)
             {
-                state = BattleState.LOST;
+                state = BattleState.State.LOST;
                 StartCoroutine(EndBattle());
             }
             else
@@ -461,7 +461,7 @@ public class BattleSystem : MonoBehaviour
                 playerUnit.isDefending = false;
                 enemyUnit.isBuildingUp = false;
                 enemyUnit.currentTurnUntilLargeAtck = 0;
-                state = BattleState.PLAYERTURN;
+                state = BattleState.State.PLAYERTURN;
                 playerTurn();
             }
         }
@@ -470,7 +470,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EndBattle()
     {
-        if(state == BattleState.WON)
+        if(state == BattleState.State.WON)
         {
             sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You win!";
@@ -479,7 +479,7 @@ public class BattleSystem : MonoBehaviour
 
         }
 
-        else if(state == BattleState.LOST)
+        else if(state == BattleState.State.LOST)
         {
             sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You Lost!";

@@ -12,7 +12,7 @@ public class Scene2BattleSystem : MonoBehaviour
 {
     //From the other BattleSystem Script
     [Header("Battle States")]
-    public BattleState state;
+    public BattleState.State state;
 
     [Header("Game Object Components")]
     public GameObject playerPrefab;
@@ -47,7 +47,7 @@ public class Scene2BattleSystem : MonoBehaviour
     void Start()
     {
         
-        state = BattleState.START;
+        state = BattleState.State.START;
         StartCoroutine(setUpBattle());
     }
 
@@ -77,7 +77,7 @@ public class Scene2BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
 
-        state = BattleState.FIRSTTURN;
+        state = BattleState.State.FIRSTTURN;
         firstTurn();
         //playerTurn();
 
@@ -100,7 +100,7 @@ public class Scene2BattleSystem : MonoBehaviour
     {
         //if it is not the first turn or player turn,
         //the button will not work
-        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
+        if (state != BattleState.State.PLAYERTURN && state != BattleState.State.FIRSTTURN)
         {
             return;
         }
@@ -108,7 +108,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else if it is the first turn,
         //the button will take the player to dialogue prompt
         //to let them know to use magic.
-        else if (state == BattleState.FIRSTTURN)
+        else if (state == BattleState.State.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagic());
             
@@ -118,7 +118,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else if the dialogue for using a magic call has been shown,
         //the button will take the player to dialogue prompt
         //to let them know to use magic call.
-        else if(isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
+        else if(isTimeForMagicCall == true && state != BattleState.State.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagicCall());
 
@@ -149,7 +149,7 @@ public class Scene2BattleSystem : MonoBehaviour
         {
             //if it is not the first turn or player turn,
             //the button will not work
-            if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
+            if (state != BattleState.State.PLAYERTURN && state != BattleState.State.FIRSTTURN)
             {
                 return;
             }
@@ -157,7 +157,7 @@ public class Scene2BattleSystem : MonoBehaviour
             //else if the dialogue for using a magic call has been shown,
             //the button will take the player to dialogue prompt
             //to let them know to use magic call.
-            else if (isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
+            else if (isTimeForMagicCall == true && state != BattleState.State.FIRSTTURN)
             {
                 StartCoroutine(HavetoUseMagicCall());
 
@@ -183,7 +183,7 @@ public class Scene2BattleSystem : MonoBehaviour
     {
         //if it is not the first turn or player turn,
         //the button will not work
-        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
+        if (state != BattleState.State.PLAYERTURN && state != BattleState.State.FIRSTTURN)
         {
             return;
         }
@@ -198,7 +198,7 @@ public class Scene2BattleSystem : MonoBehaviour
     {
         //if it is not the first turn or player turn,
         //the button will not work
-        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
+        if (state != BattleState.State.PLAYERTURN && state != BattleState.State.FIRSTTURN)
         {
             return;
         }
@@ -206,7 +206,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else if it is the first turn,
         //the button will take the player to dialogue prompt
         //to let them know that they are already at full health.
-        else if (state == BattleState.FIRSTTURN)
+        else if (state == BattleState.State.FIRSTTURN)
         {
             StartCoroutine(CannotHealonFirstTurn());
 
@@ -237,7 +237,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         //if it is not the first turn or player turn,
         //the button will not work
-        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
+        if (state != BattleState.State.PLAYERTURN && state != BattleState.State.FIRSTTURN)
         {
             return;
         }
@@ -245,7 +245,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else if it is the first turn,
         //the button will take the player to dialogue prompt
         //to let them know to use magic.
-        else if (state == BattleState.FIRSTTURN)
+        else if (state == BattleState.State.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagic());
 
@@ -253,7 +253,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else if the dialogue for using a magic call has been shown,
         //the button will take the player to dialogue prompt
         //to let them know to use magic call.
-        else if (isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
+        else if (isTimeForMagicCall == true && state != BattleState.State.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagicCall());
 
@@ -275,7 +275,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         //if it is not the first turn or player turn,
         //the button will not work
-        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
+        if (state != BattleState.State.PLAYERTURN && state != BattleState.State.FIRSTTURN)
         {
             return;
         }
@@ -283,7 +283,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else if it is the first turn,
         //the button will take the player to dialogue prompt
         //to let them know to use magic.
-        else if (state == BattleState.FIRSTTURN)
+        else if (state == BattleState.State.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagic());
         }
@@ -291,7 +291,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else if the dialogue for using a magic call has been shown,
         //the button will take the player to dialogue prompt
         //to let them know to use magic call.
-        else if (isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
+        else if (isTimeForMagicCall == true && state != BattleState.State.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagicCall());
 
@@ -311,7 +311,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         //if it is not the first turn or player turn,
         //the button will not work
-        if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
+        if (state != BattleState.State.PLAYERTURN && state != BattleState.State.FIRSTTURN)
         {
             return;
         }
@@ -319,7 +319,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else if it is the first turn,
         //the button will take the player to dialogue prompt
         //to let them know to use magic.
-        else if (state == BattleState.FIRSTTURN)
+        else if (state == BattleState.State.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagic());
 
@@ -327,7 +327,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else if the dialogue for using a magic call has been shown,
         //the button will take the player to dialogue prompt
         //to let them know to use magic call.
-        else if (isTimeForMagicCall == true && state != BattleState.FIRSTTURN)
+        else if (isTimeForMagicCall == true && state != BattleState.State.FIRSTTURN)
         {
             StartCoroutine(HavetoUseMagicCall());
 
@@ -360,12 +360,12 @@ public class Scene2BattleSystem : MonoBehaviour
             //to let them know to use magic.
 
             //else, go to the function PlayerMagicCall
-            if (state != BattleState.PLAYERTURN && state != BattleState.FIRSTTURN)
+            if (state != BattleState.State.PLAYERTURN && state != BattleState.State.FIRSTTURN)
             {
                 return;
             }
 
-            else if (state == BattleState.FIRSTTURN)
+            else if (state == BattleState.State.FIRSTTURN)
             {
                 StartCoroutine(HavetoUseMagic());
 
@@ -406,7 +406,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //Waits for 2 seconds for the dialogue
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.PLAYERTURN;
+        state = BattleState.State.PLAYERTURN;
         playerTurn();
 
     }
@@ -440,12 +440,12 @@ public class Scene2BattleSystem : MonoBehaviour
         //else, it goes to the enemy's turn.
         if (isDead == true)
         {
-            state = BattleState.WON;
+            state = BattleState.State.WON;
             StartCoroutine(EndBattle());
         }
         else
         {
-            state = BattleState.ENEMYTURN;
+            state = BattleState.State.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
     }
@@ -487,7 +487,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //else, it goes to the enemy's turn.
         if (isDead == true)
         {
-            state = BattleState.WON;
+            state = BattleState.State.WON;
             StartCoroutine(EndBattle());
         }
         else
@@ -497,17 +497,17 @@ public class Scene2BattleSystem : MonoBehaviour
             //for the Magic Call dialogue
 
             //else, it just goes to the enemy's turn and changes to enemy state.
-            if (state == BattleState.FIRSTTURN)
+            if (state == BattleState.State.FIRSTTURN)
             {
                 //Allows the Magic Call dialogue to play
                 isTimeForMagicCall = true;
 
-                state = BattleState.ENEMYTURN;
+                state = BattleState.State.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }
             else
             {
-                state = BattleState.ENEMYTURN;
+                state = BattleState.State.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }
         }
@@ -543,7 +543,7 @@ public class Scene2BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //it goes to the enemy's turn and changes to enemy state.
-        state = BattleState.ENEMYTURN;
+        state = BattleState.State.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
 
@@ -584,7 +584,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.ENEMYTURN;
+        state = BattleState.State.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
 
@@ -601,7 +601,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.ENEMYTURN;
+        state = BattleState.State.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
 
@@ -623,7 +623,7 @@ public class Scene2BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //the battle state changes to lost and changes the scene
-        state = BattleState.LOST;
+        state = BattleState.State.LOST;
         StartCoroutine(EndBattle());
 
     }
@@ -669,7 +669,7 @@ public class Scene2BattleSystem : MonoBehaviour
             yield return new WaitForSeconds(2f);
 
             //it goes to the enemy's turn and changes to enemy state.
-            state = BattleState.ENEMYTURN;
+            state = BattleState.State.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
         else
@@ -681,7 +681,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
             dialogueText.text = " \tAriar\n" +
             "I've got this.";
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
 
             //Checks to see if the enemy dies from the attack.
             //Also calls the function to damage the enemy
@@ -710,13 +710,13 @@ public class Scene2BattleSystem : MonoBehaviour
             //else, it goes to the enemy's turn.
             if (isDead == true)
             {
-                state = BattleState.WON;
+                state = BattleState.State.WON;
                 StartCoroutine(EndBattle());
             }
             else
             {
 
-                state = BattleState.ENEMYTURN;
+                state = BattleState.State.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }
 
@@ -755,10 +755,12 @@ public class Scene2BattleSystem : MonoBehaviour
                 //Checks to see if the player is dead.
                 //if, the player is dead, then the battle state changes to lose
 
-                //else, it goes to the player's turn.
+                //else,
+                //it will increase turn until large attack and magic call
+                //then it goes to the player's turn.
                 if (isDead == true)
                 {
-                    state = BattleState.LOST;
+                    state = BattleState.State.LOST;
                     StartCoroutine(EndBattle());
                 }
                 else
@@ -778,7 +780,7 @@ public class Scene2BattleSystem : MonoBehaviour
                         playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                     {
 
-                        state = BattleState.PLAYERTURN;
+                        state = BattleState.State.PLAYERTURN;
                         StartCoroutine(PlayerMagicCall());
                     }
                     else
@@ -788,7 +790,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
                     if (isTimeForMagicCall == false)
                     {
-                        state = BattleState.PLAYERTURN;
+                        state = BattleState.State.PLAYERTURN;
                         playerTurn();
                     }
                     else
@@ -799,13 +801,14 @@ public class Scene2BattleSystem : MonoBehaviour
 
                         yield return new WaitForSeconds(2f);
                         //isTimeForMagicCall = false;
-                        state = BattleState.PLAYERTURN;
+                        state = BattleState.State.PLAYERTURN;
                         playerTurn();
                     }
                    
                 }
             }
 
+            //for when the player defends
             else
             {
                 dialogueText.text = enemyUnit.unitName + " attacks " + playerUnit.unitName + ".";
@@ -822,10 +825,15 @@ public class Scene2BattleSystem : MonoBehaviour
 
                 yield return new WaitForSeconds(2f);
 
+                //Checks to see if the player is dead.
+                //if, the player is dead, then the battle state changes to lose
 
+                //else,
+                //it will increase turn until large attack and magic call
+                //then it goes to the player's turn.
                 if (isDead == true)
                 {
-                    state = BattleState.LOST;
+                    state = BattleState.State.LOST;
                     StartCoroutine(EndBattle());
                 }
                 else
@@ -840,7 +848,7 @@ public class Scene2BattleSystem : MonoBehaviour
                         playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                     {
 
-                        state = BattleState.PLAYERTURN;
+                        state = BattleState.State.PLAYERTURN;
                         StartCoroutine(PlayerMagicCall());
                     }
                     else
@@ -850,12 +858,13 @@ public class Scene2BattleSystem : MonoBehaviour
 
 
 
-                    state = BattleState.PLAYERTURN;
+                    state = BattleState.State.PLAYERTURN;
                     playerTurn();
                 }
             }
         }
 
+        //For the turn when it is building up
         else if (enemyUnit.currentTurnUntilLargeAtck == enemyUnit.maxTurnUntilLargeAtck
             && enemyUnit.isBuildingUp == false)
         {
@@ -868,7 +877,7 @@ public class Scene2BattleSystem : MonoBehaviour
                 playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
             {
 
-                state = BattleState.PLAYERTURN;
+                state = BattleState.State.PLAYERTURN;
                 StartCoroutine(PlayerMagicCall());
             }
             else
@@ -877,11 +886,12 @@ public class Scene2BattleSystem : MonoBehaviour
             }
 
 
-            state = BattleState.PLAYERTURN;
+            state = BattleState.State.PLAYERTURN;
             playerTurn();
 
         }
 
+        //For the turn of its Large Attack
         else if (enemyUnit.currentTurnUntilLargeAtck == enemyUnit.maxTurnUntilLargeAtck
             && enemyUnit.isBuildingUp == true)
         {
@@ -910,7 +920,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
             if (isDead == true)
             {
-                state = BattleState.LOST;
+                state = BattleState.State.LOST;
                 StartCoroutine(EndBattle());
             }
             else
@@ -923,7 +933,7 @@ public class Scene2BattleSystem : MonoBehaviour
                     playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                 {
 
-                    state = BattleState.PLAYERTURN;
+                    state = BattleState.State.PLAYERTURN;
                     StartCoroutine(PlayerMagicCall());
                 }
                 else
@@ -931,7 +941,7 @@ public class Scene2BattleSystem : MonoBehaviour
                     playerUnit.currentTurnUntilMagicCall++;
                 }
 
-                state = BattleState.PLAYERTURN;
+                state = BattleState.State.PLAYERTURN;
                 playerTurn();
             }
 
@@ -956,7 +966,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
             if (isDead == true)
             {
-                state = BattleState.LOST;
+                state = BattleState.State.LOST;
                 StartCoroutine(EndBattle());
             }
             else
@@ -986,7 +996,7 @@ public class Scene2BattleSystem : MonoBehaviour
                     playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                 {
 
-                    state = BattleState.PLAYERTURN;
+                    state = BattleState.State.PLAYERTURN;
                     StartCoroutine(PlayerMagicCall());
                 }
                 else
@@ -995,7 +1005,7 @@ public class Scene2BattleSystem : MonoBehaviour
                 }
 
 
-                state = BattleState.PLAYERTURN;
+                state = BattleState.State.PLAYERTURN;
                 playerTurn();
             }
         }
@@ -1004,7 +1014,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
     IEnumerator EndBattle()
     {
-        if (state == BattleState.WON)
+        if (state == BattleState.State.WON)
         {
             sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You win!";
@@ -1013,7 +1023,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         }
 
-        else if (state == BattleState.LOST)
+        else if (state == BattleState.State.LOST)
         {
             sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You Lost!";

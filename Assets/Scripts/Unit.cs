@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public string unitName;
+    public string unitName = CharacterNameScript.characterName;
 
     public int damage; 
     public int largeDamage;

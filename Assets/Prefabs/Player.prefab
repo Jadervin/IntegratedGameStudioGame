@@ -61,7 +61,7 @@ MonoBehaviour:
   maxTurnUntilMagicCall: 2
   currentTurnUntilMagicCall: 0
   MagicCallState: 0
-  magicCallDamage: 30
+  magicCallDamage: 55
 --- !u!1 &5345406751869297549
 GameObject:
   m_ObjectHideFlags: 0
