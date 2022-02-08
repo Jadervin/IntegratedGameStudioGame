@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     public string nextSceneName;
 
     public bool isSpaceDisabled = false;
-    public bool textFinished = false;
+    //public bool textFinished = false;
 
 
     [Range(0, 0.1f)]
