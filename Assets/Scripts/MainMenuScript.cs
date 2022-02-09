@@ -10,6 +10,7 @@ public class MainMenuScript : MonoBehaviour
     public string CreditsSceneName;
     public string TitleMenuSceneName;
     public string ReferencesSceneName;
+    public string PreviousSceneName;
 
     [Header("Sound Sources")]
     public AudioSource soundSource;
@@ -22,6 +23,7 @@ public class MainMenuScript : MonoBehaviour
         Cursor.visible = true;
         soundSource.PlayOneShot(menuClick);
         StartCoroutine(WaitforStartButton(clickTimer));
+
         
     }
     
@@ -60,6 +62,19 @@ public class MainMenuScript : MonoBehaviour
 
 
     }
+
+    public void RestartButtonPressed()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        soundSource.PlayOneShot(menuClick);
+        StartCoroutine(WaitforRestartButton(clickTimer));
+        
+
+
+
+    }
+
     public void CloseGame()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -104,6 +119,13 @@ public class MainMenuScript : MonoBehaviour
 
         yield return new WaitForSeconds(duration);   //Wait
         SceneManager.LoadScene(ReferencesSceneName);
+    }
+
+    IEnumerator WaitforRestartButton(float duration)
+    {
+
+        yield return new WaitForSeconds(duration);   //Wait
+        SceneManager.LoadScene(PreviousSceneName);
     }
 
 

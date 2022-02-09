@@ -207,6 +207,7 @@ public class DialogueManager : MonoBehaviour
         {
             nametag.text = CharacterNameScript.characterName;
         }
+
         else
         {
             nametag.text = _name;

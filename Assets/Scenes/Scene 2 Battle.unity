@@ -232,6 +232,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &90905347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 604288000303955129, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
+  m_PrefabInstance: {fileID: 191361381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &191361381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -493,6 +498,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214588349}
   m_CullTransparentMesh: 1
+--- !u!1 &223459582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8417087786602579927, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
+  m_PrefabInstance: {fileID: 191361381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &223975891
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +897,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416868184}
   m_CullTransparentMesh: 1
+--- !u!1 &439747117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7352089721227868044, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
+  m_PrefabInstance: {fileID: 191361381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &495223683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1563,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674152004}
   m_CullTransparentMesh: 1
+--- !u!1 &690946301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6580456949293160669, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
+  m_PrefabInstance: {fileID: 191361381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &726207613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,6 +2546,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309789724}
   m_CullTransparentMesh: 1
+--- !u!1 &1367298502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1904195917398296766, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
+  m_PrefabInstance: {fileID: 191361381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1427593595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,6 +2973,11 @@ MonoBehaviour:
   losingSceneName: Ending Screen
   sfxSource: {fileID: 1197034409}
   soundResource: {fileID: 223975892}
+  attackButton: {fileID: 1367298502}
+  defendButton: {fileID: 439747117}
+  investigateButton: {fileID: 223459582}
+  magicButton: {fileID: 90905347}
+  magicCallButton: {fileID: 690946301}
   isTimeForMagicCall: 0
 --- !u!4 &1832940630
 Transform:

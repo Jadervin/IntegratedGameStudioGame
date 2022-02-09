@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene 2 Battle.unity
     guid: 55603d3569f863b4fb3b830535d9ecfb
   - enabled: 1
+    path: Assets/Scenes/You Lose.unity
+    guid: a492e0af841391a409fa9ef556db6bae
+  - enabled: 1
     path: Assets/Scenes/Scene 2 After Battle.unity
     guid: ddcec4be3457b754296d12736a0e0fd3
   - enabled: 1

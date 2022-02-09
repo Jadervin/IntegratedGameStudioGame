@@ -680,6 +680,7 @@ MonoBehaviour:
   CreditsSceneName: Credits Screen
   TitleMenuSceneName: Title Screen
   ReferencesSceneName: References Scene
+  PreviousSceneName: 
   soundSource: {fileID: 2145920607}
   menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
   clickTimer: 0.3
@@ -1067,6 +1068,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466852590}
     m_Modifications:
+    - target: {fileID: 4788890586646972408, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788890586646972408, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788890586646972408, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788890586646972408, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788890586646972408, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788890586646972408, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.039993286
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788890586646972408, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00063323975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788890586646972408, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00016021729
+      objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

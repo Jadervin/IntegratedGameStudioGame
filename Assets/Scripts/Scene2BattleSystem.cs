@@ -41,6 +41,14 @@ public class Scene2BattleSystem : MonoBehaviour
     public AudioSource sfxSource;
     public SoundEffects soundResource;
 
+    [Header("Buttons")]
+    public GameObject attackButton;
+    public GameObject defendButton;
+    public GameObject investigateButton;
+    public GameObject magicButton;
+    public GameObject magicCallButton;
+
+
     public bool isTimeForMagicCall = false;
 
     // Start is called before the first frame update
