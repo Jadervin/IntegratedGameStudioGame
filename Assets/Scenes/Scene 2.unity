@@ -532,7 +532,7 @@ MonoBehaviour:
   charact: {fileID: 0}
   nextSceneName: Scene 2 Battle
   isSpaceDisabled: 0
-  letterSpeed: 0.05
+  letterSpeed: 0.02
 --- !u!4 &876313044
 Transform:
   m_ObjectHideFlags: 0

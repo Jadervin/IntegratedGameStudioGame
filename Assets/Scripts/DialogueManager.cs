@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
     //public bool textFinished = false;
 
 
-    [Range(0, 0.1f)]
+    [Range(0, 0.5f)]
     public float letterSpeed;
 
     // Start is called before the first frame update
