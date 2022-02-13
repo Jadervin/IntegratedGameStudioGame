@@ -56,7 +56,7 @@ MonoBehaviour:
   maxMP: 2
   currentMP: 0
   isDefending: 0
-  maxTurnUntilLargeAtck: 3
+  maxTurnUntilLargeAtck: 2
   currentTurnUntilLargeAtck: 0
   isBuildingUp: 0
   maxTurnUntilMagicCall: 0

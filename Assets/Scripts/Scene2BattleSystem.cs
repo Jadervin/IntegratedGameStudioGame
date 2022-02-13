@@ -48,8 +48,10 @@ public class Scene2BattleSystem : MonoBehaviour
     public GameObject magicButton;
     public GameObject magicCallButton;
 
-
+    [Header("Booleans")]
     public bool isTimeForMagicCall = false;
+    public bool isTimeForInvestigation = false;
+    public bool isTimeForDefend = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,20 @@ public class Scene2BattleSystem : MonoBehaviour
         //Spawns in the Player and Enemy and the Gets the unit components
         GameObject playerGameObj = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGameObj.GetComponent<Unit>();
+
+        playerUnit.unitName = CharacterNameScript.characterName;
+
+        //if (playerUnit.unitName != " ")
+        //{
+        //    playerUnit.unitName = CharacterNameScript.characterName;
+        //}
+        //else
+        //{
+        //    playerUnit.unitName = "Player";
+
+        //}
+
+
 
         GameObject enemyGameObj = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGameObj.GetComponent<Unit>();
@@ -81,6 +97,12 @@ public class Scene2BattleSystem : MonoBehaviour
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
+
+        attackButton.SetActive(false);
+        defendButton.SetActive(false);
+        investigateButton.SetActive(false);
+        magicCallButton.SetActive(false);
+
 
         yield return new WaitForSeconds(3f);
 
@@ -509,6 +531,8 @@ public class Scene2BattleSystem : MonoBehaviour
             {
                 //Allows the Magic Call dialogue to play
                 isTimeForMagicCall = true;
+                magicButton.SetActive(false);
+                magicCallButton.SetActive(true);
 
                 state = BattleState.State.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
@@ -563,6 +587,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         dialogueText.text = playerUnit.unitName + " investigates " + enemyUnit.unitName + ".";
 
+       
 
         yield return new WaitForSeconds(2f);
 
@@ -590,6 +615,21 @@ public class Scene2BattleSystem : MonoBehaviour
             dialogueText.text = enemyUnit.unitName + " will use its Large Attack on their turn.";
         }
 
+
+        if(isTimeForInvestigation == true)
+        {
+            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            "Okay, I need to make sure to defend when that attack happens. " +
+            "Until then, I just need to survive until Ariar shows up.";
+
+            isTimeForInvestigation = false;
+            investigateButton.SetActive(false);
+
+            isTimeForDefend = true;
+            defendButton.SetActive(true);
+        }
+
+
         yield return new WaitForSeconds(2f);
 
         state = BattleState.State.ENEMYTURN;
@@ -606,6 +646,11 @@ public class Scene2BattleSystem : MonoBehaviour
         //set the bool of the player is defending to true
         playerUnit.isDefending = true;
         dialogueText.text = playerUnit.unitName + " is defending.";
+
+        isTimeForDefend = false;
+        attackButton.SetActive(true);
+        investigateButton.SetActive(true);
+
 
         yield return new WaitForSeconds(2f);
 
@@ -666,10 +711,16 @@ public class Scene2BattleSystem : MonoBehaviour
             yield return new WaitForSeconds(2f);
 
             dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-            "Now I just have to hold out until he gets here.";
+            "Now I just have to hold out until he gets here. " +
+            "I know this guy's building up to a Large Attack, I'll investigate him.";
 
             //activate the magic call state to true
             playerUnit.MagicCallState = true;
+            magicCallButton.SetActive(false);
+
+
+            isTimeForInvestigation = true;
+            investigateButton.SetActive(true);
 
             //activate time for magic call bool to false
             isTimeForMagicCall = false;
@@ -879,6 +930,8 @@ public class Scene2BattleSystem : MonoBehaviour
             enemyUnit.isBuildingUp = true;
             dialogueText.text = enemyUnit.unitName + " is still.";
             yield return new WaitForSeconds(2f);
+
+            
 
             //For magic Call
             if (playerUnit.MagicCallState == true &&

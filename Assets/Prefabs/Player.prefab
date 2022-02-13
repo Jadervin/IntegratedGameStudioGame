@@ -58,7 +58,7 @@ MonoBehaviour:
   maxTurnUntilLargeAtck: 0
   currentTurnUntilLargeAtck: 0
   isBuildingUp: 0
-  maxTurnUntilMagicCall: 2
+  maxTurnUntilMagicCall: 4
   currentTurnUntilMagicCall: 0
   MagicCallState: 0
   magicCallDamage: 55
