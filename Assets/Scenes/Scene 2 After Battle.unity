@@ -392,7 +392,7 @@ MonoBehaviour:
   optionPanel: {fileID: 96007947}
   background: {fileID: 0}
   charact: {fileID: 0}
-  nextSceneName: Ending Screen
+  nextSceneName: Scene 3
   isSpaceDisabled: 0
   letterSpeed: 0.02
 --- !u!4 &317738845
