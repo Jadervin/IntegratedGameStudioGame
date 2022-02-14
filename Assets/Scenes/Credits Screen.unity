@@ -369,7 +369,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875095, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Name
+      value: References Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145466286720774624, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_Text
       value: References
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145466286720774624, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
@@ -569,6 +577,7 @@ MonoBehaviour:
   CreditsSceneName: Credits Screen
   TitleMenuSceneName: Title Screen
   ReferencesSceneName: References Scene
+  PreviousSceneName: 
   soundSource: {fileID: 1640945842}
   menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
   clickTimer: 0.3

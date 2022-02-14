@@ -272,16 +272,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5030557561464024637, guid: 33bcb941cde08a440a2997c25643dcff, type: 3}
       propertyPath: m_Text
-      value: 'Assets:
-
-        -Picture of Draconis from the Game Hungry Dragon
-
-        Link:
-
-        https://hungry-dragon.fandom.com/wiki/Draconis
-
-        -Sound
-        Effects made with Bfxr'
+      value: "Assets:\n-Picture of Master Assassin from the Game Assassin's Creed
+        \nLink:\nhttps://assassinscreed.fandom.com/wiki/Master_Assassin\n-Sound Effects
+        made with Bfxr"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33bcb941cde08a440a2997c25643dcff, type: 3}
@@ -620,7 +613,7 @@ GameObject:
   - component: {fileID: 415590667}
   - component: {fileID: 415590666}
   m_Layer: 5
-  m_Name: Credits
+  m_Name: Credits Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1305,6 +1298,7 @@ MonoBehaviour:
   CreditsSceneName: Credits Screen
   TitleMenuSceneName: Title Screen
   ReferencesSceneName: References Scene
+  PreviousSceneName: 
   soundSource: {fileID: 632128092}
   menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
   clickTimer: 0.3
