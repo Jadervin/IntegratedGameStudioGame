@@ -615,8 +615,9 @@ public class Scene2BattleSystem : MonoBehaviour
             dialogueText.text = enemyUnit.unitName + " will use its Large Attack on their turn.";
         }
 
+        yield return new WaitForSeconds(2f);
 
-        if(isTimeForInvestigation == true)
+        if (isTimeForInvestigation == true)
         {
             dialogueText.text = " \t" + playerUnit.unitName + "\n" +
             "Okay, I need to make sure to defend when that attack happens. " +
