@@ -49,6 +49,7 @@ public class DialogueManager : MonoBehaviour
             //Is there more to the story?
             if(story.canContinue)
             {
+                charact.gameObject.SetActive(false);
                 isSpaceDisabled = true;
                 nametag.text = "";
                 AdvanceDialogue();
@@ -80,10 +81,11 @@ public class DialogueManager : MonoBehaviour
     // Advance through the story 
     void AdvanceDialogue()
     {
+        
         string currentSentence = story.Continue();
         ParseTags();
         StopAllCoroutines();
-
+        
         StartCoroutine(TypeSentence(currentSentence));
 
         
@@ -203,6 +205,7 @@ public class DialogueManager : MonoBehaviour
     }
     void SetName(string _name)
     {
+
         if(_name == "MC")
         {
             nametag.text = CharacterNameScript.characterName;
@@ -216,7 +219,15 @@ public class DialogueManager : MonoBehaviour
     }
     void SetSprite(string _ch)
     {
-        charact.sprite = Resources.Load<Sprite>(_ch);
+        if (!_ch.Contains("MC"))
+        {
+            charact.sprite = Resources.Load<Sprite>(_ch);
+            charact.gameObject.SetActive(true);
+        }
+        else
+        {
+            return;
+        }
     }
 
     void SetBG(string _name)
