@@ -417,6 +417,7 @@ MonoBehaviour:
   charact: {fileID: 157094018}
   nextSceneName: Scene 2
   isSpaceDisabled: 0
+  skipping: 0
   letterSpeed: 0.02
 --- !u!4 &627901681
 Transform:
