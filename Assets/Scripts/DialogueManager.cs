@@ -232,7 +232,16 @@ public class DialogueManager : MonoBehaviour
 
     void SetBG(string _name)
     {
-        background.sprite = Resources.Load<Sprite>(_name);
+        if (!_name.Contains("blackscreen"))
+        {
+            background.sprite = Resources.Load<Sprite>(_name);
+            background.gameObject.SetActive(true);
+
+        }
+        else
+        {
+            background.gameObject.SetActive(false);
+        }
     }
 
 
