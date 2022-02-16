@@ -34,8 +34,8 @@ public class DialogueManager : MonoBehaviour
 
        
         story = new Story(inkFile.text);
-        nametag = textBox.transform.GetChild(0).GetComponent<Text>();
-        message = textBox.transform.GetChild(1).GetComponent<Text>();
+        nametag = textBox.transform.GetChild(2).GetComponent<Text>();
+        message = textBox.transform.GetChild(3).GetComponent<Text>();
         tags = new List<string>();
         choiceSelected = null;
     }
