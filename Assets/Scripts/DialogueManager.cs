@@ -22,6 +22,9 @@ public class DialogueManager : MonoBehaviour
     public string nextSceneName;
 
     public bool isSpaceDisabled = false;
+    public bool skipping = false;
+
+    string sentenceText;
     //public bool textFinished = false;
 
 
@@ -32,7 +35,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
 
-       
+
         story = new Story(inkFile.text);
         nametag = textBox.transform.GetChild(2).GetComponent<Text>();
         message = textBox.transform.GetChild(3).GetComponent<Text>();
@@ -42,31 +45,15 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isSpaceDisabled == false)
+        
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
 
-            //source.Play;
-            //Is there more to the story?
-            if(story.canContinue)
-            {
-                charact.gameObject.SetActive(false);
-                isSpaceDisabled = true;
-                nametag.text = "";
-                AdvanceDialogue();
-                //Are there any choices?
-                if (story.currentChoices.Count != 0)
-                {
-                    StartCoroutine(ShowChoices());
-                }
-            }
-            else
-            {
-                FinishDialogue();
-
-
-            }
+           OnContinueButtonPress();
         }
-    
+
+
     }
 
     // Finished the Story (Dialogue)
@@ -81,38 +68,41 @@ public class DialogueManager : MonoBehaviour
     // Advance through the story 
     void AdvanceDialogue()
     {
-        
+
         string currentSentence = story.Continue();
         ParseTags();
         StopAllCoroutines();
-        
+
         StartCoroutine(TypeSentence(currentSentence));
 
-        
-        
+
+
     }
 
     // Type out the sentence letter by letter and make character idle if they were talking
     IEnumerator TypeSentence(string sentence)
     {
         message.text = "";
+        sentenceText = sentence;
         //isSpaceDisabled = true;
-       
+
         foreach (char letter in sentence.ToCharArray())
         {
-           message.text += letter;
-            
-           if (Input.GetKey(KeyCode.S))
-           {
-                message.text = sentence;
+            message.text += letter;
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                //Just this line
+                OnFastForwardButtonPress();
                 
+
             }
-           else 
-           {
+            else
+            {
                 yield return new WaitForSeconds(letterSpeed);
 
                 yield return null;
-           }
+            }
         }
         isSpaceDisabled = false;
         yield return null;
@@ -161,10 +151,10 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(optionPanel.transform.GetChild(i).gameObject);
         }
-        choiceSelected = null; 
+        choiceSelected = null;
         // Forgot to reset the choiceSelected.
         // Otherwise, it would select an option without player intervention.
-        
+
         isSpaceDisabled = false;
         AdvanceDialogue();
     }
@@ -183,30 +173,30 @@ public class DialogueManager : MonoBehaviour
             switch (prefix.ToLower())
             {
                 case "name":
-                {
-                   SetName(param);
-                   break;
-                }
-                    
+                    {
+                        SetName(param);
+                        break;
+                    }
+
                 case "sprite":
-                {
-                   SetSprite(param);
-                   break;
-                }
-                    
+                    {
+                        SetSprite(param);
+                        break;
+                    }
+
                 case "bg":
-                {
-                  SetBG(param);
-                  break;
-                }
-                    
+                    {
+                        SetBG(param);
+                        break;
+                    }
+
             }
         }
     }
     void SetName(string _name)
     {
 
-        if(_name == "MC")
+        if (_name == "MC")
         {
             nametag.text = CharacterNameScript.characterName;
         }
@@ -215,7 +205,7 @@ public class DialogueManager : MonoBehaviour
         {
             nametag.text = _name;
         }
-        
+
     }
     void SetSprite(string _ch)
     {
@@ -244,7 +234,36 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void OnContinueButtonPress()
+    {
+        if (isSpaceDisabled == false)
+        {
+            //source.Play;
+            //Is there more to the story?
+            if (story.canContinue)
+            {
+                charact.gameObject.SetActive(false);
+                isSpaceDisabled = true;
+                nametag.text = "";
+                AdvanceDialogue();
+                //Are there any choices?
+                if (story.currentChoices.Count != 0)
+                {
+                    StartCoroutine(ShowChoices());
+                }
+            }
+            else
+            {
+                FinishDialogue();
 
 
-    
+            }
+        }
+    }
+
+    public void OnFastForwardButtonPress()
+    {
+        message.text = sentenceText;
+    }
+
 }
