@@ -102,7 +102,7 @@ public class Scene2BattleSystem : MonoBehaviour
         enemyHUD.SetHUD(enemyUnit);
 
         magicButton.SetActive(false);
-        investigateButton.SetActive(false);
+        //investigateButton.SetActive(false);
         magicCallButton.SetActive(false);
 
 
@@ -1184,13 +1184,33 @@ public class Scene2BattleSystem : MonoBehaviour
 
 
 
-                state = BattleState.State.PLAYERTURN;
-                StartCoroutine(PlayerMagicCall());
+                //state = BattleState.State.PLAYERTURN;
+                //playerTurn();
             }
+
+            //To fix playerUnit.currentTurnUntilMagicCall from increases 
+            //when magic call is not activated
+
+            //else if(playerUnit.MagicCallState == true &&
+            //    playerUnit.currentTurnUntilMagicCall != playerUnit.maxTurnUntilMagicCall)
+            //{
+            //    playerUnit.currentTurnUntilMagicCall++;
+            //    state = BattleState.State.PLAYERTURN;
+            //    playerTurn();
+            //}
+            //else
+            //{
+            //    state = BattleState.State.PLAYERTURN;
+            //    playerTurn();
+            //}
+
+
+
             else
             {
                 playerUnit.currentTurnUntilMagicCall++;
-                
+                state = BattleState.State.PLAYERTURN;
+                playerTurn();
             }
 
 

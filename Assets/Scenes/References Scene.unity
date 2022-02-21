@@ -272,9 +272,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5030557561464024637, guid: 33bcb941cde08a440a2997c25643dcff, type: 3}
       propertyPath: m_Text
-      value: "Assets:\n-Picture of Master Assassin from the Game Assassin's Creed
-        \nLink:\nhttps://assassinscreed.fandom.com/wiki/Master_Assassin\n-Sound Effects
-        made with Bfxr"
+      value: 'Assets:
+
+        -Sprites Made by Maddie Damp
+
+        -Story Made
+        by Paul Campbell and Jenna Perkin
+
+        -Game Systems by Jonathan Dervin
+
+        -Sound
+        Effects made with Bfxr'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33bcb941cde08a440a2997c25643dcff, type: 3}
