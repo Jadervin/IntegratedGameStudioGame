@@ -644,6 +644,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1740870446}
     m_Modifications:
+    - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1843923322}
     - target: {fileID: 302100930512474570, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_Name
       value: Text Button Options

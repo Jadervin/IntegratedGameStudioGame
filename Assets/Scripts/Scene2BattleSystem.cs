@@ -687,13 +687,28 @@ public class Scene2BattleSystem : MonoBehaviour
 
     IEnumerator PlayerMagicCall()
     {
+
+        //Ask Jose about why this does not work in the function
+        //The Magic Call is delayed or sometimes does not show up
+        //Do I need to StopCoroutine
+
+        //Think about putting this in the enemy turn function
+
+
+
+
+
+
+
+
+
         //Turns off the option panels
         //optionsPanel.SetActive(false);
         //magicOptionsPanel.SetActive(false);
 
         //if, the Magic Call State bool is false,
         //then activate the magic call state to true
-
+        
         //else, activate the magic call attack
         //and disable the bool
         if (playerUnit.MagicCallState == false)
@@ -737,50 +752,50 @@ public class Scene2BattleSystem : MonoBehaviour
         else
         {
            
-            dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+            //dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
 
-            yield return new WaitForSeconds(2f);
+            //yield return new WaitForSeconds(2f);
 
-            dialogueText.text = " \tAriar\n" +
-            "I've got this.";
-            yield return new WaitForSeconds(2f);
+            //dialogueText.text = " \tAriar\n" +
+            //"I've got this.";
+            //yield return new WaitForSeconds(2f);
 
-            //Checks to see if the enemy dies from the attack.
-            //Also calls the function to damage the enemy
-            //based on the player's damage amount from the Unit script
-            bool isDead = enemyUnit.TakeDamage(playerUnit.magicCallDamage);
+            ////Checks to see if the enemy dies from the attack.
+            ////Also calls the function to damage the enemy
+            ////based on the player's damage amount from the Unit script
+            //bool isDead = enemyUnit.TakeDamage(playerUnit.magicCallDamage);
 
-            //Changes the enemy HP based on the current HP
-            enemyHUD.SetHP(enemyUnit.currentHP);
+            ////Changes the enemy HP based on the current HP
+            //enemyHUD.SetHP(enemyUnit.currentHP);
 
-            //Calls a function in the Unit Script to Decrease the current MP
-            //by sending the MP cost of the magic move
-            playerUnit.MPDecrease(playerUnit.magicCost);
+            ////Calls a function in the Unit Script to Decrease the current MP
+            ////by sending the MP cost of the magic move
+            //playerUnit.MPDecrease(playerUnit.magicCost);
 
-            //Calls a function in the BattleHUD script to
-            //change the player MP text based on the current MP
-            playerHUD.SetMP(playerUnit.currentMP);
+            ////Calls a function in the BattleHUD script to
+            ////change the player MP text based on the current MP
+            //playerHUD.SetMP(playerUnit.currentMP);
 
-            yield return new WaitForSeconds(2f);
+            //yield return new WaitForSeconds(2f);
 
-            //set the magic call state to false
-            playerUnit.MagicCallState = false;
+            ////set the magic call state to false
+            //playerUnit.MagicCallState = false;
 
-            //Checks to see if the enemy is dead.
-            //if, the enemy is dead, then the battle state changes to win
+            ////Checks to see if the enemy is dead.
+            ////if, the enemy is dead, then the battle state changes to win
 
-            //else, it goes to the enemy's turn.
-            if (isDead == true)
-            {
-                state = BattleState.State.WON;
-                StartCoroutine(EndBattle());
-            }
-            else
-            {
+            ////else, it goes to the enemy's turn.
+            //if (isDead == true)
+            //{
+            //    state = BattleState.State.WON;
+            //    StartCoroutine(EndBattle());
+            //}
+            //else
+            //{
 
-                state = BattleState.State.ENEMYTURN;
-                StartCoroutine(EnemyTurn());
-            }
+            //    state = BattleState.State.PLAYERTURN;
+            //    playerTurn();
+            //}
 
         }
 
@@ -842,26 +857,65 @@ public class Scene2BattleSystem : MonoBehaviour
                         playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                     {
 
-                        state = BattleState.State.PLAYERTURN;
-                        StartCoroutine(PlayerMagicCall());
+
+                        dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+
+                        yield return new WaitForSeconds(2f);
+
+                        dialogueText.text = " \tAriar\n" +
+                        "I've got this.";
+                        yield return new WaitForSeconds(2f);
+
+                        //Checks to see if the enemy dies from the attack.
+                        //Also calls the function to damage the enemy
+                        //based on the player's damage amount from the Unit script
+                        bool isCallDead = enemyUnit.TakeDamage(playerUnit.magicCallDamage);
+
+                        //Changes the enemy HP based on the current HP
+                        enemyHUD.SetHP(enemyUnit.currentHP);
+
+                        //Calls a function in the Unit Script to Decrease the current MP
+                        //by sending the MP cost of the magic move
+                        playerUnit.MPDecrease(playerUnit.magicCost);
+
+                        //Calls a function in the BattleHUD script to
+                        //change the player MP text based on the current MP
+                        playerHUD.SetMP(playerUnit.currentMP);
+
+                        yield return new WaitForSeconds(2f);
+
+                        //set the magic call state to false
+                        playerUnit.MagicCallState = false;
+
+                        //Checks to see if the enemy is dead.
+                        //if, the enemy is dead, then the battle state changes to win
+
+                        //else, it goes to the enemy's turn.
+                        if (isCallDead == true)
+                        {
+                            state = BattleState.State.WON;
+                            StartCoroutine(EndBattle());
+                        }
+                        else
+                        {
+
+                            state = BattleState.State.PLAYERTURN;
+                            playerTurn();
+                        }
+
+
+
+
+
+                        //state = BattleState.State.PLAYERTURN;
+                        //StartCoroutine(PlayerMagicCall());
                     }
                     else
                     {
                         playerUnit.currentTurnUntilMagicCall++;
                     }
 
-                    //Turns until Magic
-                    if(turnsUntilMagic == MaxTurnsUntilMagic && 
-                        isTimeForMagic == false)
-                    {
-                        isTimeForMagic = true;
-                        state = BattleState.State.MAGICTURN;
-                        StartCoroutine(TurnToUseOnlyMagic());
-                    }
-                    else
-                    {
-                        turnsUntilMagic++;
-                    }
+                    
 
 
                     if (isTimeForMagicCall == false)
@@ -877,11 +931,60 @@ public class Scene2BattleSystem : MonoBehaviour
 
                         yield return new WaitForSeconds(2f);
                         //isTimeForMagicCall = false;
+
                         state = BattleState.State.PLAYERTURN;
                         playerTurn();
+
+                        //if(isTimeForMagic == false)
+                        //{
+                        //    state = BattleState.State.PLAYERTURN;
+                        //    playerTurn();
+                        //}
+                        //else
+                        //{
+                        //    state = BattleState.State.FIRSTTURN;
+                        //    firstTurn();
+                        //}
                     }
-                   
+
+                    //Turns until Magic
+                    if(turnsUntilMagic == MaxTurnsUntilMagic && 
+                        isTimeForMagic == false)
+                    {
+                        
+
+                        //dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        //"They're strong. I'll have to use a Magic Attack.";
+
+                        isTimeForMagic = true;
+
+
+                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        "They're strong. I'll have to use a Magic Attack.";
+
+                        attackButton.SetActive(false);
+                        defendButton.SetActive(false);
+                        investigateButton.SetActive(false);
+                        magicCallButton.SetActive(false);
+                        magicButton.SetActive(true);
+
+                        Debug.Log("firstTurn");
+                        state = BattleState.State.FIRSTTURN;
+                        
+                        firstTurn();
+
+                        
+                        yield return new WaitForSeconds(3f);
+
+                        
+                        
+                    }
+                    else
+                    {
+                        turnsUntilMagic++;
+                    }
                 }
+                
             }
 
             //for when the player defends
@@ -924,8 +1027,53 @@ public class Scene2BattleSystem : MonoBehaviour
                         playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                     {
 
-                        state = BattleState.State.PLAYERTURN;
-                        StartCoroutine(PlayerMagicCall());
+                        dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+
+                        yield return new WaitForSeconds(2f);
+
+                        dialogueText.text = " \tAriar\n" +
+                        "I've got this.";
+                        yield return new WaitForSeconds(2f);
+
+                        //Checks to see if the enemy dies from the attack.
+                        //Also calls the function to damage the enemy
+                        //based on the player's damage amount from the Unit script
+                        bool isCallDead = enemyUnit.TakeDamage(playerUnit.magicCallDamage);
+
+                        //Changes the enemy HP based on the current HP
+                        enemyHUD.SetHP(enemyUnit.currentHP);
+
+                        //Calls a function in the Unit Script to Decrease the current MP
+                        //by sending the MP cost of the magic move
+                        playerUnit.MPDecrease(playerUnit.magicCost);
+
+                        //Calls a function in the BattleHUD script to
+                        //change the player MP text based on the current MP
+                        playerHUD.SetMP(playerUnit.currentMP);
+
+                        yield return new WaitForSeconds(2f);
+
+                        //set the magic call state to false
+                        playerUnit.MagicCallState = false;
+
+                        //Checks to see if the enemy is dead.
+                        //if, the enemy is dead, then the battle state changes to win
+
+                        //else, it goes to the enemy's turn.
+                        if (isCallDead == true)
+                        {
+                            state = BattleState.State.WON;
+                            StartCoroutine(EndBattle());
+                        }
+                        else
+                        {
+
+                            state = BattleState.State.PLAYERTURN;
+                            playerTurn();
+                        }
+
+                        //state = BattleState.State.PLAYERTURN;
+                        //StartCoroutine(PlayerMagicCall());
                     }
                     else
                     {
@@ -936,18 +1084,39 @@ public class Scene2BattleSystem : MonoBehaviour
                     if (turnsUntilMagic == MaxTurnsUntilMagic &&
                         isTimeForMagic == false)
                     {
+                        //dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        //"They're strong. I'll have to use a Magic Attack.";
+
                         isTimeForMagic = true;
-                        state = BattleState.State.MAGICTURN;
-                        StartCoroutine(TurnToUseOnlyMagic());
+
+                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        "They're strong. I'll have to use a Magic Attack.";
+
+                        attackButton.SetActive(false);
+                        defendButton.SetActive(false);
+                        investigateButton.SetActive(false);
+                        magicCallButton.SetActive(false);
+                        magicButton.SetActive(true);
+
+
+                        Debug.Log("firstTurn");
+                        state = BattleState.State.FIRSTTURN;
+                        
+                        
+                        yield return new WaitForSeconds(3f);
+                        firstTurn();
+                        //Debug.Log("firstTurn");
+                        
                     }
                     else
                     {
                         turnsUntilMagic++;
+                        state = BattleState.State.PLAYERTURN;
+                        playerTurn();
                     }
 
 
-                    state = BattleState.State.PLAYERTURN;
-                    playerTurn();
+                    
                 }
             }
         }
@@ -967,17 +1136,66 @@ public class Scene2BattleSystem : MonoBehaviour
                 playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
             {
 
+
+                dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+
+                yield return new WaitForSeconds(2f);
+
+                dialogueText.text = " \tAriar\n" +
+                "I've got this.";
+                yield return new WaitForSeconds(2f);
+
+                //Checks to see if the enemy dies from the attack.
+                //Also calls the function to damage the enemy
+                //based on the player's damage amount from the Unit script
+                bool isCallDead = enemyUnit.TakeDamage(playerUnit.magicCallDamage);
+
+                //Changes the enemy HP based on the current HP
+                enemyHUD.SetHP(enemyUnit.currentHP);
+
+                //Calls a function in the Unit Script to Decrease the current MP
+                //by sending the MP cost of the magic move
+                playerUnit.MPDecrease(playerUnit.magicCost);
+
+                //Calls a function in the BattleHUD script to
+                //change the player MP text based on the current MP
+                playerHUD.SetMP(playerUnit.currentMP);
+
+                yield return new WaitForSeconds(2f);
+
+                //set the magic call state to false
+                playerUnit.MagicCallState = false;
+
+                //Checks to see if the enemy is dead.
+                //if, the enemy is dead, then the battle state changes to win
+
+                //else, it goes to the enemy's turn.
+                if (isCallDead == true)
+                {
+                    state = BattleState.State.WON;
+                    StartCoroutine(EndBattle());
+                }
+                else
+                {
+
+                    state = BattleState.State.PLAYERTURN;
+                    playerTurn();
+                }
+
+
+
                 state = BattleState.State.PLAYERTURN;
                 StartCoroutine(PlayerMagicCall());
             }
             else
             {
                 playerUnit.currentTurnUntilMagicCall++;
+                
             }
 
 
-            state = BattleState.State.PLAYERTURN;
-            playerTurn();
+            //state = BattleState.State.PLAYERTURN;
+            //playerTurn();
 
         }
 
@@ -1023,8 +1241,55 @@ public class Scene2BattleSystem : MonoBehaviour
                     playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                 {
 
-                    state = BattleState.State.PLAYERTURN;
-                    StartCoroutine(PlayerMagicCall());
+                    dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+
+                    yield return new WaitForSeconds(2f);
+
+                    dialogueText.text = " \tAriar\n" +
+                    "I've got this.";
+                    yield return new WaitForSeconds(2f);
+
+                    //Checks to see if the enemy dies from the attack.
+                    //Also calls the function to damage the enemy
+                    //based on the player's damage amount from the Unit script
+                    bool isCallDead = enemyUnit.TakeDamage(playerUnit.magicCallDamage);
+
+                    //Changes the enemy HP based on the current HP
+                    enemyHUD.SetHP(enemyUnit.currentHP);
+
+                    //Calls a function in the Unit Script to Decrease the current MP
+                    //by sending the MP cost of the magic move
+                    playerUnit.MPDecrease(playerUnit.magicCost);
+
+                    //Calls a function in the BattleHUD script to
+                    //change the player MP text based on the current MP
+                    playerHUD.SetMP(playerUnit.currentMP);
+
+                    yield return new WaitForSeconds(2f);
+
+                    //set the magic call state to false
+                    playerUnit.MagicCallState = false;
+
+                    //Checks to see if the enemy is dead.
+                    //if, the enemy is dead, then the battle state changes to win
+
+                    //else, it goes to the enemy's turn.
+                    if (isCallDead == true)
+                    {
+                        state = BattleState.State.WON;
+                        StartCoroutine(EndBattle());
+                    }
+                    else
+                    {
+
+                        state = BattleState.State.PLAYERTURN;
+                        playerTurn();
+                    }
+
+
+
+                    //state = BattleState.State.PLAYERTURN;
+                    //StartCoroutine(PlayerMagicCall());
                 }
                 else
                 {
@@ -1086,8 +1351,60 @@ public class Scene2BattleSystem : MonoBehaviour
                     playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                 {
 
-                    state = BattleState.State.PLAYERTURN;
-                    StartCoroutine(PlayerMagicCall());
+
+                    dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+
+                    yield return new WaitForSeconds(2f);
+
+                    dialogueText.text = " \tAriar\n" +
+                    "I've got this.";
+                    yield return new WaitForSeconds(2f);
+
+                    //Checks to see if the enemy dies from the attack.
+                    //Also calls the function to damage the enemy
+                    //based on the player's damage amount from the Unit script
+                    bool isCallDead = enemyUnit.TakeDamage(playerUnit.magicCallDamage);
+
+                    //Changes the enemy HP based on the current HP
+                    enemyHUD.SetHP(enemyUnit.currentHP);
+
+                    //Calls a function in the Unit Script to Decrease the current MP
+                    //by sending the MP cost of the magic move
+                    playerUnit.MPDecrease(playerUnit.magicCost);
+
+                    //Calls a function in the BattleHUD script to
+                    //change the player MP text based on the current MP
+                    playerHUD.SetMP(playerUnit.currentMP);
+
+                    yield return new WaitForSeconds(2f);
+
+                    //set the magic call state to false
+                    playerUnit.MagicCallState = false;
+
+                    //Checks to see if the enemy is dead.
+                    //if, the enemy is dead, then the battle state changes to win
+
+                    //else, it goes to the enemy's turn.
+                    if (isCallDead == true)
+                    {
+                        state = BattleState.State.WON;
+                        StartCoroutine(EndBattle());
+                    }
+                    else
+                    {
+
+                        state = BattleState.State.PLAYERTURN;
+                        playerTurn();
+                    }
+
+
+
+
+
+
+
+                    //state = BattleState.State.PLAYERTURN;
+                    //StartCoroutine(PlayerMagicCall());
                 }
                 else
                 {
@@ -1192,22 +1509,23 @@ public class Scene2BattleSystem : MonoBehaviour
     }
 
 
-    IEnumerator TurnToUseOnlyMagic()
-    {
-        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-        "They're strong. I'll have to use a Magic Attack.";
+    //IEnumerator TurnToUseOnlyMagic()
+    //{
+    //    optionsPanel.SetActive(false);
+    //    dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+    //    "They're strong. I'll have to use a Magic Attack.";
 
-        attackButton.SetActive(false);
-        defendButton.SetActive(false);
-        investigateButton.SetActive(false);
-        magicCallButton.SetActive(false);
-        magicButton.SetActive(true);
+    //    attackButton.SetActive(false);
+    //    defendButton.SetActive(false);
+    //    investigateButton.SetActive(false);
+    //    magicCallButton.SetActive(false);
+    //    magicButton.SetActive(true);
 
-        yield return new WaitForSeconds(3f);
+    //    yield return new WaitForSeconds(3f);
 
 
-        state = BattleState.State.FIRSTTURN;
-        firstTurn();
-    }
+    //    state = BattleState.State.FIRSTTURN;
+    //    firstTurn();
+    //}
 
 }

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Assassin
-  damage: 5
+  damage: 3
   largeDamage: 15
   magicCost: 1
   fireDamage: 0
