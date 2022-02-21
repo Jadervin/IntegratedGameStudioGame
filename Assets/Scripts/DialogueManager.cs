@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Ink.Runtime;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class DialogueManager : MonoBehaviour
     public Image charact;
     //public AudioClip source;
     static Story story;
-    Text nametag;
-    Text message;
+    TextMeshPro nametag;
+    TextMeshPro message;
     List<string> tags;
     static Choice choiceSelected;
     public string nextSceneName;
@@ -37,8 +38,13 @@ public class DialogueManager : MonoBehaviour
 
 
         story = new Story(inkFile.text);
-        nametag = textBox.transform.GetChild(2).GetComponent<Text>();
-        message = textBox.transform.GetChild(3).GetComponent<Text>();
+
+
+        //How to change MC to character name
+
+
+        nametag = textBox.transform.GetChild(2).GetComponent<TextMeshPro>();
+        message = textBox.transform.GetChild(3).GetComponent<TextMeshPro>();
         tags = new List<string>();
         choiceSelected = null;
     }

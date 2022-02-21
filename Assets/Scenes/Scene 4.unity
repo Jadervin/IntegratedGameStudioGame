@@ -847,7 +847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 219767761482238114, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
       propertyPath: m_FontData.m_Alignment
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2846848057390734263, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
       propertyPath: m_SizeDelta.x

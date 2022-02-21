@@ -204,7 +204,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -536,14 +536,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1663762027}
-    - target: {fileID: 1686153654874541299, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TitleMenuButtonPressed
-      objectReference: {fileID: 0}
-    - target: {fileID: 1686153655280612043, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
-      propertyPath: m_Text
-      value: Menu
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
 --- !u!1 &817954927
@@ -798,6 +790,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseGame
       objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_text
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581923710584253788, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
 --- !u!1 &1663762026
@@ -957,6 +957,14 @@ PrefabInstance:
     - target: {fileID: 1686153655280612043, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
       propertyPath: m_Text
       value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_text
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581923710584253788, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
