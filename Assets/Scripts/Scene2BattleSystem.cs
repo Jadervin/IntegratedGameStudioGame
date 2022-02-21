@@ -52,6 +52,9 @@ public class Scene2BattleSystem : MonoBehaviour
     public bool isTimeForMagicCall = false;
     public bool isTimeForInvestigation = false;
     public bool isTimeForDefend = false;
+    public bool isTimeForMagic = false;
+    public int turnsUntilMagic;
+    public int MaxTurnsUntilMagic = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -87,8 +90,8 @@ public class Scene2BattleSystem : MonoBehaviour
         //dialogueText.text = "The " + enemyUnit.unitName +
         //" approaches the " + playerUnit.unitName + ".";
 
-        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-         "They're strong. I'll have to use a Magic Attack.";
+        //dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        // "They're strong. I'll have to use a Magic Attack.";
 
         playerUnit.currentHP = playerUnit.maxHP;
         playerUnit.currentMP = playerUnit.maxMP;
@@ -98,8 +101,7 @@ public class Scene2BattleSystem : MonoBehaviour
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
 
-        attackButton.SetActive(false);
-        defendButton.SetActive(false);
+        magicButton.SetActive(false);
         investigateButton.SetActive(false);
         magicCallButton.SetActive(false);
 
@@ -107,8 +109,8 @@ public class Scene2BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
 
-        state = BattleState.State.FIRSTTURN;
-        firstTurn();
+        state = BattleState.State.PLAYERTURN;
+        playerTurn();
         //playerTurn();
 
     }
@@ -848,6 +850,20 @@ public class Scene2BattleSystem : MonoBehaviour
                         playerUnit.currentTurnUntilMagicCall++;
                     }
 
+                    //Turns until Magic
+                    if(turnsUntilMagic == MaxTurnsUntilMagic && 
+                        isTimeForMagic == false)
+                    {
+                        isTimeForMagic = true;
+                        state = BattleState.State.MAGICTURN;
+                        StartCoroutine(TurnToUseOnlyMagic());
+                    }
+                    else
+                    {
+                        turnsUntilMagic++;
+                    }
+
+
                     if (isTimeForMagicCall == false)
                     {
                         state = BattleState.State.PLAYERTURN;
@@ -916,6 +932,18 @@ public class Scene2BattleSystem : MonoBehaviour
                         playerUnit.currentTurnUntilMagicCall++;
                     }
 
+                    //Turns until Magic
+                    if (turnsUntilMagic == MaxTurnsUntilMagic &&
+                        isTimeForMagic == false)
+                    {
+                        isTimeForMagic = true;
+                        state = BattleState.State.MAGICTURN;
+                        StartCoroutine(TurnToUseOnlyMagic());
+                    }
+                    else
+                    {
+                        turnsUntilMagic++;
+                    }
 
 
                     state = BattleState.State.PLAYERTURN;
@@ -1161,6 +1189,25 @@ public class Scene2BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         playerTurn();
+    }
+
+
+    IEnumerator TurnToUseOnlyMagic()
+    {
+        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        "They're strong. I'll have to use a Magic Attack.";
+
+        attackButton.SetActive(false);
+        defendButton.SetActive(false);
+        investigateButton.SetActive(false);
+        magicCallButton.SetActive(false);
+        magicButton.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+
+        state = BattleState.State.FIRSTTURN;
+        firstTurn();
     }
 
 }
