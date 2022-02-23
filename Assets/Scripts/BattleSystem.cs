@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 //public enum BattleState {START, FIRSTTURN, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -23,7 +24,7 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     [Header("Texts and Panels")]
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
     public GameObject optionsPanel;
     public GameObject magicOptionsPanel;
 

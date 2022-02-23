@@ -16,8 +16,8 @@ public class DialogueManager : MonoBehaviour
     public Image charact;
     //public AudioClip source;
     static Story story;
-    TextMeshPro nametag;
-    TextMeshPro message;
+    TextMeshProUGUI nametag;
+    TextMeshProUGUI message;
     List<string> tags;
     static Choice choiceSelected;
     public string nextSceneName;
@@ -43,8 +43,8 @@ public class DialogueManager : MonoBehaviour
         //How to change MC to character name
 
 
-        nametag = textBox.transform.GetChild(2).GetComponent<TextMeshPro>();
-        message = textBox.transform.GetChild(3).GetComponent<TextMeshPro>();
+        nametag = textBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        message = textBox.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
         tags = new List<string>();
         choiceSelected = null;
     }

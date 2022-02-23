@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class BattleHUD : MonoBehaviour
 {
-    public Text nameText;
+    public TextMeshProUGUI nameText;
     //public Slider HPSlider;
-    public Text curHPText;
-    public Text maxHPText;
+    public TextMeshProUGUI curHPText;
+    public TextMeshProUGUI maxHPText;
 
-    public Text curMPText;
-    public Text maxMPText;
+    public TextMeshProUGUI curMPText;
+    public TextMeshProUGUI maxMPText;
 
     public void SetHUD(Unit unit)
     {

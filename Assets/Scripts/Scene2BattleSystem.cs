@@ -25,7 +25,7 @@ public class Scene2BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     [Header("Texts and Panels")]
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
     public GameObject optionsPanel;
     public GameObject magicOptionsPanel;
 
