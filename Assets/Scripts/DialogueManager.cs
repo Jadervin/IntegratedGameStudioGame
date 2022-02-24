@@ -24,7 +24,9 @@ public class DialogueManager : MonoBehaviour
 
     public bool isSpaceDisabled = false;
     public bool skipping = false;
+    public bool completed = false;
 
+    public bool skipPressed = false;
     string sentenceText;
     //public bool textFinished = false;
 
@@ -42,9 +44,10 @@ public class DialogueManager : MonoBehaviour
 
         //How to change MC to character name
 
-
+        
         nametag = textBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         message = textBox.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+        Debug.Log(message.text);
         tags = new List<string>();
         choiceSelected = null;
     }
@@ -88,20 +91,44 @@ public class DialogueManager : MonoBehaviour
     // Type out the sentence letter by letter and make character idle if they were talking
     IEnumerator TypeSentence(string sentence)
     {
+        Debug.Log(sentence);
+
+        completed = false;
+        skipping = false;
         message.text = "";
         sentenceText = sentence;
         //isSpaceDisabled = true;
 
         foreach (char letter in sentence.ToCharArray())
         {
+
             message.text += letter;
 
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.S) || completed == true)
             {
+                //For Completing
                 //Just this line
-                OnFastForwardButtonPress();
+                //OnCompleteTextButtonPress();
+                message.text = sentenceText;
+                break;
+            }
+            else if(Input.GetKey(KeyCode.A) || skipping == true)
+            {
+                //For Skipping
+                //Wh
+                //Debug.Log(skipping);
+                skipPressed = true;
+
+                if(skipPressed == true)
+                {
+                    isSpaceDisabled = false;
+                    //yield return null;
+                    OnContinueButtonPress();
+                }
                 
 
+
+                break;
             }
             else
             {
@@ -242,6 +269,9 @@ public class DialogueManager : MonoBehaviour
 
     public void OnContinueButtonPress()
     {
+        //skipping = false;
+
+
         if (isSpaceDisabled == false)
         {
             //source.Play;
@@ -267,9 +297,16 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void OnFastForwardButtonPress()
+    public void OnCompleteTextButtonPress()
     {
-        message.text = sentenceText;
+        completed = true;
+        
+    }
+
+    public void OnSkipTextButtonPress()
+    {
+        skipping = true;
+
     }
 
 }
