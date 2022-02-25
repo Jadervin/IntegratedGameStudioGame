@@ -6,60 +6,60 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title Screen.unity
+    path: Assets/Scenes/Menu Scenes/Title Screen.unity
     guid: c1a98ae8de325f3459487c3a1a109800
   - enabled: 1
-    path: Assets/Scenes/Credits Screen.unity
+    path: Assets/Scenes/Menu Scenes/Credits Screen.unity
     guid: 1a3c53402860bd5419c009587841bfea
   - enabled: 1
-    path: Assets/Scenes/References Scene.unity
+    path: Assets/Scenes/Menu Scenes/References Scene.unity
     guid: 5277b1062e6ef38429ed347d96faa78e
   - enabled: 1
-    path: Assets/Scenes/Choose your Name.unity
+    path: Assets/Scenes/Menu Scenes/Choose your Name.unity
     guid: 65377331131bb6144bf409f077005515
   - enabled: 1
-    path: Assets/Scenes/Scene 1.unity
+    path: Assets/Scenes/VN Scenes/Scene 1.unity
     guid: 027cbf2d715bf90419eafdaffa62a6da
   - enabled: 1
-    path: Assets/Scenes/Scene 2.unity
+    path: Assets/Scenes/VN Scenes/Scene 2.unity
     guid: f848b90b7f1b67944bcf7154c3fb1793
   - enabled: 1
-    path: Assets/Scenes/Scene 2 Battle.unity
+    path: Assets/Scenes/Battle Scenes/Scene 2 Battle.unity
     guid: 55603d3569f863b4fb3b830535d9ecfb
   - enabled: 1
-    path: Assets/Scenes/You Lose.unity
+    path: Assets/Scenes/Menu Scenes/You Lose.unity
     guid: a492e0af841391a409fa9ef556db6bae
   - enabled: 1
-    path: Assets/Scenes/Scene 2 After Battle.unity
+    path: Assets/Scenes/VN Scenes/Scene 2 After Battle.unity
     guid: ddcec4be3457b754296d12736a0e0fd3
   - enabled: 1
-    path: Assets/Scenes/Scene 3.unity
+    path: Assets/Scenes/VN Scenes/Scene 3.unity
     guid: 35dd877bb20c3984e99b6ca6ef010b40
   - enabled: 1
-    path: Assets/Scenes/Excursion Break 1.unity
+    path: Assets/Scenes/Excursion Breaks/Excursion Break 1.unity
     guid: 4dae9e949dc184b4e96f84c2c3bc3e43
   - enabled: 1
-    path: Assets/Scenes/(EX1)Belladonna 1.unity
+    path: Assets/Scenes/Excursion Breaks/(EX1)Belladonna 1.unity
     guid: d27b97061caf2a044aedefec3710a76d
   - enabled: 1
-    path: Assets/Scenes/(EX1)Cherry Blossom 1.unity
+    path: Assets/Scenes/Excursion Breaks/(EX1)Cherry Blossom 1.unity
     guid: c7783a4130dbe2a488f216dcb215de96
   - enabled: 1
-    path: Assets/Scenes/(EX1)Holly 1.unity
+    path: Assets/Scenes/Excursion Breaks/(EX1)Holly 1.unity
     guid: 09865e726adf21c45926cd6d2117032b
   - enabled: 1
-    path: Assets/Scenes/(EX1)Ivy 1.unity
+    path: Assets/Scenes/Excursion Breaks/(EX1)Ivy 1.unity
     guid: 9f6802d701620cf4a82ae5e02a60136e
   - enabled: 1
-    path: Assets/Scenes/(EX1)Spider Lily 1.unity
+    path: Assets/Scenes/Excursion Breaks/(EX1)Spider Lily 1.unity
     guid: 7b6764a4688d6e64099ba85d9f6d7bca
   - enabled: 1
-    path: Assets/Scenes/Scene 4.unity
+    path: Assets/Scenes/VN Scenes/Scene 4.unity
     guid: 65742e63d0cc4ef45be51a6dfa9870d4
   - enabled: 1
-    path: Assets/Scenes/Scene 5.unity
+    path: Assets/Scenes/VN Scenes/Scene 5.unity
     guid: 8d85a46672874924e863eda70b4a1e7f
   - enabled: 1
-    path: Assets/Scenes/Ending Screen.unity
+    path: Assets/Scenes/Menu Scenes/Ending Screen.unity
     guid: 7795ea0dcfe15ee4ea29e93675be5e4d
   m_configObjects: {}
