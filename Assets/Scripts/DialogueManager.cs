@@ -242,6 +242,11 @@ public class DialogueManager : MonoBehaviour
     }
     void SetSprite(string _ch)
     {
+
+        //charact.sprite = Resources.Load<Sprite>(_ch);
+        //charact.gameObject.SetActive(true);
+
+
         if (!_ch.Contains("MC"))
         {
             charact.sprite = Resources.Load<Sprite>(_ch);
@@ -249,8 +254,12 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+
             return;
         }
+
+
+
     }
 
     void SetBG(string _name)
