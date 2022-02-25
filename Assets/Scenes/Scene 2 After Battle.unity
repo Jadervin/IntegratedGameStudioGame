@@ -369,9 +369,11 @@ MonoBehaviour:
   optionPanel: {fileID: 96007947}
   background: {fileID: 357228166}
   charact: {fileID: 1580818718}
-  nextSceneName: Ending Screen
+  nextSceneName: Scene 3
   isSpaceDisabled: 0
   skipping: 0
+  completed: 0
+  skipPressed: 0
   letterSpeed: 0.02
 --- !u!4 &317738845
 Transform:
