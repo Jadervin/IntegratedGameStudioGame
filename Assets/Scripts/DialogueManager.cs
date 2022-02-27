@@ -144,8 +144,10 @@ public class DialogueManager : MonoBehaviour
     // Create then show the choices on the screen until one got selected
     IEnumerator ShowChoices()
     {
-        Debug.Log("There are choices need to be made here!");
         isSpaceDisabled = true;
+
+        Debug.Log("There are choices need to be made here!");
+        
         List<Choice> _choices = story.currentChoices;
 
 
