@@ -25,6 +25,7 @@ public class DialogueManager : MonoBehaviour
     public bool isSpaceDisabled = false;
     public bool skipping = false;
     public bool completed = false;
+    public bool isShowingOptions = false;
 
     public bool skipPressed = false;
     string sentenceText;
@@ -32,7 +33,7 @@ public class DialogueManager : MonoBehaviour
 
 
     [Range(0, 0.5f)]
-    public float letterSpeed;
+    public float letterSpeed = 0.02f;
 
     // Start is called before the first frame update
     void Start()
@@ -54,14 +55,15 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isShowingOptions == false)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
 
-           OnContinueButtonPress();
+                OnContinueButtonPress();
+            }
         }
-
 
     }
 
@@ -145,7 +147,9 @@ public class DialogueManager : MonoBehaviour
     IEnumerator ShowChoices()
     {
         isSpaceDisabled = true;
+        isShowingOptions = true;
 
+        
         Debug.Log("There are choices need to be made here!");
         
         List<Choice> _choices = story.currentChoices;
@@ -174,6 +178,7 @@ public class DialogueManager : MonoBehaviour
     // Tells the story which branch to go to
     public static void SetDecision(object element)
     {
+
         choiceSelected = (Choice)element;
         story.ChooseChoiceIndex(choiceSelected.index);
     }
@@ -181,6 +186,7 @@ public class DialogueManager : MonoBehaviour
     // After a choice was made, turn off the panel and advance from that choice
     void AdvanceFromDecision()
     {
+        isShowingOptions = false;
         optionPanel.SetActive(false);
         for (int i = 0; i < optionPanel.transform.childCount; i++)
         {
@@ -282,28 +288,30 @@ public class DialogueManager : MonoBehaviour
     {
         //skipping = false;
 
-
-        if (isSpaceDisabled == false)
+        if (isShowingOptions == false)
         {
-            //source.Play;
-            //Is there more to the story?
-            if (story.canContinue)
+            if (isSpaceDisabled == false)
             {
-                charact.gameObject.SetActive(false);
-                isSpaceDisabled = true;
-                nametag.text = "";
-                AdvanceDialogue();
-                //Are there any choices?
-                if (story.currentChoices.Count != 0)
+                //source.Play;
+                //Is there more to the story?
+                if (story.canContinue)
                 {
-                    StartCoroutine(ShowChoices());
+                    charact.gameObject.SetActive(false);
+                    isSpaceDisabled = true;
+                    nametag.text = "";
+                    AdvanceDialogue();
+                    //Are there any choices?
+                    if (story.currentChoices.Count != 0)
+                    {
+                        StartCoroutine(ShowChoices());
+                    }
                 }
-            }
-            else
-            {
-                FinishDialogue();
+                else
+                {
+                    FinishDialogue();
 
 
+                }
             }
         }
     }
