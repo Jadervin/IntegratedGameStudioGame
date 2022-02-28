@@ -142,7 +142,7 @@ public class DialogueManager : MonoBehaviour
                     skipPressed = false;
                 }
 
-                //break;
+                break;
             }
             //else if (Input.GetKeyUp(KeyCode.A))
             //{
