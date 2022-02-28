@@ -95,7 +95,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         Debug.Log(sentence);
-
+        skipPressed = false;
         completed = false;
         skipping = false;
         message.text = "";
@@ -115,7 +115,7 @@ public class DialogueManager : MonoBehaviour
                 message.text = sentenceText;
                 break;
             }
-            /*else*/if(Input.GetKey(KeyCode.A) || skipping == true)
+            if(skipping == true)
             {
                 //For Skipping
                 //Wh
@@ -134,19 +134,20 @@ public class DialogueManager : MonoBehaviour
                     isSpaceDisabled = false;
                     //yield return null;
                     OnContinueButtonPress();
-                    //skipPressed = true;
+                    skipPressed = true;
                 }
 
-                if (Input.GetKeyUp(KeyCode.A))
-                {
-                    skipPressed = false;
-                }
+                //else if (Input.GetKeyUp(KeyCode.A))
+                //{
+                //    skipPressed = false;
+                //}
 
                 break;
             }
             //else if (Input.GetKeyUp(KeyCode.A))
             //{
             //    skipPressed = false;
+            //    break;
             //}
 
             else
@@ -156,6 +157,7 @@ public class DialogueManager : MonoBehaviour
                 yield return null;
             }
         }
+        skipPressed = false;
         isSpaceDisabled = false;
         yield return null;
     }
@@ -277,10 +279,12 @@ public class DialogueManager : MonoBehaviour
             charact.sprite = Resources.Load<Sprite>(_ch);
             charact.gameObject.SetActive(true);
         }
-        else if(_ch.Contains("none"))
+
+        if(_ch.Contains("none"))
         {
             charact.gameObject.SetActive(false);
         }
+
         else
         {
 

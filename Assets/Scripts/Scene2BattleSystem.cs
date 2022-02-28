@@ -104,7 +104,7 @@ public class Scene2BattleSystem : MonoBehaviour
         magicButton.SetActive(false);
         //investigateButton.SetActive(false);
         magicCallButton.SetActive(false);
-
+        investigateButton.SetActive(false);
 
         yield return new WaitForSeconds(3f);
 
@@ -524,26 +524,33 @@ public class Scene2BattleSystem : MonoBehaviour
         }
         else
         {
+            isTimeForMagicCall = true;
+            magicButton.SetActive(false);
+            magicCallButton.SetActive(true);
+
+            state = BattleState.State.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+
 
             //if, it is the first turn, then turn the bool on 
             //for the Magic Call dialogue
 
             //else, it just goes to the enemy's turn and changes to enemy state.
-            if (state == BattleState.State.FIRSTTURN)
-            {
-                //Allows the Magic Call dialogue to play
-                isTimeForMagicCall = true;
-                magicButton.SetActive(false);
-                magicCallButton.SetActive(true);
+            //if (state == BattleState.State.FIRSTTURN)
+            //{
+            //    //Allows the Magic Call dialogue to play
+            //    isTimeForMagicCall = true;
+            //    magicButton.SetActive(false);
+            //    magicCallButton.SetActive(true);
 
-                state = BattleState.State.ENEMYTURN;
-                StartCoroutine(EnemyTurn());
-            }
-            else
-            {
-                state = BattleState.State.ENEMYTURN;
-                StartCoroutine(EnemyTurn());
-            }
+            //    state = BattleState.State.ENEMYTURN;
+            //    StartCoroutine(EnemyTurn());
+            //}
+            //else
+            //{
+            //    state = BattleState.State.ENEMYTURN;
+            //    StartCoroutine(EnemyTurn());
+            //}
         }
     }
 
@@ -601,14 +608,15 @@ public class Scene2BattleSystem : MonoBehaviour
         //then it will say the enemy is building up
 
         //else, it will say the enemy is going to attack
-        if (enemyUnit.currentTurnUntilLargeAtck < 3)
+        if (enemyUnit.currentTurnUntilLargeAtck < enemyUnit.maxTurnUntilLargeAtck)
         {
 
             dialogueText.text = enemyUnit.unitName + " has " +
                 (enemyUnit.maxTurnUntilLargeAtck - enemyUnit.currentTurnUntilLargeAtck) +
                 " turn until it uses its Large Attack.";
         }
-        else if (enemyUnit.currentTurnUntilLargeAtck == 3 && enemyUnit.isBuildingUp == false)
+        else if (enemyUnit.currentTurnUntilLargeAtck == enemyUnit.maxTurnUntilLargeAtck
+            && enemyUnit.isBuildingUp == false)
         {
             dialogueText.text = enemyUnit.unitName + " is building up.";
         }
@@ -652,7 +660,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         isTimeForDefend = false;
         attackButton.SetActive(true);
-        investigateButton.SetActive(true);
+        //investigateButton.SetActive(true);
 
 
         yield return new WaitForSeconds(2f);
@@ -693,14 +701,6 @@ public class Scene2BattleSystem : MonoBehaviour
         //Do I need to StopCoroutine
 
         //Think about putting this in the enemy turn function
-
-
-
-
-
-
-
-
 
         //Turns off the option panels
         //optionsPanel.SetActive(false);
@@ -744,6 +744,17 @@ public class Scene2BattleSystem : MonoBehaviour
             isTimeForMagicCall = false;
 
             yield return new WaitForSeconds(2f);
+
+            dialogueText.text = "Investigation:" + "\n" +
+                        "It is a technique that allows you to check how many turns " +
+                        "your opponent has until they use a Large Attack. ";
+
+            yield return new WaitForSeconds(4f);
+
+            dialogueText.text = "Your opponent will have one turn to build up power " +
+                       "for the large attack. So be prepared to defend. ";
+
+            yield return new WaitForSeconds(4f);
 
             //it goes to the enemy's turn and changes to enemy state.
             state = BattleState.State.ENEMYTURN;
@@ -845,6 +856,95 @@ public class Scene2BattleSystem : MonoBehaviour
                     //Increases turn to large attack
                     enemyUnit.currentTurnUntilLargeAtck++;
                     
+                    //Turns until Magic
+                    if(turnsUntilMagic == MaxTurnsUntilMagic && 
+                        isTimeForMagic == false)
+                    {
+                        
+
+                        //dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        //"They're strong. I'll have to use a Magic Attack.";
+
+                        isTimeForMagic = true;
+
+
+                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        "They're strong. I'll have to use a Magic Attack.";
+
+                        yield return new WaitForSeconds(3f);
+
+                        attackButton.SetActive(false);
+                        defendButton.SetActive(false);
+                        investigateButton.SetActive(false);
+                        magicCallButton.SetActive(false);
+                        magicButton.SetActive(true);
+
+                        Debug.Log("firstTurn");
+                        state = BattleState.State.FIRSTTURN;
+                        
+                        firstTurn();
+
+                        
+                        
+
+                        
+                        
+                    }
+                    else
+                    {
+                        turnsUntilMagic++;
+                        //state = BattleState.State.PLAYERTURN;
+                        //playerTurn();
+                    }
+
+
+                    if (isTimeForMagicCall == false)
+                    {
+                        state = BattleState.State.PLAYERTURN;
+                        playerTurn();
+                    }
+                    else
+                    {
+                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        "That's... strange. My magic seems weaker now. " +
+                        "I'm so, tired. Perhaps I have just enough magic energy to call for Ariar.";
+
+                        yield return new WaitForSeconds(2f);
+
+                        dialogueText.text = "Magic Call:"+ "\n" +
+                        "It is a technique that allows you to call an Ally" +
+                        " to deal a large amount of damage, "+
+                        "but will have to wait a couple of turns.";
+
+                        yield return new WaitForSeconds(5f);
+
+                        
+                        //isTimeForMagicCall = false;
+
+                        state = BattleState.State.PLAYERTURN;
+                        playerTurn();
+
+                        //if(isTimeForMagic == false)
+                        //{
+                        //    state = BattleState.State.PLAYERTURN;
+                        //    playerTurn();
+                        //}
+                        //else
+                        //{
+                        //    state = BattleState.State.FIRSTTURN;
+                        //    firstTurn();
+                        //}
+                    }
+
+                    
+
+
+                    //if (isTimeForMagicCall == false && isTimeForMagic == false)
+                    //{
+                    //    state = BattleState.State.PLAYERTURN;
+                    //    playerTurn();
+                    //}
+
 
                     //For magic Call
                     //if(playerUnit.MagicCallState == true && 
@@ -913,78 +1013,14 @@ public class Scene2BattleSystem : MonoBehaviour
                     else
                     {
                         playerUnit.currentTurnUntilMagicCall++;
+                        state = BattleState.State.PLAYERTURN;
+                        playerTurn();
                     }
 
                     
-
-
-                    if (isTimeForMagicCall == false)
-                    {
-                        state = BattleState.State.PLAYERTURN;
-                        playerTurn();
-                    }
-                    else
-                    {
-                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-                        "That's... strange. My magic seems weaker now. " +
-                        "I'm so, tired. Perhaps I have just enough magic energy to call for Ariar.";
-
-                        yield return new WaitForSeconds(2f);
-                        //isTimeForMagicCall = false;
-
-                        state = BattleState.State.PLAYERTURN;
-                        playerTurn();
-
-                        //if(isTimeForMagic == false)
-                        //{
-                        //    state = BattleState.State.PLAYERTURN;
-                        //    playerTurn();
-                        //}
-                        //else
-                        //{
-                        //    state = BattleState.State.FIRSTTURN;
-                        //    firstTurn();
-                        //}
-                    }
-
-                    //Turns until Magic
-                    if(turnsUntilMagic == MaxTurnsUntilMagic && 
-                        isTimeForMagic == false)
-                    {
-                        
-
-                        //dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-                        //"They're strong. I'll have to use a Magic Attack.";
-
-                        isTimeForMagic = true;
-
-
-                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-                        "They're strong. I'll have to use a Magic Attack.";
-
-                        attackButton.SetActive(false);
-                        defendButton.SetActive(false);
-                        investigateButton.SetActive(false);
-                        magicCallButton.SetActive(false);
-                        magicButton.SetActive(true);
-
-                        Debug.Log("firstTurn");
-                        state = BattleState.State.FIRSTTURN;
-                        
-                        firstTurn();
-
-                        
-                        yield return new WaitForSeconds(3f);
-
-                        
-                        
-                    }
-                    else
-                    {
-                        turnsUntilMagic++;
-                    }
+                    
                 }
-                
+
             }
 
             //for when the player defends
@@ -1091,6 +1127,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
                         dialogueText.text = " \t" + playerUnit.unitName + "\n" +
                         "They're strong. I'll have to use a Magic Attack.";
+                        yield return new WaitForSeconds(3f);
 
                         attackButton.SetActive(false);
                         defendButton.SetActive(false);
@@ -1103,7 +1140,7 @@ public class Scene2BattleSystem : MonoBehaviour
                         state = BattleState.State.FIRSTTURN;
                         
                         
-                        yield return new WaitForSeconds(3f);
+                        
                         firstTurn();
                         //Debug.Log("firstTurn");
                         
@@ -1316,8 +1353,8 @@ public class Scene2BattleSystem : MonoBehaviour
                     playerUnit.currentTurnUntilMagicCall++;
                 }
 
-                state = BattleState.State.PLAYERTURN;
-                playerTurn();
+                //state = BattleState.State.PLAYERTURN;
+                //playerTurn();
             }
 
         }
@@ -1432,8 +1469,8 @@ public class Scene2BattleSystem : MonoBehaviour
                 }
 
 
-                state = BattleState.State.PLAYERTURN;
-                playerTurn();
+                //state = BattleState.State.PLAYERTURN;
+                //playerTurn();
             }
         }
 
@@ -1483,6 +1520,11 @@ public class Scene2BattleSystem : MonoBehaviour
         "I should use my magic energy to call for Ariar.";
         
         yield return new WaitForSeconds(2f);
+
+        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        "I should use my magic energy to call for Ariar.";
+        yield return new WaitForSeconds(3f);
+
 
         playerTurn();
     }

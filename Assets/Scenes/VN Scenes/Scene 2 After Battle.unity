@@ -734,6 +734,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnSkipTextButtonPress
       objectReference: {fileID: 0}
+    - target: {fileID: 1136583662770120640, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_text
+      value: Skip Text
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
 --- !u!224 &1238803871 stripped

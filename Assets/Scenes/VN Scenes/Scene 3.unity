@@ -656,10 +656,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1843923322}
-    - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCompleteTextButtonPress
-      objectReference: {fileID: 0}
     - target: {fileID: 302100930512474570, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_Name
       value: Text Button Options
@@ -752,10 +748,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1843923322}
-    - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnSkipTextButtonPress
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
 --- !u!224 &1903760617 stripped
