@@ -261,6 +261,10 @@ public class DialogueManager : MonoBehaviour
             charact.sprite = Resources.Load<Sprite>(_ch);
             charact.gameObject.SetActive(true);
         }
+        else if(_ch.Contains("none"))
+        {
+            charact.gameObject.SetActive(false);
+        }
         else
         {
 
