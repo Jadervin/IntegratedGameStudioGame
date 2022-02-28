@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.17277797, g: 0.22283328, b: 0.3018868, a: 1}
+  m_Color: {r: 0.17277797, g: 0.22283328, b: 0.3018868, a: 0.4509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3972,8 +3972,8 @@ MonoBehaviour:
   magicOptionsPanel: {fileID: 540355387}
   playerBattleStation: {fileID: 84399455}
   enemyBattleStation: {fileID: 1659286502}
-  endingSceneName: Scene 2 After Battle
-  losingSceneName: Ending Screen
+  endingSceneName: Victory Scene
+  losingSceneName: You Lose
   sfxSource: {fileID: 1197034409}
   soundResource: {fileID: 223975892}
   attackButton: {fileID: 1367298502}

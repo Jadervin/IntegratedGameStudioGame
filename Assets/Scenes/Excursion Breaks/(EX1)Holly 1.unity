@@ -156,12 +156,14 @@ MonoBehaviour:
   textBox: {fileID: 1140618807}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 2119471095}
+  nameBackground: {fileID: 413346859}
   background: {fileID: 1293614061}
   charact: {fileID: 1316340260}
   nextSceneName: Scene 4
   isSpaceDisabled: 0
   skipping: 0
   completed: 0
+  isShowingOptions: 0
   skipPressed: 0
   letterSpeed: 0.02
 --- !u!4 &321678704
@@ -293,6 +295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Textbox
       objectReference: {fileID: 0}
+    - target: {fileID: 5836533929069378765, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6715836676635025998, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -379,6 +385,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+--- !u!1 &413346859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5836533929069378765, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+  m_PrefabInstance: {fileID: 413346858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &727291685
 PrefabInstance:
   m_ObjectHideFlags: 0

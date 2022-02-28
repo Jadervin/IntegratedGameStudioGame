@@ -227,16 +227,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f1a33a20214434aadca06f85e76ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 8a75ccf4e6cf9e64aa13fb2c0e96af1b, type: 3}
+  inkFile: {fileID: 4900000, guid: fdc6ee27d3c588946ba3c20add2fbc09, type: 3}
   textBox: {fileID: 183150516}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 555257467}
+  nameBackground: {fileID: 183150517}
   background: {fileID: 276107985}
   charact: {fileID: 73711917}
   nextSceneName: Scene 4
   isSpaceDisabled: 0
   skipping: 0
   completed: 0
+  isShowingOptions: 0
   skipPressed: 0
   letterSpeed: 0.02
 --- !u!4 &119384619
@@ -329,6 +331,10 @@ PrefabInstance:
     - target: {fileID: 125837700345995169, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
       propertyPath: m_Name
       value: Textbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836533929069378765, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6715836676635025998, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
       propertyPath: m_Pivot.x
@@ -424,6 +430,11 @@ RectTransform:
 --- !u!1 &183150516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 125837700345995169, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+  m_PrefabInstance: {fileID: 183150514}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &183150517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5836533929069378765, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
   m_PrefabInstance: {fileID: 183150514}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &194131564

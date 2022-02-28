@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Scenes/You Lose.unity
     guid: a492e0af841391a409fa9ef556db6bae
   - enabled: 1
+    path: Assets/Scenes/Menu Scenes/Victory Scene.unity
+    guid: 800242ea48cc6814c982e053b46e4bfe
+  - enabled: 1
     path: Assets/Scenes/VN Scenes/Scene 2 After Battle.unity
     guid: ddcec4be3457b754296d12736a0e0fd3
   - enabled: 1

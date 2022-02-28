@@ -413,12 +413,15 @@ MonoBehaviour:
   textBox: {fileID: 115157998}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 1316612077}
+  nameBackground: {fileID: 1165556672}
   background: {fileID: 516851129}
   charact: {fileID: 157094018}
   nextSceneName: Scene 2
   isSpaceDisabled: 0
   skipping: 0
   completed: 0
+  isShowingOptions: 0
+  skipPressed: 0
   letterSpeed: 0.02
 --- !u!4 &627901681
 Transform:
@@ -444,6 +447,10 @@ PrefabInstance:
     - target: {fileID: 125837700345995169, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
       propertyPath: m_Name
       value: Textbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836533929069378765, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6715836676635025998, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
       propertyPath: m_Pivot.x
@@ -529,12 +536,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6960932207806532707, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+--- !u!1 &1165556672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5836533929069378765, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+  m_PrefabInstance: {fileID: 1165556671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1301462555
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject textBox;
     public GameObject customButton;
     public GameObject optionPanel;
+    public GameObject nameBackground;
     public Image background;
     public Image charact;
     //public AudioClip source;
@@ -236,7 +237,7 @@ public class DialogueManager : MonoBehaviour
     }
     void SetName(string _name)
     {
-
+        nameBackground.SetActive(true);
         if (_name == "MC")
         {
             nametag.text = CharacterNameScript.characterName;
@@ -251,8 +252,8 @@ public class DialogueManager : MonoBehaviour
     void SetSprite(string _ch)
     {
 
-        //charact.sprite = Resources.Load<Sprite>(_ch);
-        //charact.gameObject.SetActive(true);
+        charact.sprite = Resources.Load<Sprite>(_ch);
+        charact.gameObject.SetActive(true);
 
 
         if (!_ch.Contains("MC"))
@@ -296,7 +297,8 @@ public class DialogueManager : MonoBehaviour
                 //Is there more to the story?
                 if (story.canContinue)
                 {
-                    charact.gameObject.SetActive(false);
+                    nameBackground.SetActive(false);
+                    //charact.gameObject.SetActive(false);
                     isSpaceDisabled = true;
                     nametag.text = "";
                     AdvanceDialogue();
