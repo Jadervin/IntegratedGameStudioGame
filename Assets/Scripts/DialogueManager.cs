@@ -115,24 +115,40 @@ public class DialogueManager : MonoBehaviour
                 message.text = sentenceText;
                 break;
             }
-            else if(Input.GetKey(KeyCode.A) || skipping == true)
+            /*else*/if(Input.GetKey(KeyCode.A) || skipping == true)
             {
                 //For Skipping
                 //Wh
                 //Debug.Log(skipping);
-                skipPressed = true;
+                //skipPressed = true;
 
-                if(skipPressed == true)
+                //if(skipPressed == true)
+                //{
+                //    isSpaceDisabled = false;
+                //    //yield return null;
+                //    OnContinueButtonPress();
+                //}
+
+                if (skipPressed == false)
                 {
                     isSpaceDisabled = false;
                     //yield return null;
                     OnContinueButtonPress();
+                    //skipPressed = true;
                 }
-                
 
+                if (Input.GetKeyUp(KeyCode.A))
+                {
+                    skipPressed = false;
+                }
 
-                break;
+                //break;
             }
+            //else if (Input.GetKeyUp(KeyCode.A))
+            //{
+            //    skipPressed = false;
+            //}
+
             else
             {
                 yield return new WaitForSeconds(letterSpeed);
