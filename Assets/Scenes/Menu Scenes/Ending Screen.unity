@@ -235,6 +235,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Close
       objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
 --- !u!1 &841711683
@@ -398,6 +406,7 @@ MonoBehaviour:
   TitleMenuSceneName: Title Screen
   ReferencesSceneName: References Scene
   PreviousSceneName: 
+  continueSceneName: 
   soundSource: {fileID: 841711684}
   menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
   clickTimer: 0.3
@@ -906,6 +915,14 @@ PrefabInstance:
     - target: {fileID: 1686153655280612043, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
       propertyPath: m_Text
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}

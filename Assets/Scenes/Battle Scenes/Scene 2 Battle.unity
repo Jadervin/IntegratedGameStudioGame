@@ -2311,6 +2311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heal Buttons
       objectReference: {fileID: 0}
+    - target: {fileID: 1573499129612542658, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1573499130012835064, guid: 7f780812008acb248af0e48c2293545c, type: 3}
       propertyPath: m_Text
       value: Heal
@@ -3258,9 +3262,9 @@ MonoBehaviour:
   m_fontSize: 35
   m_fontSizeBase: 35
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 12
+  m_fontSizeMax: 35
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

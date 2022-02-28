@@ -591,6 +591,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1663762027}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
 --- !u!1 &817954927
@@ -849,6 +857,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Close
       objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7581923710584253788, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -889,6 +905,7 @@ MonoBehaviour:
   TitleMenuSceneName: Title Screen
   ReferencesSceneName: References Scene
   PreviousSceneName: Scene 2 Battle
+  continueSceneName: 
   soundSource: {fileID: 367982138}
   menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
   clickTimer: 0.3
@@ -1016,6 +1033,14 @@ PrefabInstance:
     - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
       propertyPath: m_text
       value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062372852034939472, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7581923710584253788, guid: 3c97df3220d025c4cbb7a2be9ca1a18c, type: 3}
       propertyPath: m_RootOrder
