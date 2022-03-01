@@ -181,7 +181,7 @@ public class DialogueManager : MonoBehaviour
 
             //temp.transform.SetParent(optionPanel.transform); 
 
-            temp.transform.GetChild(0).GetComponent<Text>().text = _choices[i].text;
+            temp.transform.GetChild(1).GetComponent<Text>().text = _choices[i].text;
             temp.AddComponent<Selectable>();
             temp.GetComponent<Selectable>().element = _choices[i];
             temp.GetComponent<Button>().onClick.AddListener(() => { temp.GetComponent<Selectable>().Decide(); });
