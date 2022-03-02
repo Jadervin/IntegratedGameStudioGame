@@ -277,7 +277,7 @@ PrefabInstance:
     - target: {fileID: 5777285490114579321, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1740870450}
     - target: {fileID: 5777285490114579321, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MenuPressed
@@ -289,7 +289,7 @@ PrefabInstance:
     - target: {fileID: 7535688349824218413, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1740870450}
     - target: {fileID: 7535688349824218413, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UnPause

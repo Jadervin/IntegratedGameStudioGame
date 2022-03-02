@@ -267,6 +267,18 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3145aee8cb6f79040bdf61e04a1923b9, type: 3}
+    - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -302,6 +314,18 @@ PrefabInstance:
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_SizeDelta.y
       value: 144.0384
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_LocalPosition.x
@@ -397,6 +421,18 @@ PrefabInstance:
       propertyPath: m_enableWordWrapping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc7a3873a20219e4d8e63b6d39e4e72a, type: 3}
+    - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -432,6 +468,18 @@ PrefabInstance:
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_SizeDelta.y
       value: 144.0384
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_LocalPosition.x

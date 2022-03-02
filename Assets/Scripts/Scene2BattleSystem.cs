@@ -1164,6 +1164,13 @@ public class Scene2BattleSystem : MonoBehaviour
         {
             enemyUnit.isBuildingUp = true;
             dialogueText.text = enemyUnit.unitName + " is still.";
+
+            //Favor text for different enemies
+            //dialogueText.text = enemyUnit.unitName + " is " + enemyUnit.enemyBuildUpText;
+
+
+
+
             yield return new WaitForSeconds(2f);
 
             

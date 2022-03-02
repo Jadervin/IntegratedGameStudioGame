@@ -7,6 +7,9 @@ public class Unit : MonoBehaviour
 {
     public string unitName;
 
+    //for when the enemy builds up
+    public string enemyBuildUpText;
+
     public int damage; 
     public int largeDamage;
 
