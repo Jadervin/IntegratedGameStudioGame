@@ -3316,9 +3316,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1837787885}
     m_Modifications:
+    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 181.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 105.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -22.791
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -8.195
+      objectReference: {fileID: 0}
     - target: {fileID: 3076165697413466868, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_Name
       value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076165697413466868, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3076165697413466869, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_Pivot.x

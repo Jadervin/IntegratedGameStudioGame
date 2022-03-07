@@ -178,6 +178,22 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 181.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 105.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -22.791
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -8.195
+      objectReference: {fileID: 0}
     - target: {fileID: 3076165696392282079, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_Color.a
       value: 0.5294118
