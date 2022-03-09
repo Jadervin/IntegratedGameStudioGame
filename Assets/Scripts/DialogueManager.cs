@@ -354,4 +354,12 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+
+
+    public string GetStoryState()
+    {
+        return story.state.ToJson();
+    }
+
+
 }
