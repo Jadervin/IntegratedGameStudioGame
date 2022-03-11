@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f1a33a20214434aadca06f85e76ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 485f9982b27150b4c84f73f76e11a3fd, type: 3}
+  inkFile: {fileID: 4900000, guid: 97fbd12c2138a2a41b6541db87df2a7d, type: 3}
   textBox: {fileID: 641070398}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 1135081761}
