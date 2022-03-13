@@ -63,6 +63,21 @@ EditorBuildSettings:
     path: Assets/Scenes/VN Scenes/Scene 5.unity
     guid: 8d85a46672874924e863eda70b4a1e7f
   - enabled: 1
+    path: Assets/Scenes/Excursion Breaks/Excursion Break 2.unity
+    guid: 94d744db3414dee40a51191e200ff341
+  - enabled: 1
+    path: Assets/Scenes/Excursion Breaks/(EX1)Aether 1.unity
+    guid: ac9a743aaecbcb64cb3b68ef7a29ba43
+  - enabled: 1
+    path: Assets/Scenes/Excursion Breaks/(EX1)Galedric 1.unity
+    guid: e436b62bd1171994985bfaf15125fcb6
+  - enabled: 1
+    path: Assets/Scenes/Excursion Breaks/(EX1)Xzciar 1.unity
+    guid: cca6703fd3c8afc4585465f482ed82cf
+  - enabled: 1
+    path: Assets/Scenes/VN Scenes/Scene 6.unity
+    guid: 1716f2c5df200c844a4b82178c73653e
+  - enabled: 1
     path: Assets/Scenes/Menu Scenes/Ending Screen.unity
     guid: 7795ea0dcfe15ee4ea29e93675be5e4d
   m_configObjects: {}

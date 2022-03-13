@@ -19,10 +19,16 @@ public class GameStateManager : MonoBehaviour
 
     public void StartGame()
     {
+
     }
 
     public void SaveGame()
     {
+        //try to save data of scene
+
+
+
+
         SaveData save = CreateSaveGameObject();
         var bf = new BinaryFormatter();
 
@@ -48,7 +54,35 @@ public class GameStateManager : MonoBehaviour
 
     public void LoadGame()
     {
+        //try to load data of scene
+
+
+
+
+
         // Here we will load data from a file and make it available to other managers
+        var savePath = Application.persistentDataPath + "/savedata.save";
+
+        if (File.Exists(savePath))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+
+            FileStream file = File.Open(savePath, FileMode.Open);
+            file.Position = 0;
+
+            SaveData save = (SaveData)bf.Deserialize(file);
+
+            file.Close();
+
+            //InkManager.LoadState(save.InkStoryState);
+
+            StartGame();
+        }
+        else
+        {
+            Debug.Log("No game saved!");
+        }
+
     }
 
     public void ExitGame()
