@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SaveGameButtonScript : MonoBehaviour
 {
-    GameStateManager _gameStateManager;
+    SaveStateManager _gameStateManager;
 
     void Start()
     {
-        _gameStateManager = FindObjectOfType<GameStateManager>();
+        _gameStateManager = FindObjectOfType<SaveStateManager>();
 
         if (_gameStateManager == null)
         {
@@ -16,10 +16,10 @@ public class SaveGameButtonScript : MonoBehaviour
         }
     }
 
-    public void OnClick()
-    {
-        _gameStateManager?.SaveGame();
-    }
+    //public void OnClick()
+    //{
+    //    //_gameStateManager?.SaveGame();
+    //}
 
 
 }

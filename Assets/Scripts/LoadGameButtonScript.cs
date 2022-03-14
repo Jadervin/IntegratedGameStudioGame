@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LoadGameButtonScript : MonoBehaviour
 {
-    GameStateManager _gameStateManager;
+    SaveStateManager _gameStateManager;
 
     void Start()
     {
-        _gameStateManager = FindObjectOfType<GameStateManager>();
+        _gameStateManager = FindObjectOfType<SaveStateManager>();
 
         if (_gameStateManager == null)
         {
