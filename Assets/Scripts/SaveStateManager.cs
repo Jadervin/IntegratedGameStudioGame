@@ -10,7 +10,6 @@ public class SaveStateManager : MonoBehaviour
 {
     private DialogueManager dialogueManager;
     string filePath;
-
     private SceneNamesScript sceneNames;
 
     static public SaveStateManager instance;
