@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1229297117622436799}
   - component: {fileID: 310949891071725450}
   - component: {fileID: 2565819623233106285}
-  - component: {fileID: 6654233709891558352}
   m_Layer: 5
   m_Name: Save
   m_TagString: Untagged
@@ -122,9 +121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6654233709891558352}
-        m_TargetAssemblyTypeName: SaveGameButtonScript, Assembly-CSharp
-        m_MethodName: OnClick
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+        m_MethodName: OnSaveButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -134,18 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6654233709891558352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2414640429301323662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f790bb32335eeee4aa7a4e21ffb6feff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3076165696392282077
 GameObject:
   m_ObjectHideFlags: 0

@@ -862,6 +862,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 983793531}
     m_Modifications:
+    - target: {fileID: 2565819623233106285, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1905525375}
+    - target: {fileID: 2565819623233106285, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSaveButtonClick
+      objectReference: {fileID: 0}
     - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_SizeDelta.x
       value: 181.85
@@ -1266,9 +1274,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1905525374}
+  - component: {fileID: 1905525375}
   - component: {fileID: 1905525373}
   m_Layer: 0
-  m_Name: GameStateManager (15)
+  m_Name: GameStateManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1300,3 +1309,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905525375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905525372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b204fea57b2cfe345b938087233c6c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
