@@ -44,7 +44,7 @@ public class SaveStateManager : MonoBehaviour
     public void SaveGame(GameData saveData)
     {
         saveData.sceneName = SceneManager.GetActiveScene().name;
-        
+        saveData.characterName = CharacterNameScript.characterName;
 
 
         //try to save data of scene
@@ -86,7 +86,7 @@ public class SaveStateManager : MonoBehaviour
             GameData saveData = converter.Deserialize(dataStream) as GameData;
 
             SceneManager.LoadScene(saveData.sceneName);
-
+            CharacterNameScript.characterName = saveData.characterName;
 
             dataStream.Close();
             return saveData;

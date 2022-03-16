@@ -28,6 +28,7 @@ public class Scene2BattleSystem : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public GameObject optionsPanel;
     public GameObject magicOptionsPanel;
+    public GameObject PlayerUIParent;
 
     [Header("Battle Stations")]
     public Transform playerBattleStation;
@@ -119,6 +120,7 @@ public class Scene2BattleSystem : MonoBehaviour
     {
         //turns on the options panel
         optionsPanel.SetActive(true);
+        PlayerUIParent.SetActive(true);
 
     }
 
@@ -126,6 +128,7 @@ public class Scene2BattleSystem : MonoBehaviour
     {
         //turns on the options panel
         optionsPanel.SetActive(true);
+        PlayerUIParent.SetActive(true);
     }
 
     public void OnAttackButton()

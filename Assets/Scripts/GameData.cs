@@ -7,5 +7,6 @@ public class GameData
 {
     public string InkStoryState;
     public string sceneName;
+    public string characterName;
 
 }
