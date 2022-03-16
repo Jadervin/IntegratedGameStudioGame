@@ -632,7 +632,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
         if (isTimeForInvestigation == true)
         {
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            dialogueText.text = 
             "Okay, I need to make sure to defend when that attack happens. " +
             "Until then, I just need to survive until Ariar shows up.";
 
@@ -686,7 +686,7 @@ public class Scene2BattleSystem : MonoBehaviour
         dialogueText.text = playerUnit.unitName + " ran away.";
         yield return new WaitForSeconds(2f);
 
-        dialogueText.text = "Apparently, the Hero was not brave enough.";
+        dialogueText.text = "Apparently, " + playerUnit.unitName + " was not brave enough.";
         yield return new WaitForSeconds(2f);
 
         //the battle state changes to lost and changes the scene
@@ -731,7 +731,7 @@ public class Scene2BattleSystem : MonoBehaviour
             //Waits for 2 seconds for the dialogue
             yield return new WaitForSeconds(2f);
 
-            dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+            dialogueText.text = 
             "Now I just have to hold out until he gets here. " +
             "I know this guy's building up to a Large Attack, I'll investigate him.";
 
@@ -871,7 +871,7 @@ public class Scene2BattleSystem : MonoBehaviour
                         isTimeForMagic = true;
 
 
-                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        dialogueText.text = 
                         "They're strong. I'll have to use a Magic Attack.";
 
                         yield return new WaitForSeconds(3f);
@@ -908,7 +908,7 @@ public class Scene2BattleSystem : MonoBehaviour
                     }
                     else
                     {
-                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        dialogueText.text = 
                         "That's... strange. My magic seems weaker now. " +
                         "I'm so, tired. Perhaps I have just enough magic energy to call for Ariar.";
 
@@ -1128,7 +1128,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
                         isTimeForMagic = true;
 
-                        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+                        dialogueText.text = 
                         "They're strong. I'll have to use a Magic Attack.";
                         yield return new WaitForSeconds(3f);
 
@@ -1513,7 +1513,7 @@ public class Scene2BattleSystem : MonoBehaviour
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
-        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        dialogueText.text = 
         "They're strong. I'll have to use a Magic Attack.";
         
         yield return new WaitForSeconds(2f);
@@ -1526,14 +1526,14 @@ public class Scene2BattleSystem : MonoBehaviour
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
-        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        dialogueText.text = 
         "I should use my magic energy to call for Ariar.";
         
         yield return new WaitForSeconds(2f);
 
-        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
-        "I should use my magic energy to call for Ariar.";
-        yield return new WaitForSeconds(3f);
+        //dialogueText.text =
+        //"I should use my magic energy to call for Ariar.";
+        //yield return new WaitForSeconds(3f);
 
 
         playerTurn();
@@ -1545,7 +1545,7 @@ public class Scene2BattleSystem : MonoBehaviour
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
-        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        dialogueText.text =
         "I do not need to heal.";
 
         yield return new WaitForSeconds(2f);
@@ -1559,7 +1559,7 @@ public class Scene2BattleSystem : MonoBehaviour
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
-        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        dialogueText.text =
         "I do not need to heal.";
 
         yield return new WaitForSeconds(2f);
@@ -1572,7 +1572,7 @@ public class Scene2BattleSystem : MonoBehaviour
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
-        dialogueText.text = " \t" + playerUnit.unitName + "\n" +
+        dialogueText.text =
         "Now I just have to hold out until he gets here.";
 
         yield return new WaitForSeconds(2f);

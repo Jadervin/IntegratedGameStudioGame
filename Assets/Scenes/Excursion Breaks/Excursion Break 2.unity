@@ -474,6 +474,9 @@ MonoBehaviour:
   HollySceneName: (EX1)Holly 1
   BelladonnaSceneName: (EX1)Belladonna 1
   IvySceneName: (EX1)Ivy 1
+  XzciarSceneName: (EX1)Xzciar 1
+  GaledricSceneName: (EX1)Galedric 1
+  AetherSceneName: (EX1)Aether 1
   soundSource: {fileID: 1811870}
   menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
   clickTimer: 0.5
@@ -820,7 +823,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 822317164}
         m_TargetAssemblyTypeName: ExcursionBreakMenu, Assembly-CSharp
-        m_MethodName: CherryBlossomButtonPressed
+        m_MethodName: XzciarButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2284,7 +2287,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 822317164}
         m_TargetAssemblyTypeName: ExcursionBreakMenu, Assembly-CSharp
-        m_MethodName: IvyButtonPressed
+        m_MethodName: GaledricButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2568,7 +2571,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 822317164}
         m_TargetAssemblyTypeName: ExcursionBreakMenu, Assembly-CSharp
-        m_MethodName: BelladonnaButtonPressed
+        m_MethodName: AetherButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

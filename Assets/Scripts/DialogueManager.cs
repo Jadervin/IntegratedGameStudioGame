@@ -8,27 +8,38 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+
     public TextAsset inkFile;
+
+    [Header("Objects")]
     public GameObject textBox;
     public GameObject customButton;
     public GameObject optionPanel;
     public GameObject nameBackground;
+
+    [Header("Images")]
     public Image background;
     public Image charact;
+    public Image chapterBackground;
+
     //public AudioClip source;
+    
     static Story story;
     TextMeshProUGUI nametag;
     TextMeshProUGUI message;
     List<string> tags;
     static Choice choiceSelected;
+
+    [Header("Scenes")]
     public string nextSceneName;
 
+    [Header("Booleans")]
     public bool isSpaceDisabled = false;
     public bool skipping = false;
     public bool completed = false;
     public bool isShowingOptions = false;
-
     public bool skipPressed = false;
+
     string sentenceText;
     //public bool textFinished = false;
 
@@ -297,6 +308,9 @@ public class DialogueManager : MonoBehaviour
 
     void SetBG(string _name)
     {
+        chapterBackground.gameObject.SetActive(false);
+
+
         if (!_name.Contains("blackscreen"))
         {
             background.sprite = Resources.Load<Sprite>(_name);

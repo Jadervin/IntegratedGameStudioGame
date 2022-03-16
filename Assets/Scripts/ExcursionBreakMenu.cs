@@ -11,6 +11,9 @@ public class ExcursionBreakMenu : MonoBehaviour
     public string HollySceneName;
     public string BelladonnaSceneName;
     public string IvySceneName;
+    public string XzciarSceneName;
+    public string GaledricSceneName;
+    public string AetherSceneName;
 
     [Header("Sound Sources")]
     public AudioSource soundSource;
@@ -111,5 +114,62 @@ public class ExcursionBreakMenu : MonoBehaviour
         SceneManager.LoadScene(IvySceneName);
     }
 
+
+
+    public void XzciarButtonPressed()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        soundSource.PlayOneShot(menuClick);
+        StartCoroutine(WaitforXzciarButton(clickTimer));
+
+
+    }
+
+
+    IEnumerator WaitforXzciarButton(float duration)
+    {
+
+        yield return new WaitForSeconds(duration);   //Wait
+        SceneManager.LoadScene(XzciarSceneName);
+    }
+
+
+    public void GaledricButtonPressed()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        soundSource.PlayOneShot(menuClick);
+        StartCoroutine(WaitforGaledricButton(clickTimer));
+
+
+    }
+
+
+    IEnumerator WaitforGaledricButton(float duration)
+    {
+
+        yield return new WaitForSeconds(duration);   //Wait
+        SceneManager.LoadScene(GaledricSceneName);
+    }
+
+
+    public void AetherButtonPressed()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        soundSource.PlayOneShot(menuClick);
+        StartCoroutine(WaitforAetherButton(clickTimer));
+
+
+    }
+
+
+    IEnumerator WaitforAetherButton(float duration)
+    {
+
+        yield return new WaitForSeconds(duration);   //Wait
+        SceneManager.LoadScene(AetherSceneName);
+    }
 
 }
