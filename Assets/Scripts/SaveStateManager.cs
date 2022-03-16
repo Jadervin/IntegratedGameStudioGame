@@ -8,9 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class SaveStateManager : MonoBehaviour
 {
-    private DialogueManager dialogueManager;
+    //private DialogueManager dialogueManager;
     string filePath;
     private SceneNamesScript sceneNames;
+
+
+    public ExcursionBreakMenu exbMenu;
 
     static public SaveStateManager instance;
 
@@ -45,7 +48,16 @@ public class SaveStateManager : MonoBehaviour
     {
         saveData.sceneName = SceneManager.GetActiveScene().name;
         saveData.characterName = CharacterNameScript.characterName;
-
+        
+        
+        //saveData.CherryBlossomExcursionChoiceVar = exbMenu.CherryBlossomExcursionChoice;
+        //saveData.SpiderLilyExcursionChoiceVar = exbMenu.SpiderLilyExcursionChoice;
+        //saveData.HollyExcursionChoiceVar = exbMenu.HollyExcursionChoice;
+        //saveData.BelladonnaExcursionChoiceVar = exbMenu.BelladonnaExcursionChoice;
+        //saveData.IvyExcursionChoiceVar = exbMenu.IvyExcursionChoice;
+        //saveData.XzciarExcursionChoiceVar = exbMenu.XzciarExcursionChoice;
+        //saveData.GaledricExcursionChoiceVar = exbMenu.GaledricExcursionChoice;
+        //saveData.AetherExcursionChoiceVar = exbMenu.AetherExcursionChoice;
 
         //try to save data of scene
 

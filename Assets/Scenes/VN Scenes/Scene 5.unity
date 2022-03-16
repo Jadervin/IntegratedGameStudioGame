@@ -1233,7 +1233,7 @@ MonoBehaviour:
   background: {fileID: 1892203372}
   charact: {fileID: 1198386297}
   chapterBackground: {fileID: 703759380}
-  nextSceneName: Excursion Break 2
+  nextSceneName: Excursion Break 1
   isSpaceDisabled: 0
   skipping: 0
   completed: 0

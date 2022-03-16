@@ -361,7 +361,7 @@ MonoBehaviour:
   nameBackground: {fileID: 183150517}
   background: {fileID: 276107985}
   charact: {fileID: 73711917}
-  chapterBackground: {fileID: 0}
+  chapterBackground: {fileID: 649124900}
   nextSceneName: Scene 4
   isSpaceDisabled: 0
   skipping: 0

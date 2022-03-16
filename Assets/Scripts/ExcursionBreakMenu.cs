@@ -5,20 +5,103 @@ using UnityEngine.SceneManagement;
 
 public class ExcursionBreakMenu : MonoBehaviour
 {
+    [Header("Buttons")]
+    public GameObject CherryBlossomButton;
+    public GameObject SpiderLilyButton;
+    public GameObject HollyButton;
+    public GameObject BelladonnaButton;
+    public GameObject IvyButton;
+    public GameObject XzciarButton;
+    public GameObject GaledricButton;
+    public GameObject AetherButton;
+
+
     [Header("Scene Names")]
-    public string CherryBlossomSceneName;
-    public string SpiderLilySceneName;
-    public string HollySceneName;
-    public string BelladonnaSceneName;
-    public string IvySceneName;
-    public string XzciarSceneName;
-    public string GaledricSceneName;
-    public string AetherSceneName;
+    public string CherryBlossom1SceneName;
+    public string SpiderLily1SceneName;
+    public string Holly1SceneName;
+    public string Belladonna1SceneName;
+    public string Ivy1SceneName;
+    public string Xzciar1SceneName;
+    public string Galedric1SceneName;
+    public string Aether1SceneName;
+
+
+    public string CherryBlossom2SceneName;
+    public string SpiderLily2SceneName;
+    public string Holly2SceneName;
+    public string Belladonna2SceneName;
+    public string Xzciar2SceneName;
+    public string Galedric2SceneName;
+    public string Aether2SceneName;
+
+
+    //[Header("Integers")]
+    public static int CherryBlossomExcursionChoice = 0;
+    public static int SpiderLilyExcursionChoice = 0;
+    public static int HollyExcursionChoice = 0;
+    public static int BelladonnaExcursionChoice = 0;
+    public static int IvyExcursionChoice = 0;
+    public static int XzciarExcursionChoice = 0;
+    public static int GaledricExcursionChoice = 0;
+    public static int AetherExcursionChoice = 0;
+
+
 
     [Header("Sound Sources")]
     public AudioSource soundSource;
     public AudioClip menuClick;
     public float clickTimer = 0.5f;
+
+
+
+    private void Awake()
+    {
+        if (CherryBlossomExcursionChoice > 1)
+        {
+            CherryBlossomButton.gameObject.SetActive(false);
+        }
+
+        if (SpiderLilyExcursionChoice > 1)
+        {
+            CherryBlossomButton.gameObject.SetActive(false);
+        }
+
+        if (IvyExcursionChoice > 0)
+        {
+            CherryBlossomButton.gameObject.SetActive(false);
+        }
+
+
+        if (HollyExcursionChoice > 1)
+        {
+            CherryBlossomButton.gameObject.SetActive(false);
+        }
+
+
+        if (BelladonnaExcursionChoice > 1)
+        {
+            CherryBlossomButton.gameObject.SetActive(false);
+        }
+
+        if (XzciarExcursionChoice > 1)
+        {
+            CherryBlossomButton.gameObject.SetActive(false);
+        }
+
+        if (GaledricExcursionChoice > 1)
+        {
+            CherryBlossomButton.gameObject.SetActive(false);
+        }
+
+        if (AetherExcursionChoice > 1)
+        {
+            CherryBlossomButton.gameObject.SetActive(false);
+        }
+
+        
+        
+    }
 
 
     public void CherryBlossomButtonPressed()
@@ -36,7 +119,18 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
-        SceneManager.LoadScene(CherryBlossomSceneName);
+
+        if (CherryBlossomExcursionChoice == 0)
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(CherryBlossom1SceneName);
+        }
+        else
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(CherryBlossom2SceneName);
+        }
+        
     }
 
 
@@ -55,7 +149,17 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
-        SceneManager.LoadScene(SpiderLilySceneName);
+
+        if (SpiderLilyExcursionChoice == 0)
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(SpiderLily1SceneName);
+        }
+        else
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(SpiderLily2SceneName);
+        }
     }
 
 
@@ -74,7 +178,17 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
-        SceneManager.LoadScene(HollySceneName);
+
+        if (HollyExcursionChoice == 0)
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Holly1SceneName);
+        }
+        else
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Holly2SceneName);
+        }
     }
 
 
@@ -93,7 +207,18 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
-        SceneManager.LoadScene(BelladonnaSceneName);
+
+
+        if (BelladonnaExcursionChoice == 0)
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Belladonna1SceneName);
+        }
+        else
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Belladonna2SceneName);
+        }
     }
 
     public void IvyButtonPressed()
@@ -111,7 +236,14 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
-        SceneManager.LoadScene(IvySceneName);
+
+
+        if (CherryBlossomExcursionChoice == 0)
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Ivy1SceneName);
+        }
+        
     }
 
 
@@ -131,7 +263,17 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
-        SceneManager.LoadScene(XzciarSceneName);
+
+        if (XzciarExcursionChoice == 0)
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Xzciar1SceneName);
+        }
+        else
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Xzciar2SceneName);
+        }
     }
 
 
@@ -150,7 +292,17 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
-        SceneManager.LoadScene(GaledricSceneName);
+
+        if (GaledricExcursionChoice == 0)
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Galedric1SceneName);
+        }
+        else
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Galedric2SceneName);
+        }
     }
 
 
@@ -169,7 +321,17 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
-        SceneManager.LoadScene(AetherSceneName);
+
+        if (CherryBlossomExcursionChoice == 0)
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Aether1SceneName);
+        }
+        else
+        {
+            CherryBlossomExcursionChoice++;
+            SceneManager.LoadScene(Aether2SceneName);
+        }
     }
 
 }
