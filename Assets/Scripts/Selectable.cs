@@ -10,4 +10,9 @@ public class Selectable : MonoBehaviour
         DialogueManager.SetDecision(element);
     }
 
+    public void DecideExcursionBreak()
+    {
+        ExcursionBreakDialogueManager.SetDecision(element);
+    }
+
 }

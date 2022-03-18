@@ -133,11 +133,27 @@ PrefabInstance:
     - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1784212624}
+      objectReference: {fileID: 1334737288}
+    - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnContinueButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExcursionBreakDialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1784212624}
+      objectReference: {fileID: 1334737288}
+    - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCompleteTextButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExcursionBreakDialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 302100930512474570, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_Name
       value: Text Button Options
@@ -229,7 +245,15 @@ PrefabInstance:
     - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1784212624}
+      objectReference: {fileID: 1334737288}
+    - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSkipTextButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExcursionBreakDialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
 --- !u!224 &122361326 stripped
@@ -518,12 +542,12 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &630479037 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 125837700345995169, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5836533929069378765, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
   m_PrefabInstance: {fileID: 630479035}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &630479038 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5836533929069378765, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+  m_CorrespondingSourceObject: {fileID: 125837700345995169, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
   m_PrefabInstance: {fileID: 630479035}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &721386403
@@ -801,7 +825,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983793530
 GameObject:
@@ -1082,6 +1106,67 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3076165697413466868, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
   m_PrefabInstance: {fileID: 1011694216}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1334737287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334737289}
+  - component: {fileID: 1334737288}
+  m_Layer: 0
+  m_Name: EXBDialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1334737288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334737287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d44a95e14641714384b51bd201420cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkyFile: {fileID: 4900000, guid: 90f9b7b11c7bac94882f45cf97c58aa7, type: 3}
+  textBox: {fileID: 630479038}
+  customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
+  optionPanel: {fileID: 346093881}
+  nameBackground: {fileID: 630479037}
+  background: {fileID: 735356283}
+  charact: {fileID: 1767268224}
+  chapterBackground: {fileID: 721386405}
+  Scene4Name: Scene 4
+  Scene6Name: Scene 6
+  Scene10Name: Scene 10
+  Scene12Name: Scene 12
+  isSpaceDisabled: 0
+  skipping: 0
+  completed: 0
+  isShowingOptions: 0
+  skipPressed: 0
+  letterSpeed: 0.02
+--- !u!4 &1334737289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334737287}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370093269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,64 +1325,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 13}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1784212623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1784212625}
-  - component: {fileID: 1784212624}
-  m_Layer: 0
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1784212624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784212623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81f1a33a20214434aadca06f85e76ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 90f9b7b11c7bac94882f45cf97c58aa7, type: 3}
-  textBox: {fileID: 630479037}
-  customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
-  optionPanel: {fileID: 346093881}
-  nameBackground: {fileID: 630479038}
-  background: {fileID: 735356283}
-  charact: {fileID: 1767268224}
-  chapterBackground: {fileID: 721386405}
-  nextSceneName: Scene 4
-  isSpaceDisabled: 0
-  skipping: 0
-  completed: 0
-  isShowingOptions: 0
-  skipPressed: 0
-  letterSpeed: 0.02
---- !u!4 &1784212625
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784212623}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 426.05237, y: 373.18924, z: -64.27229}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1809288332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905525372
 GameObject:
@@ -1372,6 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6f832330cf5fc4a93817764c166d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exbMenu: {fileID: 0}
 --- !u!4 &1905525374
 Transform:
   m_ObjectHideFlags: 0
@@ -1384,7 +1412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1905525375
 MonoBehaviour:
