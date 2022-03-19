@@ -1121,14 +1121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f1a33a20214434aadca06f85e76ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 485f9982b27150b4c84f73f76e11a3fd, type: 3}
+  inkFile: {fileID: 4900000, guid: 1898bc601bbec3c4395485103cc2624b, type: 3}
   textBox: {fileID: 2009285738}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 931041769}
   nameBackground: {fileID: 2009285739}
   background: {fileID: 1601363260}
   charact: {fileID: 39066235}
-  chapterBackground: {fileID: 0}
+  chapterBackground: {fileID: 703759380}
   nextSceneName: Ending Screen
   isSpaceDisabled: 0
   skipping: 0
@@ -1180,6 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6f832330cf5fc4a93817764c166d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exbMenu: {fileID: 0}
 --- !u!4 &1905525374
 Transform:
   m_ObjectHideFlags: 0
@@ -1244,7 +1245,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 315.57196
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1327,7 +1328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994213694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 355.4926, y: 284.96414, z: -895.9864}
+  m_LocalPosition: {x: 232, y: 144, z: -43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

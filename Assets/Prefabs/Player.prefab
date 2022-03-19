@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: MC
+  enemyBuildUpText: 
   damage: 5
   largeDamage: 0
   magicCost: 1
   fireDamage: 2
-  healamount: 5
+  healamount: 10
   maxHP: 50
   currentHP: 0
   maxMP: 2

@@ -642,6 +642,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6715836676635025998, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
   m_PrefabInstance: {fileID: 641070396}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &641070398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5836533929069378765, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+  m_PrefabInstance: {fileID: 641070396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &641070399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125837700345995169, guid: a4c3dfb5b04d65c489939aabb0937a96, type: 3}
+  m_PrefabInstance: {fileID: 641070396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &649124898
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,10 +781,26 @@ PrefabInstance:
     - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1796444433}
+    - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnContinueButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExcursionBreakDialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1796444433}
+    - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCompleteTextButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExcursionBreakDialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 302100930512474570, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_Name
@@ -867,6 +893,14 @@ PrefabInstance:
     - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1796444433}
+    - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSkipTextButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExcursionBreakDialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
@@ -1179,13 +1213,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkyFile: {fileID: 4900000, guid: 2c1ed3530db1bb64ea2fdfc75ce92095, type: 3}
-  textBox: {fileID: 0}
+  textBox: {fileID: 641070399}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
-  optionPanel: {fileID: 0}
-  nameBackground: {fileID: 0}
-  background: {fileID: 0}
-  charact: {fileID: 0}
-  chapterBackground: {fileID: 0}
+  optionPanel: {fileID: 1135081761}
+  nameBackground: {fileID: 641070398}
+  background: {fileID: 1766992989}
+  charact: {fileID: 250646881}
+  chapterBackground: {fileID: 649124900}
   Scene4Name: Scene 4
   Scene6Name: Scene 6
   Scene10Name: Scene 10
