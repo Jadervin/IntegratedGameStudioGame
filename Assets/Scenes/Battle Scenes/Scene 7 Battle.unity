@@ -679,6 +679,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7352089721227868044, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
   m_PrefabInstance: {fileID: 1534851714}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &151598807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151598805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192da9a768a571949b4b7dbf33b95d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: A Basic Defend Button
 --- !u!1 &164331403
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +705,7 @@ GameObject:
   - component: {fileID: 164331407}
   - component: {fileID: 164331406}
   - component: {fileID: 164331405}
+  - component: {fileID: 164331409}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -712,6 +726,7 @@ RectTransform:
   m_Children:
   - {fileID: 291275616}
   - {fileID: 1741112656}
+  - {fileID: 688065446}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -802,6 +817,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &164331409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164331403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33032324b176e14daa737f7e2e75199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipText: {fileID: 1539348887}
+  tipWindow: {fileID: 688065446}
 --- !u!1 &164788477
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,11 +887,38 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6580456949293160669, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
   m_PrefabInstance: {fileID: 1534851714}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &172619278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172619277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192da9a768a571949b4b7dbf33b95d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: It is a technique that allows you to call an Ally to deal a large amount
+    of damage, but will have to wait a couple of turns.
 --- !u!1 &187650309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1904195917398296766, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
   m_PrefabInstance: {fileID: 1534851714}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &187650311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187650309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192da9a768a571949b4b7dbf33b95d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: A Basic Attack
 --- !u!1 &198686934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1703,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 604288000303955129, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
   m_PrefabInstance: {fileID: 1534851714}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &357910686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357910684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192da9a768a571949b4b7dbf33b95d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: A Button that will give you access to your magic attacks
 --- !u!1 &389310288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3076165697413466869, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3076165697413466869, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2281,6 +2350,24 @@ PrefabInstance:
       objectReference: {fileID: 164331405}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
+--- !u!1 &579846741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1573499129612542658, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+  m_PrefabInstance: {fileID: 1915411021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &579846742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579846741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192da9a768a571949b4b7dbf33b95d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: A Fire Attack
 --- !u!1 &650707659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,6 +2501,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650707659}
+  m_CullTransparentMesh: 1
+--- !u!1 &688065445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 688065446}
+  - component: {fileID: 688065448}
+  - component: {fileID: 688065447}
+  m_Layer: 5
+  m_Name: TipWindow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &688065446
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688065445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1539348886}
+  m_Father: {fileID: 164331404}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 488, y: -687}
+  m_SizeDelta: {x: 200, y: 90.086}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &688065447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688065445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.42352942}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &688065448
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688065445}
   m_CullTransparentMesh: 1
 --- !u!1 &834037992
 GameObject:
@@ -2564,7 +2727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &935476241
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2799,6 +2962,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946522277}
   m_CullTransparentMesh: 1
+--- !u!1 &964868324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 511899916919800506, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
+  m_PrefabInstance: {fileID: 1534851714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &964868326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964868324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192da9a768a571949b4b7dbf33b95d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: Escape from battle
 --- !u!1 &994438664
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,6 +4364,140 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
+--- !u!1 &1539348885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1539348886}
+  - component: {fileID: 1539348888}
+  - component: {fileID: 1539348887}
+  m_Layer: 5
+  m_Name: TipText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1539348886
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539348885}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 688065446}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -38.036987}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1539348887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539348885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 30
+  m_fontSizeBase: 30
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 2, y: 2, z: 2, w: 2}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1539348888
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539348885}
+  m_CullTransparentMesh: 1
 --- !u!1 &1562909347
 GameObject:
   m_ObjectHideFlags: 0
@@ -4668,6 +4983,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8417087786602579927, guid: 0523ce7ea920b994c9161dd62535a9d3, type: 3}
   m_PrefabInstance: {fileID: 1534851714}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1774216994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774216992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192da9a768a571949b4b7dbf33b95d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: It is a technique that allows you to check how many turns your opponent
+    has until they use a Large Attack. Your opponent will have one turn to build
+    up power for the large attack. So be prepared to defend.
 --- !u!1 &1809158119
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,6 +5285,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829502801}
   m_CullTransparentMesh: 1
+--- !u!1 &1901327085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1573499129612542658, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+  m_PrefabInstance: {fileID: 1512357085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1901327086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901327085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192da9a768a571949b4b7dbf33b95d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: A Healing Technique
 --- !u!1 &1902497060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,6 +5613,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+--- !u!1 &2045562436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1573499129612542658, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+  m_PrefabInstance: {fileID: 939495744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2045562437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045562436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192da9a768a571949b4b7dbf33b95d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: Allows you to go Back to other options
 --- !u!1 &2055528808
 GameObject:
   m_ObjectHideFlags: 0
