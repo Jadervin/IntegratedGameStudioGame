@@ -1097,7 +1097,7 @@ MonoBehaviour:
   background: {fileID: 840726439}
   charact: {fileID: 1145650141}
   chapterBackground: {fileID: 703759380}
-  nextSceneName: Ending Screen
+  nextSceneName: Scene 7
   isSpaceDisabled: 0
   skipping: 0
   completed: 0
@@ -1148,6 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6f832330cf5fc4a93817764c166d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exbMenu: {fileID: 0}
 --- !u!4 &1905525374
 Transform:
   m_ObjectHideFlags: 0

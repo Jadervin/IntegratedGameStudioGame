@@ -1129,7 +1129,7 @@ MonoBehaviour:
   background: {fileID: 1601363260}
   charact: {fileID: 39066235}
   chapterBackground: {fileID: 703759380}
-  nextSceneName: Ending Screen
+  nextSceneName: Scene 7 Battle
   isSpaceDisabled: 0
   skipping: 0
   completed: 0
