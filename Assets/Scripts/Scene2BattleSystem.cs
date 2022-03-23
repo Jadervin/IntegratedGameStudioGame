@@ -57,6 +57,8 @@ public class Scene2BattleSystem : MonoBehaviour
     public int turnsUntilMagic;
     public int MaxTurnsUntilMagic = 1;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -148,6 +150,7 @@ public class Scene2BattleSystem : MonoBehaviour
         //to let them know to use magic.
         else if (state == BattleState.State.FIRSTTURN)
         {
+            
             StartCoroutine(HavetoUseMagic());
             
 
@@ -405,6 +408,7 @@ public class Scene2BattleSystem : MonoBehaviour
 
             else if (state == BattleState.State.FIRSTTURN)
             {
+
                 StartCoroutine(HavetoUseMagic());
 
             }
@@ -441,6 +445,7 @@ public class Scene2BattleSystem : MonoBehaviour
         }
         else
         {
+
             magicOptionsPanel.SetActive(false);
         }
 
@@ -766,14 +771,14 @@ public class Scene2BattleSystem : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
 
-            dialogueText.text = "Investigation:" + "\n" +
-                        "It is a technique that allows you to check how many turns " +
-                        "your opponent has until they use a Large Attack. ";
+            //dialogueText.text = "Investigation:" + "\n" +
+            //            "It is a technique that allows you to check how many turns " +
+            //            "your opponent has until they use a Large Attack. ";
 
             yield return new WaitForSeconds(4f);
 
-            dialogueText.text = "Your opponent will have one turn to build up power " +
-                       "for the large attack. So be prepared to defend. ";
+            //dialogueText.text = "Your opponent will have one turn to build up power " +
+            //           "for the large attack. So be prepared to defend. ";
 
             yield return new WaitForSeconds(4f);
 
@@ -932,10 +937,10 @@ public class Scene2BattleSystem : MonoBehaviour
 
                         yield return new WaitForSeconds(2f);
 
-                        dialogueText.text = "Magic Call:"+ "\n" +
-                        "It is a technique that allows you to call an Ally" +
-                        " to deal a large amount of damage, "+
-                        "but will have to wait a couple of turns.";
+                        //dialogueText.text = "Magic Call:"+ "\n" +
+                        //"It is a technique that allows you to call an Ally" +
+                        //" to deal a large amount of damage, "+
+                        //"but will have to wait a couple of turns.";
 
                         yield return new WaitForSeconds(5f);
 

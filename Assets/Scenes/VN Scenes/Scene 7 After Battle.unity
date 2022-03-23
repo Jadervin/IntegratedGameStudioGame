@@ -1378,7 +1378,7 @@ MonoBehaviour:
   background: {fileID: 1274876682}
   charact: {fileID: 943775919}
   chapterBackground: {fileID: 562285875}
-  nextSceneName: Ending Screen
+  nextSceneName: Scene 8
   isSpaceDisabled: 0
   skipping: 0
   completed: 0

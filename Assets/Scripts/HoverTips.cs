@@ -20,9 +20,19 @@ public class HoverTips : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         StopAllCoroutines();
+        
         HoverTipManager.OnMouseLoseFocus();
+
+
     }
 
+
+    public void OnButtonPresssToDisable()
+    {
+        StopAllCoroutines();
+        
+        HoverTipManager.OnMouseLoseFocus();
+    }
 
     private void ShowMessage()
     {
