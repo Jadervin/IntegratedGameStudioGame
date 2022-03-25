@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f1a33a20214434aadca06f85e76ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: f924c6ea66972e848a12c89cf833ff9e, type: 3}
+  inkFile: {fileID: 4900000, guid: 95bb63baee34e8143ab5932bcd7762f3, type: 3}
   textBox: {fileID: 1590977606}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 96007947}
@@ -1138,6 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6f832330cf5fc4a93817764c166d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exbMenu: {fileID: 0}
 --- !u!4 &1311005662
 Transform:
   m_ObjectHideFlags: 0
