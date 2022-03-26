@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d44a95e14641714384b51bd201420cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkyFile: {fileID: 4900000, guid: 75477840a5c5c8d498fe625d9f5b4e57, type: 3}
+  inkyFile: {fileID: 4900000, guid: 19eed965657b81a44a10f2609686e2a9, type: 3}
   textBox: {fileID: 1144062591}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 1368200696}

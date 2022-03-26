@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d44a95e14641714384b51bd201420cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkyFile: {fileID: 4900000, guid: 8a75ccf4e6cf9e64aa13fb2c0e96af1b, type: 3}
+  inkyFile: {fileID: 4900000, guid: be882ed5bf185c74191000948433a39c, type: 3}
   textBox: {fileID: 413346860}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 2119471095}
