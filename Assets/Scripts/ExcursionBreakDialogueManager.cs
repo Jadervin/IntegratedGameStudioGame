@@ -290,6 +290,11 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
                         SetBG(param);
                         break;
                     }
+                case "esteemChar":
+                    {
+                        SetEsteemChar(param);
+                        break;
+                    }
 
             }
         }
@@ -351,6 +356,15 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
         {
             background.gameObject.SetActive(false);
         }
+    }
+
+    void SetEsteemChar(string _name)
+    {
+        if(_name.Contains("Aether"))
+        {
+
+        }
+
     }
 
     public void OnContinueButtonPress()
