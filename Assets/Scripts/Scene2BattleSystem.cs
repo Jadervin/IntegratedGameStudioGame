@@ -775,12 +775,12 @@ public class Scene2BattleSystem : MonoBehaviour
             //            "It is a technique that allows you to check how many turns " +
             //            "your opponent has until they use a Large Attack. ";
 
-            yield return new WaitForSeconds(4f);
+            //yield return new WaitForSeconds(4f);
 
             //dialogueText.text = "Your opponent will have one turn to build up power " +
             //           "for the large attack. So be prepared to defend. ";
 
-            yield return new WaitForSeconds(4f);
+           //yield return new WaitForSeconds(4f);
 
             //it goes to the enemy's turn and changes to enemy state.
             state = BattleState.State.ENEMYTURN;
@@ -942,7 +942,7 @@ public class Scene2BattleSystem : MonoBehaviour
                         //" to deal a large amount of damage, "+
                         //"but will have to wait a couple of turns.";
 
-                        yield return new WaitForSeconds(5f);
+                        //yield return new WaitForSeconds(5f);
 
                         
                         //isTimeForMagicCall = false;
