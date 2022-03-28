@@ -50,7 +50,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
     [Range(0, 0.5f)]
     public float letterSpeed = 0.02f;
 
-    static int excursionBreaksTaken = 0;
+    public static int excursionBreaksTaken = 0;
 
 
     // Start is called before the first frame update

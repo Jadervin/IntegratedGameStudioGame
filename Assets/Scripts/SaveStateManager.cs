@@ -14,6 +14,7 @@ public class SaveStateManager : MonoBehaviour
 
 
     public ExcursionBreakMenu exbMenu;
+    ExcursionBreakDialogueManager exbDialogueManager;
 
     static public SaveStateManager instance;
 
@@ -48,16 +49,17 @@ public class SaveStateManager : MonoBehaviour
     {
         saveData.sceneName = SceneManager.GetActiveScene().name;
         saveData.characterName = CharacterNameScript.characterName;
-        
-        
-        //saveData.CherryBlossomExcursionChoiceVar = exbMenu.CherryBlossomExcursionChoice;
-        //saveData.SpiderLilyExcursionChoiceVar = exbMenu.SpiderLilyExcursionChoice;
-        //saveData.HollyExcursionChoiceVar = exbMenu.HollyExcursionChoice;
-        //saveData.BelladonnaExcursionChoiceVar = exbMenu.BelladonnaExcursionChoice;
-        //saveData.IvyExcursionChoiceVar = exbMenu.IvyExcursionChoice;
-        //saveData.XzciarExcursionChoiceVar = exbMenu.XzciarExcursionChoice;
-        //saveData.GaledricExcursionChoiceVar = exbMenu.GaledricExcursionChoice;
-        //saveData.AetherExcursionChoiceVar = exbMenu.AetherExcursionChoice;
+        saveData.exbTaken = ExcursionBreakDialogueManager.excursionBreaksTaken;
+        //saveData.exbTaken = exbDialogueManager.excursionBreaksTaken;
+
+        saveData.CherryBlossomExcursionChoiceVar = ExcursionBreakMenu.CherryBlossomExcursionChoice;
+        saveData.SpiderLilyExcursionChoiceVar = ExcursionBreakMenu.SpiderLilyExcursionChoice;
+        saveData.HollyExcursionChoiceVar = ExcursionBreakMenu.HollyExcursionChoice;
+        saveData.BelladonnaExcursionChoiceVar = ExcursionBreakMenu.BelladonnaExcursionChoice;
+        saveData.IvyExcursionChoiceVar = ExcursionBreakMenu.IvyExcursionChoice;
+        saveData.XzciarExcursionChoiceVar = ExcursionBreakMenu.XzciarExcursionChoice;
+        saveData.GaledricExcursionChoiceVar = ExcursionBreakMenu.GaledricExcursionChoice;
+        saveData.AetherExcursionChoiceVar = ExcursionBreakMenu.AetherExcursionChoice;
 
         //try to save data of scene
 

@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 822317164}
         m_TargetAssemblyTypeName: ExcursionBreakMenu, Assembly-CSharp
         m_MethodName: AetherButtonPressed
         m_Mode: 1
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 822317164}
         m_TargetAssemblyTypeName: ExcursionBreakMenu, Assembly-CSharp
         m_MethodName: GaledricButtonPressed
         m_Mode: 1
@@ -2585,7 +2585,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 822317164}
         m_TargetAssemblyTypeName: ExcursionBreakMenu, Assembly-CSharp
         m_MethodName: XzciarButtonPressed
         m_Mode: 1
