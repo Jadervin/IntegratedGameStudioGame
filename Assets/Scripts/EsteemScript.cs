@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EsteemScript : MonoBehaviour
 {
-    int cherryBlossomEsteemCount;
-    int HollyEsteemCount;
-    int IvyEsteemCount;
-    int SpiderLilyEsteemCount;
-    int BelladonnaEsteemCount;
-    int AetherEsteemCount;
-    int GaledricEsteemCount;
-    int XzciarEsteemCount;
+    public static int cherryBlossomEsteemCount;
+    public static int HollyEsteemCount;
+    public static int IvyEsteemCount;
+    public static int SpiderLilyEsteemCount;
+    public static int BelladonnaEsteemCount;
+    public static int AetherEsteemCount;
+    public static int GaledricEsteemCount;
+    public static int XzciarEsteemCount;
 
 
     // Start is called before the first frame update

@@ -423,6 +423,20 @@ MonoBehaviour:
   completed: 0
   isShowingOptions: 0
   skipPressed: 0
+  saveManager: {fileID: 1311005661}
+  saveData:
+    InkStoryState: 
+    sceneName: 
+    characterName: 
+    CherryBlossomExcursionChoiceVar: 0
+    SpiderLilyExcursionChoiceVar: 0
+    HollyExcursionChoiceVar: 0
+    BelladonnaExcursionChoiceVar: 0
+    IvyExcursionChoiceVar: 0
+    XzciarExcursionChoiceVar: 0
+    GaledricExcursionChoiceVar: 0
+    AetherExcursionChoiceVar: 0
+    exbTaken: 0
   letterSpeed: 0.02
 --- !u!4 &627901681
 Transform:

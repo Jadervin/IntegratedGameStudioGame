@@ -15,7 +15,15 @@ public class CharacterNameInput : MonoBehaviour
     {
         CharacterNameScript.characterName = field.text;
 
+        
+
         StartCoroutine(WaitforSound());
+
+        if (CharacterNameScript.characterName == "")
+        {
+            CharacterNameScript.characterName = "MC";
+        }
+
         SceneManager.LoadScene(nextSceneName);
     }
 

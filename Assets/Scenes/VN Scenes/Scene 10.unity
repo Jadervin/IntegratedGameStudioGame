@@ -1129,12 +1129,25 @@ MonoBehaviour:
   background: {fileID: 1601363260}
   charact: {fileID: 39066235}
   chapterBackground: {fileID: 703759380}
-  nextSceneName: Ending Screen
+  nextSceneName: Scene 11
   isSpaceDisabled: 0
   skipping: 0
   completed: 0
   isShowingOptions: 0
   skipPressed: 0
+  saveData:
+    InkStoryState: 
+    sceneName: 
+    characterName: 
+    CherryBlossomExcursionChoiceVar: 0
+    SpiderLilyExcursionChoiceVar: 0
+    HollyExcursionChoiceVar: 0
+    BelladonnaExcursionChoiceVar: 0
+    IvyExcursionChoiceVar: 0
+    XzciarExcursionChoiceVar: 0
+    GaledricExcursionChoiceVar: 0
+    AetherExcursionChoiceVar: 0
+    exbTaken: 0
   letterSpeed: 0.02
 --- !u!4 &1843923323
 Transform:

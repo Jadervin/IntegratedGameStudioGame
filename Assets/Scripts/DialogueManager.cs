@@ -43,14 +43,21 @@ public class DialogueManager : MonoBehaviour
     string sentenceText;
     //public bool textFinished = false;
 
+    [Header("Saving")]
+    //public SaveStateManager saveManager;
+    //[HideInInspector]
+    public GameData saveData;
 
     [Range(0, 0.5f)]
     public float letterSpeed = 0.02f;
 
+    //string[] splitArray;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        //autosave function
+        SaveStateManager.instance.SaveGame(saveData);
 
         story = new Story(inkFile.text);
 
@@ -238,10 +245,44 @@ public class DialogueManager : MonoBehaviour
         tags = story.currentTags;
         foreach (string t in tags)
         {
-            string prefix = t.Split(' ')[0];
-            string param = t.Split(' ')[1];
+            string prefix = " ";
+            string param = " ";
+            string num = " ";
 
-            Debug.Log(param);
+            string[] splitArray = t.Split(' ');
+
+            if (splitArray.Length == 2)
+            {
+                prefix = splitArray[0];
+                param = splitArray[1];
+            }
+            else if(splitArray.Length == 3)
+            {
+                prefix = splitArray[0];
+                param = splitArray[1];
+                num = splitArray[2];
+            }
+
+            //string prefix = splitArray[0];
+
+            //splitArray = new string[] { prefix };
+
+            //string param = splitArray[1];
+
+            //splitArray = new string[] { param };
+
+            //string num = t.Split(' ')[2];
+
+            //splitArray = new string[] { num };
+
+            //split string into array of string 
+            //put string array into string array variable
+            //check length to see what operations are possible
+            //continue as normal
+
+            //t.Split(' ')
+
+            //Debug.Log(param);
 
             switch (prefix.ToLower())
             {
@@ -261,6 +302,16 @@ public class DialogueManager : MonoBehaviour
                 case "bg":
                     {
                         SetBG(param);
+                        break;
+                    }
+                case "esteemCharAdd":
+                    {
+                        SetEsteemAdd(param, num);
+                        break;
+                    }
+                case "esteemCharSubtract":
+                    {
+                        SetEsteemSubtract(param, num);
                         break;
                     }
 
@@ -326,6 +377,82 @@ public class DialogueManager : MonoBehaviour
             background.gameObject.SetActive(false);
         }
     }
+    void SetEsteemAdd(string _name, string _number)
+    {
+        if (_name.Contains("Aether"))
+        {
+            EsteemScript.AetherEsteemCount += int.Parse(_number);
+        }
+        else if (_name.Contains("Galedric"))
+        {
+            EsteemScript.GaledricEsteemCount += int.Parse(_number);
+        }
+        else if (_name.Contains("Xzciar"))
+        {
+            EsteemScript.XzciarEsteemCount += int.Parse(_number);
+        }
+        else if (_name.Contains("Belladonna"))
+        {
+            EsteemScript.BelladonnaEsteemCount += int.Parse(_number);
+        }
+        else if (_name.Contains("SpiderLily"))
+        {
+            EsteemScript.SpiderLilyEsteemCount += int.Parse(_number);
+
+        }
+        else if (_name.Contains("Ivy"))
+        {
+            EsteemScript.IvyEsteemCount += int.Parse(_number);
+        }
+        else if (_name.Contains("Holly"))
+        {
+            EsteemScript.HollyEsteemCount += int.Parse(_number);
+        }
+        else if (_name.Contains("CherryBlossom"))
+        {
+            EsteemScript.cherryBlossomEsteemCount += int.Parse(_number);
+        }
+
+    }
+
+    void SetEsteemSubtract(string _name, string _number)
+    {
+        if (_name.Contains("Aether"))
+        {
+            EsteemScript.AetherEsteemCount -= int.Parse(_number);
+        }
+        else if (_name.Contains("Galedric"))
+        {
+            EsteemScript.GaledricEsteemCount -= int.Parse(_number);
+        }
+        else if (_name.Contains("Xzciar"))
+        {
+            EsteemScript.XzciarEsteemCount -= int.Parse(_number);
+        }
+        else if (_name.Contains("Belladonna"))
+        {
+            EsteemScript.BelladonnaEsteemCount -= int.Parse(_number);
+        }
+        else if (_name.Contains("SpiderLily"))
+        {
+            EsteemScript.SpiderLilyEsteemCount -= int.Parse(_number);
+
+        }
+        else if (_name.Contains("Ivy"))
+        {
+            EsteemScript.IvyEsteemCount -= int.Parse(_number);
+        }
+        else if (_name.Contains("Holly"))
+        {
+            EsteemScript.HollyEsteemCount -= int.Parse(_number);
+        }
+        else if (_name.Contains("CherryBlossom"))
+        {
+            EsteemScript.cherryBlossomEsteemCount -= int.Parse(_number);
+        }
+
+    }
+
 
     public void OnContinueButtonPress()
     {
