@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
         
         nametag = textBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         message = textBox.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-        Debug.Log(message.text);
+        //Debug.Log(message.text);
         tags = new List<string>();
         choiceSelected = null;
     }
@@ -105,7 +105,7 @@ public class DialogueManager : MonoBehaviour
     // Type out the sentence letter by letter and make character idle if they were talking
     IEnumerator TypeSentence(string sentence)
     {
-        Debug.Log(sentence);
+        //Debug.Log(sentence);
         skipPressed = false;
         completed = false;
         skipping = false;
@@ -241,10 +241,13 @@ public class DialogueManager : MonoBehaviour
             string prefix = t.Split(' ')[0];
             string param = t.Split(' ')[1];
 
+            Debug.Log(param);
+
             switch (prefix.ToLower())
             {
                 case "name":
                     {
+                        //Debug.Log(param);
                         SetName(param);
                         break;
                     }
@@ -266,6 +269,7 @@ public class DialogueManager : MonoBehaviour
     }
     void SetName(string _name)
     {
+        //Debug.Log(_name);
         nameBackground.SetActive(true);
         if (_name == "MC")
         {
@@ -283,7 +287,7 @@ public class DialogueManager : MonoBehaviour
 
         charact.sprite = Resources.Load<Sprite>(_ch);
         charact.gameObject.SetActive(true);
-
+        //Debug.Log(_ch);
 
         if (!_ch.Contains("MC"))
         {
