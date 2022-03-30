@@ -52,11 +52,16 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
 
     public static int excursionBreaksTaken = 0;
 
+    [Header("Saving")]
+    //public SaveStateManager saveManager;
+    //[HideInInspector]
+    public GameData saveData;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        SaveStateManager.instance.SaveGame(saveData);
 
         story = new Story(inkyFile.text);
 

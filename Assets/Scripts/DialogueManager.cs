@@ -263,32 +263,12 @@ public class DialogueManager : MonoBehaviour
                 num = splitArray[2];
             }
 
-            //string prefix = splitArray[0];
-
-            //splitArray = new string[] { prefix };
-
-            //string param = splitArray[1];
-
-            //splitArray = new string[] { param };
-
-            //string num = t.Split(' ')[2];
-
-            //splitArray = new string[] { num };
-
-            //split string into array of string 
-            //put string array into string array variable
-            //check length to see what operations are possible
-            //continue as normal
-
-            //t.Split(' ')
-
-            //Debug.Log(param);
 
             switch (prefix.ToLower())
             {
                 case "name":
                     {
-                        //Debug.Log(param);
+                        
                         SetName(param);
                         break;
                     }

@@ -5,6 +5,17 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
+    //public EsteemScript esteemData;
+    public int cherryBlossomEsteemCountVar;
+    public int HollyEsteemCountVar;
+    public int IvyEsteemCountVar;
+    public int SpiderLilyEsteemCountVar;
+    public int BelladonnaEsteemCountVar;
+    public int AetherEsteemCountVar;
+    public int GaledricEsteemCountVar;
+    public int XzciarEsteemCountVar;
+
+
     public string InkStoryState;
     public string sceneName;
     public string characterName;
@@ -17,5 +28,6 @@ public class GameData
     public int GaledricExcursionChoiceVar = 0;
     public int AetherExcursionChoiceVar = 0;
     public int exbTaken;
+
 
 }

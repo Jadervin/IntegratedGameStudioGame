@@ -10,10 +10,10 @@ public class SaveStateManager : MonoBehaviour
 {
     //private DialogueManager dialogueManager;
     string filePath;
-    private SceneNamesScript sceneNames;
+    //private SceneNamesScript sceneNames;
 
 
-    public ExcursionBreakMenu exbMenu;
+    //public ExcursionBreakMenu exbMenu;
     ExcursionBreakDialogueManager exbDialogueManager;
 
     static public SaveStateManager instance;
@@ -50,7 +50,7 @@ public class SaveStateManager : MonoBehaviour
         saveData.sceneName = SceneManager.GetActiveScene().name;
         saveData.characterName = CharacterNameScript.characterName;
         saveData.exbTaken = ExcursionBreakDialogueManager.excursionBreaksTaken;
-        //saveData.exbTaken = exbDialogueManager.excursionBreaksTaken;
+        
 
         saveData.CherryBlossomExcursionChoiceVar = ExcursionBreakMenu.CherryBlossomExcursionChoice;
         saveData.SpiderLilyExcursionChoiceVar = ExcursionBreakMenu.SpiderLilyExcursionChoice;
@@ -61,9 +61,19 @@ public class SaveStateManager : MonoBehaviour
         saveData.GaledricExcursionChoiceVar = ExcursionBreakMenu.GaledricExcursionChoice;
         saveData.AetherExcursionChoiceVar = ExcursionBreakMenu.AetherExcursionChoice;
 
-        //try to save data of scene
 
-        FileStream dataStream = new FileStream(filePath, FileMode.Create);
+        saveData.cherryBlossomEsteemCountVar = EsteemScript.cherryBlossomEsteemCount;
+        saveData.HollyEsteemCountVar = EsteemScript.HollyEsteemCount;
+        saveData.IvyEsteemCountVar = EsteemScript.IvyEsteemCount;
+        saveData.SpiderLilyEsteemCountVar = EsteemScript.SpiderLilyEsteemCount;
+        saveData.BelladonnaEsteemCountVar = EsteemScript.BelladonnaEsteemCount;
+        saveData.AetherEsteemCountVar = EsteemScript.AetherEsteemCount;
+        saveData.GaledricEsteemCountVar = EsteemScript.GaledricEsteemCount;
+        saveData.XzciarEsteemCountVar = EsteemScript.XzciarEsteemCount;
+
+    //try to save data of scene
+
+    FileStream dataStream = new FileStream(filePath, FileMode.Create);
 
         BinaryFormatter converter = new BinaryFormatter();
         converter.Serialize(dataStream, saveData);
@@ -99,8 +109,34 @@ public class SaveStateManager : MonoBehaviour
             BinaryFormatter converter = new BinaryFormatter();
             GameData saveData = converter.Deserialize(dataStream) as GameData;
 
-            SceneManager.LoadScene(saveData.sceneName);
+           
+
             CharacterNameScript.characterName = saveData.characterName;
+
+            ExcursionBreakDialogueManager.excursionBreaksTaken = saveData.exbTaken;
+
+
+            ExcursionBreakMenu.CherryBlossomExcursionChoice= saveData.CherryBlossomExcursionChoiceVar;
+            ExcursionBreakMenu.SpiderLilyExcursionChoice = saveData.SpiderLilyExcursionChoiceVar;
+            ExcursionBreakMenu.HollyExcursionChoice = saveData.HollyExcursionChoiceVar;
+            ExcursionBreakMenu.BelladonnaExcursionChoice =saveData.BelladonnaExcursionChoiceVar;
+            ExcursionBreakMenu.IvyExcursionChoice =saveData.IvyExcursionChoiceVar;
+            ExcursionBreakMenu.XzciarExcursionChoice =saveData.XzciarExcursionChoiceVar;
+            ExcursionBreakMenu.GaledricExcursionChoice =saveData.GaledricExcursionChoiceVar;
+            ExcursionBreakMenu.AetherExcursionChoice =saveData.AetherExcursionChoiceVar;
+
+
+            EsteemScript.cherryBlossomEsteemCount= saveData.cherryBlossomEsteemCountVar;
+            EsteemScript.HollyEsteemCount= saveData.HollyEsteemCountVar;
+            EsteemScript.IvyEsteemCount =saveData.IvyEsteemCountVar;
+            EsteemScript.SpiderLilyEsteemCount =saveData.SpiderLilyEsteemCountVar;
+            EsteemScript.BelladonnaEsteemCount =saveData.BelladonnaEsteemCountVar;
+            EsteemScript.AetherEsteemCount =saveData.AetherEsteemCountVar;
+            EsteemScript.GaledricEsteemCount =saveData.GaledricEsteemCountVar;
+            EsteemScript.XzciarEsteemCount= saveData.XzciarEsteemCountVar;
+
+
+            SceneManager.LoadScene(saveData.sceneName);
 
             dataStream.Close();
             return saveData;
