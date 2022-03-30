@@ -27,6 +27,9 @@ public class Scene7BattleSystem : MonoBehaviour
     public GameObject magicOptionsPanel;
     public GameObject PlayerUIParent;
 
+    [Range(0, 15f)]
+    public float textWaitSpeed = 3f;
+
     [Header("Battle Stations")]
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -107,7 +110,7 @@ public class Scene7BattleSystem : MonoBehaviour
         magicCallButton.SetActive(false);
         //investigateButton.SetActive(false);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
 
         state = BattleState.State.PLAYERTURN;
@@ -367,7 +370,7 @@ public class Scene7BattleSystem : MonoBehaviour
         dialogueText.text = playerUnit.unitName + " has no more magic left.";
 
         //Waits for 2 seconds for the dialogue
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
         state = BattleState.State.PLAYERTURN;
         playerTurn();
@@ -394,7 +397,7 @@ public class Scene7BattleSystem : MonoBehaviour
         dialogueText.text = playerUnit.unitName + " Attacks " + enemyUnit.unitName + ".";
 
         //Waits for 2 seconds for the dialogue
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
 
         //Checks to see if the enemy is dead.
@@ -441,7 +444,7 @@ public class Scene7BattleSystem : MonoBehaviour
         playerHUD.SetMP(playerUnit.currentMP);
 
         //Waits for 2 seconds for the dialogue
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
 
         //Checks to see if the enemy is dead.
@@ -493,7 +496,7 @@ public class Scene7BattleSystem : MonoBehaviour
         //change the player MP text based on the current MP
         playerHUD.SetMP(playerUnit.currentMP);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
         //it goes to the enemy's turn and changes to enemy state.
         state = BattleState.State.ENEMYTURN;
@@ -510,7 +513,7 @@ public class Scene7BattleSystem : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
 
         //if, the enemy's current attack is less than 3,
@@ -537,7 +540,7 @@ public class Scene7BattleSystem : MonoBehaviour
             dialogueText.text = enemyUnit.unitName + " will use its Large Attack on their turn.";
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
        
 
@@ -561,7 +564,7 @@ public class Scene7BattleSystem : MonoBehaviour
         //investigateButton.SetActive(true);
 
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
         state = BattleState.State.ENEMYTURN;
         StartCoroutine(EnemyTurn());
@@ -579,10 +582,10 @@ public class Scene7BattleSystem : MonoBehaviour
 
 
         dialogueText.text = playerUnit.unitName + " ran away.";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
         dialogueText.text = "Apparently, " + playerUnit.unitName + " was not brave enough.";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
         //the battle state changes to lost and changes the scene
         state = BattleState.State.LOST;
@@ -624,7 +627,7 @@ public class Scene7BattleSystem : MonoBehaviour
             playerHUD.SetMP(playerUnit.currentMP);
 
             //Waits for 2 seconds for the dialogue
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(textWaitSpeed);
 
             dialogueText.text =
             "Now I just have to hold out until he gets here. ";
@@ -633,7 +636,7 @@ public class Scene7BattleSystem : MonoBehaviour
             playerUnit.MagicCallState = true;
             magicCallButton.SetActive(false);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(textWaitSpeed);
 
             //it goes to the enemy's turn and changes to enemy state.
             state = BattleState.State.ENEMYTURN;
@@ -717,7 +720,7 @@ public class Scene7BattleSystem : MonoBehaviour
                 //Changes the player HP text based on the current HP
                 playerHUD.SetHP(playerUnit.currentHP);
 
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(textWaitSpeed);
 
                 //Checks to see if the player is dead.
                 //if, the player is dead, then the battle state changes to lose
@@ -742,11 +745,11 @@ public class Scene7BattleSystem : MonoBehaviour
 
                         dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
 
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(textWaitSpeed);
 
                         dialogueText.text = " \tAriar\n" +
                         "I've got this.";
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(textWaitSpeed);
 
                         //Checks to see if the enemy dies from the attack.
                         //Also calls the function to damage the enemy
@@ -764,7 +767,7 @@ public class Scene7BattleSystem : MonoBehaviour
                         //change the player MP text based on the current MP
                         playerHUD.SetMP(playerUnit.currentMP);
 
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(textWaitSpeed);
 
                         //set the magic call state to false
                         playerUnit.MagicCallState = false;
@@ -810,7 +813,7 @@ public class Scene7BattleSystem : MonoBehaviour
             {
                 dialogueText.text = enemyUnit.unitName + " attacks " + playerUnit.unitName + ".";
 
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(textWaitSpeed);
 
                 sfxSource.PlayOneShot(soundResource.defendSound);
 
@@ -820,7 +823,7 @@ public class Scene7BattleSystem : MonoBehaviour
 
                 playerHUD.SetHP(playerUnit.currentHP);
 
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(textWaitSpeed);
 
                 //Checks to see if the player is dead.
                 //if, the player is dead, then the battle state changes to lose
@@ -846,11 +849,11 @@ public class Scene7BattleSystem : MonoBehaviour
 
                         dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
 
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(textWaitSpeed);
 
                         dialogueText.text = " \tAriar\n" +
                         "I've got this.";
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(textWaitSpeed);
 
                         //Checks to see if the enemy dies from the attack.
                         //Also calls the function to damage the enemy
@@ -868,7 +871,7 @@ public class Scene7BattleSystem : MonoBehaviour
                         //change the player MP text based on the current MP
                         playerHUD.SetMP(playerUnit.currentMP);
 
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(textWaitSpeed);
 
                         //set the magic call state to false
                         playerUnit.MagicCallState = false;
@@ -920,7 +923,7 @@ public class Scene7BattleSystem : MonoBehaviour
 
 
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(textWaitSpeed);
 
 
 
@@ -932,11 +935,11 @@ public class Scene7BattleSystem : MonoBehaviour
 
                 dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
 
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(textWaitSpeed);
 
                 dialogueText.text = " \tAriar\n" +
                 "I've got this.";
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(textWaitSpeed);
 
                 //Checks to see if the enemy dies from the attack.
                 //Also calls the function to damage the enemy
@@ -954,7 +957,7 @@ public class Scene7BattleSystem : MonoBehaviour
                 //change the player MP text based on the current MP
                 playerHUD.SetMP(playerUnit.currentMP);
 
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(textWaitSpeed);
 
                 //set the magic call state to false
                 playerUnit.MagicCallState = false;
@@ -1017,7 +1020,7 @@ public class Scene7BattleSystem : MonoBehaviour
 
             playerHUD.SetHP(playerUnit.currentHP);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(textWaitSpeed);
 
 
             if (isDead == true)
@@ -1037,11 +1040,11 @@ public class Scene7BattleSystem : MonoBehaviour
 
                     dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
 
-                    yield return new WaitForSeconds(2f);
+                    yield return new WaitForSeconds(textWaitSpeed);
 
                     dialogueText.text = " \tAriar\n" +
                     "I've got this.";
-                    yield return new WaitForSeconds(2f);
+                    yield return new WaitForSeconds(textWaitSpeed);
 
                     //Checks to see if the enemy dies from the attack.
                     //Also calls the function to damage the enemy
@@ -1059,7 +1062,7 @@ public class Scene7BattleSystem : MonoBehaviour
                     //change the player MP text based on the current MP
                     playerHUD.SetMP(playerUnit.currentMP);
 
-                    yield return new WaitForSeconds(2f);
+                    yield return new WaitForSeconds(textWaitSpeed);
 
                     //set the magic call state to false
                     playerUnit.MagicCallState = false;
@@ -1100,7 +1103,7 @@ public class Scene7BattleSystem : MonoBehaviour
             dialogueText.text = enemyUnit.unitName + " attacks " +
             playerUnit.unitName + " with Large Attack.";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(textWaitSpeed);
 
             sfxSource.PlayOneShot(soundResource.largeDefendSound);
 
@@ -1110,7 +1113,7 @@ public class Scene7BattleSystem : MonoBehaviour
 
             playerHUD.SetHP(playerUnit.currentHP);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(textWaitSpeed);
 
 
             if (isDead == true)
@@ -1148,11 +1151,11 @@ public class Scene7BattleSystem : MonoBehaviour
 
                     dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
 
-                    yield return new WaitForSeconds(2f);
+                    yield return new WaitForSeconds(textWaitSpeed);
 
                     dialogueText.text = " \tAriar\n" +
                     "I've got this.";
-                    yield return new WaitForSeconds(2f);
+                    yield return new WaitForSeconds(textWaitSpeed);
 
                     //Checks to see if the enemy dies from the attack.
                     //Also calls the function to damage the enemy
@@ -1170,7 +1173,7 @@ public class Scene7BattleSystem : MonoBehaviour
                     //change the player MP text based on the current MP
                     playerHUD.SetMP(playerUnit.currentMP);
 
-                    yield return new WaitForSeconds(2f);
+                    yield return new WaitForSeconds(textWaitSpeed);
 
                     //set the magic call state to false
                     playerUnit.MagicCallState = false;
@@ -1213,7 +1216,7 @@ public class Scene7BattleSystem : MonoBehaviour
         {
             sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You win!";
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(textWaitSpeed);
             SceneManager.LoadScene(endingSceneName);
 
         }
@@ -1222,7 +1225,7 @@ public class Scene7BattleSystem : MonoBehaviour
         {
             sfxSource.PlayOneShot(soundResource.deathSound);
             dialogueText.text = "You Lost!";
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(textWaitSpeed);
             SceneManager.LoadScene(losingSceneName);
         }
 
@@ -1269,7 +1272,7 @@ public class Scene7BattleSystem : MonoBehaviour
         dialogueText.text =
         "I do not need to heal.";
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
         playerTurn();
     }
@@ -1283,7 +1286,7 @@ public class Scene7BattleSystem : MonoBehaviour
         dialogueText.text =
         "I do not need to heal.";
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
         playerTurn();
     }
@@ -1296,7 +1299,7 @@ public class Scene7BattleSystem : MonoBehaviour
         dialogueText.text =
         "Now I just have to hold out until he gets here.";
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textWaitSpeed);
 
         playerTurn();
     }
