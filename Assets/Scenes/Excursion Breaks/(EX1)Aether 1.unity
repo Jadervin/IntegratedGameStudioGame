@@ -381,6 +381,27 @@ MonoBehaviour:
   isShowingOptions: 0
   skipPressed: 0
   letterSpeed: 0.02
+  saveData:
+    cherryBlossomEsteemCountVar: 0
+    HollyEsteemCountVar: 0
+    IvyEsteemCountVar: 0
+    SpiderLilyEsteemCountVar: 0
+    BelladonnaEsteemCountVar: 0
+    AetherEsteemCountVar: 0
+    GaledricEsteemCountVar: 0
+    XzciarEsteemCountVar: 0
+    InkStoryState: 
+    sceneName: 
+    characterName: 
+    CherryBlossomExcursionChoiceVar: 0
+    SpiderLilyExcursionChoiceVar: 0
+    HollyExcursionChoiceVar: 0
+    BelladonnaExcursionChoiceVar: 0
+    IvyExcursionChoiceVar: 0
+    XzciarExcursionChoiceVar: 0
+    GaledricExcursionChoiceVar: 0
+    AetherExcursionChoiceVar: 0
+    exbTaken: 0
 --- !u!4 &146821941
 Transform:
   m_ObjectHideFlags: 0
@@ -1186,7 +1207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1766992987
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1274,7 +1295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6f832330cf5fc4a93817764c166d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exbMenu: {fileID: 0}
 --- !u!4 &1905525374
 Transform:
   m_ObjectHideFlags: 0
