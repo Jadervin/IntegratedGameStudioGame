@@ -59,56 +59,56 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
         if (ExcursionBreakDialogueManager.excursionBreaksTaken < 1)
         {
-            XzciarButton.gameObject.SetActive(false);
-            GaledricButton.gameObject.SetActive(false);
-            AetherButton.gameObject.SetActive(false);
+            XzciarButton.SetActive(false);
+            GaledricButton.SetActive(false);
+            AetherButton.SetActive(false);
         }
         else
         {
-            XzciarButton.gameObject.SetActive(true);
-            GaledricButton.gameObject.SetActive(true);
-            AetherButton.gameObject.SetActive(true);
+            XzciarButton.SetActive(true);
+            GaledricButton.SetActive(true);
+            AetherButton.SetActive(true);
 
             if (CherryBlossomExcursionChoice > 1)
             {
-                CherryBlossomButton.gameObject.SetActive(false);
+                CherryBlossomButton.SetActive(false);
             }
 
             if (SpiderLilyExcursionChoice > 1)
             {
-                CherryBlossomButton.gameObject.SetActive(false);
+                CherryBlossomButton.SetActive(false);
             }
 
             if (IvyExcursionChoice > 0)
             {
-                CherryBlossomButton.gameObject.SetActive(false);
+                CherryBlossomButton.SetActive(false);
             }
 
 
             if (HollyExcursionChoice > 1)
             {
-                CherryBlossomButton.gameObject.SetActive(false);
+                CherryBlossomButton.SetActive(false);
             }
 
 
             if (BelladonnaExcursionChoice > 1)
             {
-                CherryBlossomButton.gameObject.SetActive(false);
+                CherryBlossomButton.SetActive(false);
             }
 
             if (XzciarExcursionChoice > 1)
             {
-                CherryBlossomButton.gameObject.SetActive(false);
+                CherryBlossomButton.SetActive(false);
             }
 
             if (GaledricExcursionChoice > 1)
             {
-                CherryBlossomButton.gameObject.SetActive(false);
+                CherryBlossomButton.SetActive(false);
             }
 
             if (AetherExcursionChoice > 1)
             {
-                CherryBlossomButton.gameObject.SetActive(false);
+                CherryBlossomButton.SetActive(false);
             }
 
         }

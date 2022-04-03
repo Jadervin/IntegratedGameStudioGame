@@ -311,11 +311,6 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
                         SetBG(param);
                         break;
                     }
-                case "esteemChar":
-                    {
-                        SetEsteemChar(param);
-                        break;
-                    }
                 case "esteemCharAdd":
                     {
                         SetEsteemAdd(param, num);
@@ -388,50 +383,49 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
         }
     }
 
-    void SetEsteemChar(string _name)
-    {
-        if(_name.Contains("Aether"))
-        {
-
-        }
-
-    }
-
 
     void SetEsteemAdd(string _name, string _number)
     {
         if (_name.Contains("Aether"))
         {
             EsteemScript.AetherEsteemCount += int.Parse(_number);
+            Debug.Log(EsteemScript.AetherEsteemCount);
         }
         else if(_name.Contains("Galedric"))
         {
             EsteemScript.GaledricEsteemCount += int.Parse(_number);
+            Debug.Log(EsteemScript.GaledricEsteemCount);
         }
         else if (_name.Contains("Xzciar"))
         {
             EsteemScript.XzciarEsteemCount += int.Parse(_number);
+            Debug.Log(EsteemScript.XzciarEsteemCount);
         }
         else if (_name.Contains("Belladonna"))
         {
             EsteemScript.BelladonnaEsteemCount += int.Parse(_number);
+            Debug.Log(EsteemScript.BelladonnaEsteemCount);
         }
         else if (_name.Contains("SpiderLily"))
         {
             EsteemScript.SpiderLilyEsteemCount += int.Parse(_number);
+            Debug.Log(EsteemScript.SpiderLilyEsteemCount);
 
         }
         else if (_name.Contains("Ivy"))
         {
             EsteemScript.IvyEsteemCount += int.Parse(_number);
+            Debug.Log(EsteemScript.IvyEsteemCount);
         }
         else if (_name.Contains("Holly"))
         {
             EsteemScript.HollyEsteemCount += int.Parse(_number);
+            Debug.Log(EsteemScript.HollyEsteemCount);
         }
         else if (_name.Contains("CherryBlossom"))
         {
             EsteemScript.cherryBlossomEsteemCount += int.Parse(_number);
+            Debug.Log(EsteemScript.cherryBlossomEsteemCount);
         }
         
     }
@@ -441,35 +435,43 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
         if (_name.Contains("Aether"))
         {
             EsteemScript.AetherEsteemCount -= int.Parse(_number);
+            Debug.Log(EsteemScript.AetherEsteemCount);
         }
         else if (_name.Contains("Galedric"))
         {
             EsteemScript.GaledricEsteemCount -= int.Parse(_number);
+            Debug.Log(EsteemScript.GaledricEsteemCount);
         }
         else if (_name.Contains("Xzciar"))
         {
             EsteemScript.XzciarEsteemCount -= int.Parse(_number);
+            Debug.Log(EsteemScript.XzciarEsteemCount);
         }
         else if (_name.Contains("Belladonna"))
         {
             EsteemScript.BelladonnaEsteemCount -= int.Parse(_number);
+            Debug.Log(EsteemScript.BelladonnaEsteemCount);
         }
         else if (_name.Contains("SpiderLily"))
         {
             EsteemScript.SpiderLilyEsteemCount -= int.Parse(_number);
+            Debug.Log(EsteemScript.SpiderLilyEsteemCount);
 
         }
         else if (_name.Contains("Ivy"))
         {
             EsteemScript.IvyEsteemCount -= int.Parse(_number);
+            Debug.Log(EsteemScript.IvyEsteemCount);
         }
         else if (_name.Contains("Holly"))
         {
             EsteemScript.HollyEsteemCount -= int.Parse(_number);
+            Debug.Log(EsteemScript.HollyEsteemCount);
         }
         else if (_name.Contains("CherryBlossom"))
         {
             EsteemScript.cherryBlossomEsteemCount -= int.Parse(_number);
+            Debug.Log(EsteemScript.cherryBlossomEsteemCount);
         }
 
     }
