@@ -17,6 +17,9 @@ public class Scene2BattleSystem : MonoBehaviour
     [Header("Game Object Components")]
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
+
+
+
     Unit playerUnit;
     Unit enemyUnit;
 

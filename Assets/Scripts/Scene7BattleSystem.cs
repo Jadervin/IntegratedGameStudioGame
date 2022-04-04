@@ -14,6 +14,7 @@ public class Scene7BattleSystem : MonoBehaviour
     [Header("Game Object Components")]
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
+
     Unit playerUnit;
     Unit enemyUnit;
 
@@ -85,7 +86,6 @@ public class Scene7BattleSystem : MonoBehaviour
         //    playerUnit.unitName = "Player";
 
         //}
-
 
 
         GameObject enemyGameObj = Instantiate(enemyPrefab, enemyBattleStation);

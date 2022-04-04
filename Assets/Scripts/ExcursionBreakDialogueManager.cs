@@ -53,7 +53,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
     [Range(0, 0.5f)]
     public float letterSpeed = 0.02f;
 
-    public static int excursionBreaksTaken = 0;
+    //public static int excursionBreaksTaken = 0;
 
     [Header("Saving")]
     //public SaveStateManager saveManager;
@@ -99,27 +99,27 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
         Debug.Log("End Scene!");
         //Goes to the battle scene
 
-        if (excursionBreaksTaken == 0)
+        if (ExcursionBreaksTaken.EXBNum == 0)
         {
-            excursionBreaksTaken++;
+            ExcursionBreaksTaken.EXBNum++;
             SceneManager.LoadScene(Scene4Name);
         }
 
-        else if (excursionBreaksTaken == 1)
+        else if (ExcursionBreaksTaken.EXBNum == 1)
         {
-            excursionBreaksTaken++;
+            ExcursionBreaksTaken.EXBNum++;
             SceneManager.LoadScene(Scene6Name);
         }
 
-        else if (excursionBreaksTaken == 2)
+        else if (ExcursionBreaksTaken.EXBNum == 2)
         {
-            excursionBreaksTaken++;
+            ExcursionBreaksTaken.EXBNum++;
             SceneManager.LoadScene(Scene10Name);
         }
 
         else
         {
-            excursionBreaksTaken++;
+            ExcursionBreaksTaken.EXBNum++;
             SceneManager.LoadScene(Scene10Name);
         }
 

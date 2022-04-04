@@ -42,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Excursion Breaks/Excursion Break 1.unity
     guid: 4dae9e949dc184b4e96f84c2c3bc3e43
   - enabled: 1
+    path: Assets/Scenes/Battle Scenes/EXB Battles.unity
+    guid: 18e7750c2a0ab714ea4b86acf8921a34
+  - enabled: 1
     path: Assets/Scenes/Excursion Breaks/(EX1)Belladonna 1.unity
     guid: d27b97061caf2a044aedefec3710a76d
   - enabled: 1

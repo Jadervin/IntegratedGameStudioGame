@@ -49,7 +49,7 @@ public class SaveStateManager : MonoBehaviour
     {
         saveData.sceneName = SceneManager.GetActiveScene().name;
         saveData.characterName = CharacterNameScript.characterName;
-        saveData.exbTaken = ExcursionBreakDialogueManager.excursionBreaksTaken;
+        saveData.exbTaken = ExcursionBreaksTaken.EXBNum;
         
 
         saveData.CherryBlossomExcursionChoiceVar = ExcursionBreakMenu.CherryBlossomExcursionChoice;
@@ -113,7 +113,7 @@ public class SaveStateManager : MonoBehaviour
 
             CharacterNameScript.characterName = saveData.characterName;
 
-            ExcursionBreakDialogueManager.excursionBreaksTaken = saveData.exbTaken;
+            ExcursionBreaksTaken.EXBNum = saveData.exbTaken;
 
 
             ExcursionBreakMenu.CherryBlossomExcursionChoice= saveData.CherryBlossomExcursionChoiceVar;
