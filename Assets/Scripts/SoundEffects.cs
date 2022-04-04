@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundEffects : MonoBehaviour
 {
+
     public AudioClip fireSound;
     public AudioClip healSound;
     public AudioClip attackSound;
@@ -12,6 +13,9 @@ public class SoundEffects : MonoBehaviour
     public AudioClip runSound;
     public AudioClip defendSound;
     public AudioClip largeDefendSound;
+
+
+
 
    
 }

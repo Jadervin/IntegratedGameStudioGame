@@ -22,8 +22,11 @@ public class DialogueManager : MonoBehaviour
     public Image charact;
     public Image chapterBackground;
 
-    //public AudioClip source;
-    
+
+    [Header("Sound")]
+    public AudioSource audioSource;
+    //public AudioClip audioClip;
+
     static Story story;
     TextMeshProUGUI nametag;
     TextMeshProUGUI message;
@@ -278,7 +281,11 @@ public class DialogueManager : MonoBehaviour
                         SetSprite(param);
                         break;
                     }
-
+                case "sound":
+                    {
+                        SetSound(param);
+                        break;
+                    }
                 case "bg":
                     {
                         SetBG(param);
@@ -433,10 +440,22 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-
+    void SetSound(string _sound)
+    {
+        if (_sound == "none")
+        {
+            audioSource.Stop();
+        }
+        else
+        {
+            audioSource.PlayOneShot(Resources.Load<AudioClip>(_sound));
+        }
+        
+    }
     public void OnContinueButtonPress()
     {
         //skipping = false;
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
 
         if (isShowingOptions == false)
         {
@@ -475,6 +494,7 @@ public class DialogueManager : MonoBehaviour
 
     public void OnSkipTextButtonPress()
     {
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
         skipping = true;
 
     }

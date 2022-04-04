@@ -21,7 +21,10 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
     public Image charact;
     public Image chapterBackground;
 
-    //public AudioClip source;
+    [Header("Sound")]
+    public SoundEffects soundEffects;
+    public AudioSource audioSource;
+    //public AudioClip audioClip;
 
     static Story story;
     TextMeshProUGUI nametag;
@@ -305,7 +308,11 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
                         SetSprite(param);
                         break;
                     }
-
+                case "sound":
+                    {
+                        SetSound(param);
+                        break;
+                    }
                 case "bg":
                     {
                         SetBG(param);
@@ -474,6 +481,18 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
             Debug.Log(EsteemScript.cherryBlossomEsteemCount);
         }
 
+    }
+
+    void SetSound(string _sound)
+    {
+        if (_sound == "none")
+        {
+            audioSource.Stop();
+        }
+        else
+        {
+            audioSource.PlayOneShot(Resources.Load<AudioClip>(_sound));
+        }
     }
 
     public void OnContinueButtonPress()
