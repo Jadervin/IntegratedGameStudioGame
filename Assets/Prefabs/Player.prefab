@@ -49,7 +49,7 @@ MonoBehaviour:
   damage: 5
   largeDamage: 0
   magicCost: 1
-  fireDamage: 2
+  fireDamage: 7
   healamount: 10
   maxHP: 50
   currentHP: 0

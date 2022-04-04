@@ -55,7 +55,7 @@ public class EXBBattleVictoryScript : MonoBehaviour
         else
         {
             ExcursionBreaksTaken.EXBNum++;
-            SceneManager.LoadScene(Scene10Name);
+            SceneManager.LoadScene(Scene12Name);
         }
 
 

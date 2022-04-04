@@ -63,7 +63,7 @@ public class ExcursionBreakMenu : MonoBehaviour
         SaveStateManager.instance.SaveGame(saveData);
     }
 
-        private void Awake()
+    private void Awake()
     {
         if (ExcursionBreaksTaken.EXBNum < 1)
         {
@@ -84,39 +84,39 @@ public class ExcursionBreakMenu : MonoBehaviour
 
             if (SpiderLilyExcursionChoice > 1)
             {
-                CherryBlossomButton.SetActive(false);
+                SpiderLilyButton.SetActive(false);
             }
 
             if (IvyExcursionChoice > 0)
             {
-                CherryBlossomButton.SetActive(false);
+                IvyButton.SetActive(false);
             }
 
 
             if (HollyExcursionChoice > 1)
             {
-                CherryBlossomButton.SetActive(false);
+                HollyButton.SetActive(false);
             }
 
 
             if (BelladonnaExcursionChoice > 1)
             {
-                CherryBlossomButton.SetActive(false);
+                BelladonnaButton.SetActive(false);
             }
 
             if (XzciarExcursionChoice > 1)
             {
-                CherryBlossomButton.SetActive(false);
+                XzciarButton.SetActive(false);
             }
 
             if (GaledricExcursionChoice > 1)
             {
-                CherryBlossomButton.SetActive(false);
+                GaledricButton.SetActive(false);
             }
 
             if (AetherExcursionChoice > 1)
             {
-                CherryBlossomButton.SetActive(false);
+                AetherButton.SetActive(false);
             }
 
         }
@@ -172,12 +172,12 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         if (SpiderLilyExcursionChoice == 0)
         {
-            CherryBlossomExcursionChoice++;
+            SpiderLilyExcursionChoice++;
             SceneManager.LoadScene(SpiderLily1SceneName);
         }
         else
         {
-            CherryBlossomExcursionChoice++;
+            SpiderLilyExcursionChoice++;
             SceneManager.LoadScene(SpiderLily2SceneName);
         }
     }
@@ -201,12 +201,12 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         if (HollyExcursionChoice == 0)
         {
-            CherryBlossomExcursionChoice++;
+            HollyExcursionChoice++;
             SceneManager.LoadScene(Holly1SceneName);
         }
         else
         {
-            CherryBlossomExcursionChoice++;
+            HollyExcursionChoice++;
             SceneManager.LoadScene(Holly2SceneName);
         }
     }
@@ -231,12 +231,12 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         if (BelladonnaExcursionChoice == 0)
         {
-            CherryBlossomExcursionChoice++;
+            BelladonnaExcursionChoice++;
             SceneManager.LoadScene(Belladonna1SceneName);
         }
         else
         {
-            CherryBlossomExcursionChoice++;
+            BelladonnaExcursionChoice++;
             SceneManager.LoadScene(Belladonna2SceneName);
         }
     }
@@ -258,9 +258,9 @@ public class ExcursionBreakMenu : MonoBehaviour
         yield return new WaitForSeconds(duration);   //Wait
 
 
-        if (CherryBlossomExcursionChoice == 0)
+        if (IvyExcursionChoice == 0)
         {
-            CherryBlossomExcursionChoice++;
+            IvyExcursionChoice++;
             SceneManager.LoadScene(Ivy1SceneName);
         }
         
@@ -286,12 +286,12 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         if (XzciarExcursionChoice == 0)
         {
-            CherryBlossomExcursionChoice++;
+            XzciarExcursionChoice++;
             SceneManager.LoadScene(Xzciar1SceneName);
         }
         else
         {
-            CherryBlossomExcursionChoice++;
+            XzciarExcursionChoice++;
             SceneManager.LoadScene(Xzciar2SceneName);
         }
     }
@@ -315,12 +315,12 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         if (GaledricExcursionChoice == 0)
         {
-            CherryBlossomExcursionChoice++;
+            GaledricExcursionChoice++;
             SceneManager.LoadScene(Galedric1SceneName);
         }
         else
         {
-            CherryBlossomExcursionChoice++;
+            GaledricExcursionChoice++;
             SceneManager.LoadScene(Galedric2SceneName);
         }
     }
@@ -342,14 +342,14 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         yield return new WaitForSeconds(duration);   //Wait
 
-        if (CherryBlossomExcursionChoice == 0)
+        if (AetherExcursionChoice == 0)
         {
-            CherryBlossomExcursionChoice++;
+            AetherExcursionChoice++;
             SceneManager.LoadScene(Aether1SceneName);
         }
         else
         {
-            CherryBlossomExcursionChoice++;
+            AetherExcursionChoice++;
             SceneManager.LoadScene(Aether2SceneName);
         }
     }
