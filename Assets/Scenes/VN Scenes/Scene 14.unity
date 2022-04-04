@@ -508,7 +508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c24e9a21af05f6448ab38e3160f40e5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 341e39296bc799a4fa2559a58d3f40f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1229,6 +1229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1843923323}
   - component: {fileID: 1843923322}
+  - component: {fileID: 1843923324}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -1257,7 +1258,7 @@ MonoBehaviour:
   charact: {fileID: 39066235}
   chapterBackground: {fileID: 703759380}
   audioSource: {fileID: 1994213695}
-  nextSceneName: Scene 13
+  nextSceneName: Ending Screen
   isSpaceDisabled: 0
   skipping: 0
   completed: 0
@@ -1299,6 +1300,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1843923324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843923321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7da40e9edd1d974e855eb2cd4b14eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AetherInkFile: {fileID: 4900000, guid: 0d28b17af50c3524e87c08b653df037c, type: 3}
+  GaledricInkFile: {fileID: 4900000, guid: b9713fd98b843d043a9ff4fc02928b9b, type: 3}
+  XzciarInkFile: {fileID: 4900000, guid: 72999eef2f4b03345894c8fb97407b22, type: 3}
+  textBox: {fileID: 2009285738}
+  customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
+  optionPanel: {fileID: 931041769}
+  nameBackground: {fileID: 2009285739}
+  background: {fileID: 1601363260}
+  charact: {fileID: 39066235}
+  chapterBackground: {fileID: 703759380}
+  audioSource: {fileID: 1994213695}
+  nextSceneName: Ending Screen
+  isSpaceDisabled: 0
+  skipping: 0
+  completed: 0
+  isShowingOptions: 0
+  skipPressed: 0
+  saveData:
+    cherryBlossomEsteemCountVar: 0
+    HollyEsteemCountVar: 0
+    IvyEsteemCountVar: 0
+    SpiderLilyEsteemCountVar: 0
+    BelladonnaEsteemCountVar: 0
+    AetherEsteemCountVar: 0
+    GaledricEsteemCountVar: 0
+    XzciarEsteemCountVar: 0
+    InkStoryState: 
+    sceneName: 
+    characterName: 
+    CherryBlossomExcursionChoiceVar: 0
+    SpiderLilyExcursionChoiceVar: 0
+    HollyExcursionChoiceVar: 0
+    BelladonnaExcursionChoiceVar: 0
+    IvyExcursionChoiceVar: 0
+    XzciarExcursionChoiceVar: 0
+    GaledricExcursionChoiceVar: 0
+    AetherExcursionChoiceVar: 0
+    exbTaken: 0
+  letterSpeed: 0.02
 --- !u!1 &1905525372
 GameObject:
   m_ObjectHideFlags: 0

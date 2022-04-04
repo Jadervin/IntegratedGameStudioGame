@@ -129,6 +129,12 @@ EditorBuildSettings:
     path: Assets/Scenes/VN Scenes/Scene 12.unity
     guid: 7a2df93e0b8ee1c4281782645db786a7
   - enabled: 1
+    path: Assets/Scenes/VN Scenes/Scene 13.unity
+    guid: 824a9986a45ffb2419e842304d305037
+  - enabled: 1
+    path: Assets/Scenes/VN Scenes/Scene 14.unity
+    guid: 2ba27decf90b22f40b1840fe1c268c5b
+  - enabled: 1
     path: Assets/Scenes/Menu Scenes/Ending Screen.unity
     guid: 7795ea0dcfe15ee4ea29e93675be5e4d
   m_configObjects: {}

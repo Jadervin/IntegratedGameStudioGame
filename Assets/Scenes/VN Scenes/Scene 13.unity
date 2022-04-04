@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnContinueButtonPress
       objectReference: {fileID: 0}
+    - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene13DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -347,6 +351,10 @@ PrefabInstance:
     - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnCompleteTextButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene13DialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 302100930512474570, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_Name
@@ -444,6 +452,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnSkipTextButtonPress
       objectReference: {fileID: 0}
+    - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene13DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
 --- !u!224 &544830709 stripped
@@ -508,7 +520,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c24e9a21af05f6448ab38e3160f40e5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 198835c10927c4b42a8f6db6d2ada9e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1245,10 +1257,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1843923321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81f1a33a20214434aadca06f85e76ec3, type: 3}
+  m_Script: {fileID: 11500000, guid: 62f739927819b0e48841f4295e246248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 9255b16dc0f6ac1428e3682403097ef3, type: 3}
+  HollyInkFile: {fileID: 4900000, guid: 5503de79ada391643859519cacd00833, type: 3}
+  BelladonnaInkFile: {fileID: 4900000, guid: 4846361c523bc9c4a88e593f06273b6f, type: 3}
+  SpiderLilyInkFile: {fileID: 4900000, guid: 6da9fddf929528c449f8154c477a84e4, type: 3}
+  IvyInkFile: {fileID: 4900000, guid: e4733364b5b365748904dba8428b7a85, type: 3}
+  CherryBlossomInkFile: {fileID: 4900000, guid: 0efc85d22105fed498c5db1cb1160e85, type: 3}
   textBox: {fileID: 2009285738}
   customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
   optionPanel: {fileID: 931041769}
@@ -1257,7 +1273,7 @@ MonoBehaviour:
   charact: {fileID: 39066235}
   chapterBackground: {fileID: 703759380}
   audioSource: {fileID: 1994213695}
-  nextSceneName: Scene 13
+  nextSceneName: Scene 14
   isSpaceDisabled: 0
   skipping: 0
   completed: 0
