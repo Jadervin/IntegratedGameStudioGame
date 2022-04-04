@@ -22,7 +22,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
     public Image chapterBackground;
 
     [Header("Sound")]
-    public SoundEffects soundEffects;
+    //public SoundEffects soundEffects;
     public AudioSource audioSource;
     //public AudioClip audioClip;
 

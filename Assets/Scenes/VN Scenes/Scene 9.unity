@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d14ac99f69735c49930691559e44857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1994213695}
+  audioSource: {fileID: 1954964329}
 --- !u!4 &366444805
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   background: {fileID: 1601363260}
   charact: {fileID: 39066235}
   chapterBackground: {fileID: 703759380}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1994213695}
   nextSceneName: Excursion Break 1
   isSpaceDisabled: 0
   skipping: 0
