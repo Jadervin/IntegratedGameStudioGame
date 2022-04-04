@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d14ac99f69735c49930691559e44857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 312280834}
+  audioSource: {fileID: 351740419}
 --- !u!4 &1589337808
 Transform:
   m_ObjectHideFlags: 0
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   background: {fileID: 1586285786}
   charact: {fileID: 216287319}
   chapterBackground: {fileID: 703759380}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 312280834}
   nextSceneName: Scene 5
   isSpaceDisabled: 0
   skipping: 0
