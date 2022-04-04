@@ -13,9 +13,5 @@ public class SoundEffects : MonoBehaviour
     public AudioClip runSound;
     public AudioClip defendSound;
     public AudioClip largeDefendSound;
-
-
-
-
    
 }

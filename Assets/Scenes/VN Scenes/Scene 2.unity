@@ -1337,9 +1337,9 @@ MonoBehaviour:
   clickTimer: 0.5
   musicManager: {fileID: 1493324058}
   soundSource: {fileID: 814280365}
-  pauseSound: {fileID: 0}
-  unpauseSound: {fileID: 0}
-  menuClick: {fileID: 0}
+  pauseSound: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
+  unpauseSound: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
+  menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
 --- !u!1001 &1603990208
 PrefabInstance:
   m_ObjectHideFlags: 0

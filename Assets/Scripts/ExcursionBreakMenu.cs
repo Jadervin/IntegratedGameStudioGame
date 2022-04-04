@@ -35,6 +35,8 @@ public class ExcursionBreakMenu : MonoBehaviour
     public string Galedric2SceneName;
     public string Aether2SceneName;
 
+    public string BattleSceneName;
+
 
     //[Header("Integers")]
     public static int CherryBlossomExcursionChoice = 0;
@@ -46,18 +48,24 @@ public class ExcursionBreakMenu : MonoBehaviour
     public static int GaledricExcursionChoice = 0;
     public static int AetherExcursionChoice = 0;
 
-
-
     [Header("Sound Sources")]
     public AudioSource soundSource;
     public AudioClip menuClick;
     public float clickTimer = 0.5f;
 
+    [Header("Saving")]
+    public GameData saveData;
 
 
-    private void Awake()
+
+    void Start()
     {
-        if (ExcursionBreakDialogueManager.excursionBreaksTaken < 1)
+        SaveStateManager.instance.SaveGame(saveData);
+    }
+
+        private void Awake()
+    {
+        if (ExcursionBreaksTaken.EXBNum < 1)
         {
             XzciarButton.SetActive(false);
             GaledricButton.SetActive(false);
@@ -344,6 +352,24 @@ public class ExcursionBreakMenu : MonoBehaviour
             CherryBlossomExcursionChoice++;
             SceneManager.LoadScene(Aether2SceneName);
         }
+    }
+
+    public void BattleButtonPressed()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        soundSource.PlayOneShot(menuClick);
+        StartCoroutine(WaitforBattleButton(clickTimer));
+
+
+    }
+
+    IEnumerator WaitforBattleButton(float duration)
+    {
+
+        yield return new WaitForSeconds(duration);   //Wait
+        SceneManager.LoadScene(BattleSceneName);
+       
     }
 
 }

@@ -296,7 +296,10 @@ PrefabInstance:
         -Game Systems by Jonathan
         Dervin
 
-        -Sound Effects made with Bfxr'
+        -Sound Effects made with the Bfxr Software and Jenna Perkin
+
+        -Music
+        Made by Jenna Perkins'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33bcb941cde08a440a2997c25643dcff, type: 3}

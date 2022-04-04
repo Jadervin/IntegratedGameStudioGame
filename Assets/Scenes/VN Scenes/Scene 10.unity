@@ -1211,9 +1211,9 @@ MonoBehaviour:
   clickTimer: 0.5
   musicManager: {fileID: 366444804}
   soundSource: {fileID: 1994213695}
-  pauseSound: {fileID: 0}
-  unpauseSound: {fileID: 0}
-  menuClick: {fileID: 0}
+  pauseSound: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
+  unpauseSound: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
+  menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
 --- !u!224 &1804803172 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3076165697413466869, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}

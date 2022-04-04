@@ -1184,9 +1184,9 @@ MonoBehaviour:
   clickTimer: 0.5
   musicManager: {fileID: 1324096733}
   soundSource: {fileID: 262459471}
-  pauseSound: {fileID: 0}
-  unpauseSound: {fileID: 0}
-  menuClick: {fileID: 0}
+  pauseSound: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
+  unpauseSound: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
+  menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
 --- !u!1 &1843923321
 GameObject:
   m_ObjectHideFlags: 0

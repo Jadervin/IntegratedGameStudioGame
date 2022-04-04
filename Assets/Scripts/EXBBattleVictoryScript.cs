@@ -6,33 +6,18 @@ using UnityEngine.SceneManagement;
 public class EXBBattleVictoryScript : MonoBehaviour
 {
     [Header("Scene Names")]
-    public string continueSceneName;
+    public string Scene4Name;
+    public string Scene6Name;
+    public string Scene10Name;
+    public string Scene12Name;
 
     [Header("Sound Sources")]
     public AudioSource soundSource;
     public AudioClip menuClick;
     public float clickTimer = 0.5f;
 
-    [Header("Scenes")]
-    //public string nextSceneName;
-    public string Scene4Name;
-    public string Scene6Name;
-    public string Scene10Name;
-    public string Scene12Name;
+    
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void ContinueButtonPressed()
     {

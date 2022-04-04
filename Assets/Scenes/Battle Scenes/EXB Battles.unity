@@ -144,7 +144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &112874643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bd9cc3feff8f4e2429c0d8accdfcd794, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4be133589b5e5d74e8a4bb4118c0153f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 112874642}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 476, y: 389, z: 0}
-  m_LocalScale: {x: 77.29634, y: 77.29634, z: 0}
+  m_LocalScale: {x: 38.008156, y: 38.008156, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1800,9 +1800,9 @@ MonoBehaviour:
   clickTimer: 0.5
   musicManager: {fileID: 2083475537}
   soundSource: {fileID: 832525375}
-  pauseSound: {fileID: 0}
-  unpauseSound: {fileID: 0}
-  menuClick: {fileID: 0}
+  pauseSound: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
+  unpauseSound: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
+  menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
 --- !u!114 &402812285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1946,6 +1946,27 @@ MonoBehaviour:
   investigateButton: {fileID: 970338095}
   magicButton: {fileID: 150924267}
   magicCallButton: {fileID: 1812419088}
+  saveData:
+    cherryBlossomEsteemCountVar: 0
+    HollyEsteemCountVar: 0
+    IvyEsteemCountVar: 0
+    SpiderLilyEsteemCountVar: 0
+    BelladonnaEsteemCountVar: 0
+    AetherEsteemCountVar: 0
+    GaledricEsteemCountVar: 0
+    XzciarEsteemCountVar: 0
+    InkStoryState: 
+    sceneName: 
+    characterName: 
+    CherryBlossomExcursionChoiceVar: 0
+    SpiderLilyExcursionChoiceVar: 0
+    HollyExcursionChoiceVar: 0
+    BelladonnaExcursionChoiceVar: 0
+    IvyExcursionChoiceVar: 0
+    XzciarExcursionChoiceVar: 0
+    GaledricExcursionChoiceVar: 0
+    AetherExcursionChoiceVar: 0
+    exbTaken: 0
 --- !u!1 &422887277
 GameObject:
   m_ObjectHideFlags: 0

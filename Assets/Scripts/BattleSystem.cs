@@ -63,11 +63,15 @@ public class BattleSystem : MonoBehaviour
     //public int turnsUntilMagic;
     //public int MaxTurnsUntilMagic = 1;
 
-
+    [Header("Saving")]
+    public GameData saveData;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        SaveStateManager.instance.SaveGame(saveData);
+
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
@@ -693,7 +697,7 @@ public class BattleSystem : MonoBehaviour
                         playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                     {
 
-                        dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+                        dialogueText.text = playerUnit.unitName + "'s Magic Call activates.";
 
                         yield return new WaitForSeconds(textWaitSpeed);
 
@@ -779,7 +783,7 @@ public class BattleSystem : MonoBehaviour
             {
 
 
-                dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+                dialogueText.text = playerUnit.unitName + "'s Magic Call activates.";
 
                 yield return new WaitForSeconds(textWaitSpeed);
 
@@ -884,7 +888,7 @@ public class BattleSystem : MonoBehaviour
                     playerUnit.currentTurnUntilMagicCall == playerUnit.maxTurnUntilMagicCall)
                 {
 
-                    dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+                    dialogueText.text = playerUnit.unitName + "'s Magic Call activates.";
 
                     yield return new WaitForSeconds(textWaitSpeed);
 
@@ -997,7 +1001,7 @@ public class BattleSystem : MonoBehaviour
                 {
 
 
-                    dialogueText.text = playerUnit.unitName + "'s  Magic Call activates.";
+                    dialogueText.text = playerUnit.unitName + "'s Magic Call activates.";
 
                     yield return new WaitForSeconds(textWaitSpeed);
 

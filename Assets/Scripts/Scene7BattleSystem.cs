@@ -58,10 +58,14 @@ public class Scene7BattleSystem : MonoBehaviour
     //public int turnsUntilMagic;
     //public int MaxTurnsUntilMagic = 1;
 
+    [Header("Saving")]
+    public GameData saveData;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        SaveStateManager.instance.SaveGame(saveData);
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
