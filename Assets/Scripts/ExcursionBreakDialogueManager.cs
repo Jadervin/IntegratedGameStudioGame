@@ -34,6 +34,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
 
     [Header("Scenes")]
     //public string nextSceneName;
+    public string EXBScene;
     public string Scene4Name;
     public string Scene6Name;
     public string Scene10Name;
@@ -102,21 +103,45 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
         if (ExcursionBreaksTaken.EXBNum == 0)
         {
             ExcursionBreaksTaken.EXBNum++;
-            SceneManager.LoadScene(Scene4Name);
+            SceneManager.LoadScene(EXBScene);
         }
 
         else if (ExcursionBreaksTaken.EXBNum == 1)
         {
             ExcursionBreaksTaken.EXBNum++;
-            SceneManager.LoadScene(Scene6Name);
+            SceneManager.LoadScene(Scene4Name);
         }
 
         else if (ExcursionBreaksTaken.EXBNum == 2)
         {
             ExcursionBreaksTaken.EXBNum++;
+            SceneManager.LoadScene(EXBScene);
+        }
+
+        else if (ExcursionBreaksTaken.EXBNum == 3)
+        {
+            ExcursionBreaksTaken.EXBNum++;
+            SceneManager.LoadScene(Scene6Name);
+        }
+
+
+        else if (ExcursionBreaksTaken.EXBNum == 4)
+        {
+            ExcursionBreaksTaken.EXBNum++;
+            SceneManager.LoadScene(EXBScene);
+        }
+
+        else if (ExcursionBreaksTaken.EXBNum == 5)
+        {
+            ExcursionBreaksTaken.EXBNum++;
             SceneManager.LoadScene(Scene10Name);
         }
 
+        else if (ExcursionBreaksTaken.EXBNum == 6)
+        {
+            ExcursionBreaksTaken.EXBNum++;
+            SceneManager.LoadScene(EXBScene);
+        }
         else
         {
             ExcursionBreaksTaken.EXBNum++;

@@ -65,10 +65,16 @@ public class ExcursionBreakMenu : MonoBehaviour
 
     private void Awake()
     {
-        if (ExcursionBreaksTaken.EXBNum < 1)
+        if (ExcursionBreaksTaken.EXBNum < 2)
         {
             XzciarButton.SetActive(false);
             GaledricButton.SetActive(false);
+            AetherButton.SetActive(false);
+        }
+        else if(ExcursionBreaksTaken.EXBNum >= 2 && ExcursionBreaksTaken.EXBNum < 4)
+        {
+            GaledricButton.SetActive(true);
+            XzciarButton.SetActive(false);
             AetherButton.SetActive(false);
         }
         else
@@ -77,50 +83,54 @@ public class ExcursionBreakMenu : MonoBehaviour
             GaledricButton.SetActive(true);
             AetherButton.SetActive(true);
 
-            if (CherryBlossomExcursionChoice > 1)
-            {
-                CherryBlossomButton.SetActive(false);
-            }
-
-            if (SpiderLilyExcursionChoice > 1)
-            {
-                SpiderLilyButton.SetActive(false);
-            }
-
-            if (IvyExcursionChoice > 0)
-            {
-                IvyButton.SetActive(false);
-            }
-
-
-            if (HollyExcursionChoice > 1)
-            {
-                HollyButton.SetActive(false);
-            }
-
-
-            if (BelladonnaExcursionChoice > 1)
-            {
-                BelladonnaButton.SetActive(false);
-            }
-
-            if (XzciarExcursionChoice > 1)
-            {
-                XzciarButton.SetActive(false);
-            }
-
-            if (GaledricExcursionChoice > 1)
-            {
-                GaledricButton.SetActive(false);
-            }
-
-            if (AetherExcursionChoice > 1)
-            {
-                AetherButton.SetActive(false);
-            }
-
         }
-        
+
+
+        if (CherryBlossomExcursionChoice > 1)
+        {
+            CherryBlossomButton.SetActive(false);
+        }
+
+        if (SpiderLilyExcursionChoice > 1)
+        {
+            SpiderLilyButton.SetActive(false);
+        }
+
+        if (IvyExcursionChoice > 0)
+        {
+            IvyButton.SetActive(false);
+        }
+
+
+        if (HollyExcursionChoice > 1)
+        {
+            HollyButton.SetActive(false);
+        }
+
+
+        if (BelladonnaExcursionChoice > 1)
+        {
+            BelladonnaButton.SetActive(false);
+        }
+
+        if (XzciarExcursionChoice > 1)
+        {
+            XzciarButton.SetActive(false);
+        }
+
+        if (GaledricExcursionChoice > 1)
+        {
+            GaledricButton.SetActive(false);
+        }
+
+        if (AetherExcursionChoice > 1)
+        {
+            AetherButton.SetActive(false);
+        }
+
+
+
+
     }
 
 
