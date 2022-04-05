@@ -318,12 +318,12 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
                         SetBG(param);
                         break;
                     }
-                case "esteemCharAdd":
+                case "esteemcharadd":
                     {
                         SetEsteemAdd(param, num);
                         break;
                     }
-                case "esteemCharSubtract":
+                case "esteemcharsubtract":
                     {
                         SetEsteemSubtract(param, num);
                         break;

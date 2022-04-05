@@ -18,6 +18,9 @@ public class MainMenuScript : MonoBehaviour
     public AudioClip menuClick;
     public float clickTimer = 0.5f;
 
+    public GameData saveData;
+
+
     public void StartButtonPressed()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -103,6 +106,9 @@ public class MainMenuScript : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
+
+        //reset save data
+
         SceneManager.LoadScene(StartSceneName);
     }
     IEnumerator WaitforTitleMenuButton(float duration)
