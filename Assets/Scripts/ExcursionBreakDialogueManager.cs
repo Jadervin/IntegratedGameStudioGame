@@ -497,6 +497,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
 
     public void OnContinueButtonPress()
     {
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
         //skipping = false;
 
         if (isShowingOptions == false)
@@ -536,6 +537,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
 
     public void OnSkipTextButtonPress()
     {
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
         skipping = true;
 
     }

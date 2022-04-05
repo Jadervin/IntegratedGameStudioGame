@@ -335,18 +335,26 @@ PrefabInstance:
     - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1843923322}
+      objectReference: {fileID: 1843923324}
     - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnContinueButtonPress
       objectReference: {fileID: 0}
+    - target: {fileID: 32149874504004774, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene14DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1843923322}
+      objectReference: {fileID: 1843923324}
     - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnCompleteTextButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 302100930510386193, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene14DialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 302100930512474570, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_Name
@@ -439,10 +447,14 @@ PrefabInstance:
     - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1843923322}
+      objectReference: {fileID: 1843923324}
     - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnSkipTextButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 302100930914983651, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene14DialogueManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1aac2d42b7a8243862bec7902a1695, type: 3}
@@ -1228,7 +1240,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1843923323}
-  - component: {fileID: 1843923322}
   - component: {fileID: 1843923324}
   m_Layer: 0
   m_Name: DialogueManager
@@ -1237,55 +1248,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1843923322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843923321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81f1a33a20214434aadca06f85e76ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 9255b16dc0f6ac1428e3682403097ef3, type: 3}
-  textBox: {fileID: 2009285738}
-  customButton: {fileID: 5594061587560320015, guid: 19645ffad1b81024a89ee56cc81fda8c, type: 3}
-  optionPanel: {fileID: 931041769}
-  nameBackground: {fileID: 2009285739}
-  background: {fileID: 1601363260}
-  charact: {fileID: 39066235}
-  chapterBackground: {fileID: 703759380}
-  audioSource: {fileID: 1994213695}
-  nextSceneName: Ending Screen
-  isSpaceDisabled: 0
-  skipping: 0
-  completed: 0
-  isShowingOptions: 0
-  skipPressed: 0
-  saveData:
-    cherryBlossomEsteemCountVar: 0
-    HollyEsteemCountVar: 0
-    IvyEsteemCountVar: 0
-    SpiderLilyEsteemCountVar: 0
-    BelladonnaEsteemCountVar: 0
-    AetherEsteemCountVar: 0
-    GaledricEsteemCountVar: 0
-    XzciarEsteemCountVar: 0
-    InkStoryState: 
-    sceneName: 
-    characterName: 
-    CherryBlossomExcursionChoiceVar: 0
-    SpiderLilyExcursionChoiceVar: 0
-    HollyExcursionChoiceVar: 0
-    BelladonnaExcursionChoiceVar: 0
-    IvyExcursionChoiceVar: 0
-    XzciarExcursionChoiceVar: 0
-    GaledricExcursionChoiceVar: 0
-    AetherExcursionChoiceVar: 0
-    exbTaken: 0
-  letterSpeed: 0.02
 --- !u!4 &1843923323
 Transform:
   m_ObjectHideFlags: 0
