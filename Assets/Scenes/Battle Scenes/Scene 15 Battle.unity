@@ -1933,7 +1933,7 @@ MonoBehaviour:
   textWaitSpeed: 3
   playerBattleStation: {fileID: 422887278}
   enemyBattleStation: {fileID: 1817483729}
-  endingSceneName: EXB Battle Victory Scene
+  endingSceneName: Scene 15 After Battle
   losingSceneName: You Lose 1
   sfxSource: {fileID: 1176971579}
   soundResource: {fileID: 1078683626}
