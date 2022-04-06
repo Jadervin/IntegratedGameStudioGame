@@ -1253,7 +1253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d14ac99f69735c49930691559e44857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 2049515175}
+  musicSource: {fileID: 2049515175}
+  soundSource: {fileID: 20663095}
 --- !u!4 &1606842424
 Transform:
   m_ObjectHideFlags: 0
@@ -1306,6 +1307,7 @@ MonoBehaviour:
   charact: {fileID: 875428873}
   chapterBackground: {fileID: 649124900}
   audioSource: {fileID: 20663095}
+  EXBScene: Excursion Break 1
   Scene4Name: Scene 4
   Scene6Name: Scene 6
   Scene10Name: Scene 10
@@ -1504,7 +1506,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

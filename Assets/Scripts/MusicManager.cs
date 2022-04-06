@@ -5,11 +5,13 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
 
-    public AudioSource audioSource;
+    public AudioSource musicSource;
+    public AudioSource soundSource;
 
     public void Pause()
     {
-        audioSource.Pause();
+        musicSource.Pause();
+        soundSource.Pause();
     }
 
 
@@ -18,7 +20,8 @@ public class MusicManager : MonoBehaviour
     public void UnPause()
     {
 
-        audioSource.UnPause();
+        musicSource.UnPause();
+        soundSource.UnPause();
 
     }
 }

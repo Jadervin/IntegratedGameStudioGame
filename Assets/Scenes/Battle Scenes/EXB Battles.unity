@@ -1130,18 +1130,22 @@ PrefabInstance:
     - target: {fileID: 2558036578703594837, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 422877948}
+      objectReference: {fileID: 422877946}
     - target: {fileID: 2558036578703594837, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnMagicButton
       objectReference: {fileID: 0}
     - target: {fileID: 2558036578703594837, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
+      value: EXBBattleSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2558036578703594839, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106678947622518012, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3106678948279514032, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_IsActive
@@ -1250,50 +1254,50 @@ PrefabInstance:
     - target: {fileID: 3172652106985122646, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 422877948}
+      objectReference: {fileID: 422877946}
     - target: {fileID: 3172652106985122646, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnRunButton
       objectReference: {fileID: 0}
     - target: {fileID: 3172652106985122646, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
+      value: EXBBattleSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3562404557624893778, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 422877948}
+      objectReference: {fileID: 422877946}
     - target: {fileID: 3562404557624893778, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnAttackButton
       objectReference: {fileID: 0}
     - target: {fileID: 3562404557624893778, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
+      value: EXBBattleSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4524733427139660997, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 422877948}
+      objectReference: {fileID: 422877946}
     - target: {fileID: 4524733427139660997, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnFireMagicButton
       objectReference: {fileID: 0}
     - target: {fileID: 4524733427139660997, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
+      value: EXBBattleSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4524733427936708098, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 422877948}
+      objectReference: {fileID: 422877946}
     - target: {fileID: 4524733427936708098, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnHealMagicButton
       objectReference: {fileID: 0}
     - target: {fileID: 4524733427936708098, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
+      value: EXBBattleSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4524733427936708099, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1302,26 +1306,26 @@ PrefabInstance:
     - target: {fileID: 4524733428138657994, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 422877948}
+      objectReference: {fileID: 422877946}
     - target: {fileID: 4524733428138657994, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnBackButton
       objectReference: {fileID: 0}
     - target: {fileID: 4524733428138657994, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
+      value: EXBBattleSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5556028719617203808, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 422877948}
+      objectReference: {fileID: 422877946}
     - target: {fileID: 5556028719617203808, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnDefendButton
       objectReference: {fileID: 0}
     - target: {fileID: 5556028719617203808, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
+      value: EXBBattleSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6904762271839907385, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_IsActive
@@ -1330,26 +1334,26 @@ PrefabInstance:
     - target: {fileID: 6904762271839907387, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 422877948}
+      objectReference: {fileID: 422877946}
     - target: {fileID: 6904762271839907387, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnInvestigateButton
       objectReference: {fileID: 0}
     - target: {fileID: 6904762271839907387, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
+      value: EXBBattleSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8092791165523210545, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 422877948}
+      objectReference: {fileID: 422877946}
     - target: {fileID: 8092791165523210545, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnMagicCallButton
       objectReference: {fileID: 0}
     - target: {fileID: 8092791165523210545, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BattleSystem, Assembly-CSharp
+      value: EXBBattleSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8092791165523210547, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_IsActive
@@ -1887,7 +1891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422877947}
-  - component: {fileID: 422877948}
+  - component: {fileID: 422877946}
   m_Layer: 0
   m_Name: 'BattleSystem '
   m_TagString: Untagged
@@ -1895,21 +1899,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &422877947
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422877945}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 785.19507, y: 222.17448, z: -1161.8298}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &422877948
+--- !u!114 &422877946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1918,16 +1908,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 422877945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b403f6831219b649b9f4947ab7c10f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d614fa583d2c2f4289cc4931baee3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
   playerPrefab: {fileID: 3958377372304139921, guid: e566490f6f200f9479513e53be8d6431, type: 3}
   prefabNum: 0
   enemyPrefabList:
-  - {fileID: 5861059418221842721, guid: e2293048a7b72894eadd1a51d870d9bd, type: 3}
   - {fileID: 815413136707400056, guid: ecce34c8cb1e9534d9d655a37bafb6ae, type: 3}
   - {fileID: 2925291057040725528, guid: 289966661e48cba438a9083d91659ae2, type: 3}
+  - {fileID: 5861059418221842721, guid: e2293048a7b72894eadd1a51d870d9bd, type: 3}
   playerHUD: {fileID: 249833791}
   enemyHUD: {fileID: 667925442}
   dialogueText: {fileID: 476989556}
@@ -1967,6 +1957,20 @@ MonoBehaviour:
     GaledricExcursionChoiceVar: 0
     AetherExcursionChoiceVar: 0
     exbTaken: 0
+--- !u!4 &422877947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422877945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 785.19507, y: 222.17448, z: -1161.8298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &422887277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,7 +2944,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6126,7 +6130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d14ac99f69735c49930691559e44857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 832525375}
+  musicSource: {fileID: 832525375}
+  soundSource: {fileID: 1176971579}
 --- !u!4 &2083475538
 Transform:
   m_ObjectHideFlags: 0

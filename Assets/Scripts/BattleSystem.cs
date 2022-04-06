@@ -15,10 +15,11 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Game Object Components")]
     public GameObject playerPrefab;
-    public int prefabNum;
-    public List<GameObject> enemyPrefabList;
+    public GameObject enemyPrefab;
+    //public int prefabNum;
+    //public List<GameObject> enemyPrefabList;
 
-   
+
     Unit playerUnit;
     Unit enemyUnit;
 
@@ -75,7 +76,7 @@ public class BattleSystem : MonoBehaviour
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
 
-        prefabNum = Random.Range(0, 2);
+        //prefabNum = Random.Range(0, enemyPrefabList.Count);
 
         state = BattleState.State.START;
         StartCoroutine(setUpBattle());
@@ -89,7 +90,7 @@ public class BattleSystem : MonoBehaviour
         //try to randomly spawn in 3 different enemies
 
 
-        GameObject enemyGameObj = Instantiate(enemyPrefabList[prefabNum], enemyBattleStation);
+        GameObject enemyGameObj = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGameObj.GetComponent<Unit>();
 
         dialogueText.text = enemyUnit.unitName + " Appears.";

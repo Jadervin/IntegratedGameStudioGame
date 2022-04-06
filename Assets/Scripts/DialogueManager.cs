@@ -301,6 +301,11 @@ public class DialogueManager : MonoBehaviour
                         SetEsteemSubtract(param, num);
                         break;
                     }
+                case "finaldecision":
+                    {
+                        SetWarDecision(param);
+                        break;
+                    }
 
             }
         }
@@ -452,6 +457,20 @@ public class DialogueManager : MonoBehaviour
         }
         
     }
+
+    void SetWarDecision(string _decision)
+    {
+
+        if(_decision == "continue")
+        {
+            WarChoice.warChoice = 0;
+        }
+        else
+        {
+            WarChoice.warChoice = 1;
+        }
+    }
+
     public void OnContinueButtonPress()
     {
         //skipping = false;

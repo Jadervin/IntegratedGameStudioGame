@@ -1018,7 +1018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d14ac99f69735c49930691559e44857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1773200212}
+  musicSource: {fileID: 1773200212}
+  soundSource: {fileID: 958246565}
 --- !u!4 &1641551068
 Transform:
   m_ObjectHideFlags: 0
