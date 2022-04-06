@@ -18,7 +18,9 @@ public class MainMenuScript : MonoBehaviour
     public AudioClip menuClick;
     public float clickTimer = 0.5f;
 
+    //public GameMaster master;
     public GameData saveData;
+    //public SaveStateManager saveManager;
 
 
     public void StartButtonPressed()
@@ -108,6 +110,7 @@ public class MainMenuScript : MonoBehaviour
         yield return new WaitForSeconds(duration);   //Wait
 
         //reset save data
+        SaveStateManager.instance.DeleteData();
 
         SceneManager.LoadScene(StartSceneName);
     }

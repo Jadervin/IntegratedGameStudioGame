@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class WarChoice
 {
-    public static int warChoice;
+    public static int warChoice = 0;
 }

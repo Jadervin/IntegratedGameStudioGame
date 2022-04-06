@@ -950,6 +950,27 @@ MonoBehaviour:
   soundSource: {fileID: 2145920607}
   menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
   clickTimer: 0.3
+  saveData:
+    cherryBlossomEsteemCountVar: 0
+    HollyEsteemCountVar: 0
+    IvyEsteemCountVar: 0
+    SpiderLilyEsteemCountVar: 0
+    BelladonnaEsteemCountVar: 0
+    AetherEsteemCountVar: 0
+    GaledricEsteemCountVar: 0
+    XzciarEsteemCountVar: 0
+    InkStoryState: 
+    sceneName: 
+    characterName: 
+    CherryBlossomExcursionChoiceVar: 0
+    SpiderLilyExcursionChoiceVar: 0
+    HollyExcursionChoiceVar: 0
+    BelladonnaExcursionChoiceVar: 0
+    IvyExcursionChoiceVar: 0
+    XzciarExcursionChoiceVar: 0
+    GaledricExcursionChoiceVar: 0
+    AetherExcursionChoiceVar: 0
+    exbTaken: 0
 --- !u!4 &1398104931
 Transform:
   m_ObjectHideFlags: 0
@@ -1283,6 +1304,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1398104930}
+    - target: {fileID: 5940707859733875093, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartButtonPressed
+      objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875095, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Name
       value: 'Start '

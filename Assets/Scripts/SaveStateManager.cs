@@ -154,7 +154,12 @@ public class SaveStateManager : MonoBehaviour
 
 
 
-
+    public GameData DeleteData()
+    {
+        GameData saveData = new GameData();
+        SaveGame(saveData);
+        return saveData;
+    }
 
 
 

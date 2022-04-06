@@ -1286,7 +1286,7 @@ MonoBehaviour:
   charact: {fileID: 39066235}
   chapterBackground: {fileID: 703759380}
   audioSource: {fileID: 1994213695}
-  nextSceneName: Ending Screen
+  nextSceneName: Scene 15
   isSpaceDisabled: 0
   skipping: 0
   completed: 0

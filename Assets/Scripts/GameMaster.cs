@@ -28,4 +28,9 @@ public class GameMaster : MonoBehaviour
 
         //_gameStateManager?.SaveGame();
     }
+
+    public void OnStartButtonClicktoDelete()
+    {
+        SaveStateManager.instance.DeleteData();
+    }
 }
