@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dffb52702b3ed384c8198f6f368af359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EXBScene: 
+  EXBScene: Excursion Break 1
   Scene4Name: Scene 4
   Scene6Name: Scene 6
   Scene10Name: Scene 10

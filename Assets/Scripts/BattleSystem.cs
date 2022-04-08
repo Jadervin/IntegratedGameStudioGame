@@ -31,6 +31,7 @@ public class BattleSystem : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public GameObject optionsPanel;
     public GameObject magicOptionsPanel;
+    public GameObject magicCallOptionsPanel;
     public GameObject PlayerUIParent;
 
     [Range(0, 15f)]
@@ -56,7 +57,14 @@ public class BattleSystem : MonoBehaviour
     public GameObject magicCallButton;
 
 
-    //[Header("Booleans")]
+    
+    [Header("Character Booleans")]
+    public bool AetherBool = false;
+    public bool AriarBool = false;
+    public bool GaledricBool = false;
+    public bool XzciarBool = false;
+
+    [Header("Booleans")]
     //public bool isTimeForMagicCall = false;
     //public bool isTimeForInvestigation = false;
     //public bool isTimeForDefend = false;
@@ -75,6 +83,7 @@ public class BattleSystem : MonoBehaviour
 
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
+        magicCallOptionsPanel.SetActive(false);
 
         //prefabNum = Random.Range(0, enemyPrefabList.Count);
 
@@ -171,6 +180,51 @@ public class BattleSystem : MonoBehaviour
         
     }
 
+    public void OnAriarMagicCallButton()
+    {
+        if (state != BattleState.State.PLAYERTURN)
+        {
+            return;
+        }
+
+        AriarBool = true;
+        StartCoroutine(PlayerMagicCall());
+    }
+
+    public void OnAetherMagicCallButton()
+    {
+        if (state != BattleState.State.PLAYERTURN)
+        {
+            return;
+        }
+
+        AetherBool = true;
+        StartCoroutine(PlayerMagicCall());
+    }
+
+    public void OnGaledricMagicCallButton()
+    {
+        if (state != BattleState.State.PLAYERTURN)
+        {
+            return;
+        }
+
+        GaledricBool = true;
+        StartCoroutine(PlayerMagicCall());
+    }
+
+    public void OnXzciarMagicCallButton()
+    {
+        if (state != BattleState.State.PLAYERTURN)
+        {
+            return;
+        }
+
+        XzciarBool = true;
+        StartCoroutine(PlayerMagicCall());
+    }
+
+
     public void OnInvestigateButton()
     {
         if (state != BattleState.State.PLAYERTURN)
@@ -234,7 +288,8 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
-                StartCoroutine(PlayerMagicCall());
+                magicCallOptionsPanel.SetActive(true);
+                //StartCoroutine(PlayerMagicCall());
             }
 
 
@@ -259,6 +314,22 @@ public class BattleSystem : MonoBehaviour
         else
         {
             magicOptionsPanel.SetActive(false);
+        }
+
+    }
+
+
+    public void OnBackfromMagicCallButton()
+    {
+        //if it is not the first turn or player turn,
+        //the button will not work
+        if (state != BattleState.State.PLAYERTURN && state != BattleState.State.FIRSTTURN)
+        {
+            return;
+        }
+        else
+        {
+            magicCallOptionsPanel.SetActive(false);
         }
 
     }
@@ -515,6 +586,7 @@ public class BattleSystem : MonoBehaviour
 
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
+        magicCallOptionsPanel.SetActive(false);
         dialogueText.text = playerUnit.unitName + " uses Magic Call.";
 
         //Calls a function in the Unit Script to Decrease the current MP
@@ -598,9 +670,40 @@ public class BattleSystem : MonoBehaviour
 
                         yield return new WaitForSeconds(textWaitSpeed);
 
-                        dialogueText.text = " \tAriar\n" +
-                        "I've got this.";
-                        yield return new WaitForSeconds(textWaitSpeed);
+
+                        if (AriarBool == true)
+                        {
+                            dialogueText.text = " \tAriar\n" +
+                            "I've got this.";
+                            AriarBool = false;
+                            yield return new WaitForSeconds(textWaitSpeed);
+
+                        }
+                        if(AetherBool == true)
+                        {
+                            dialogueText.text = " \tAether\n" +
+                            "I've got your back.";
+                            EsteemScript.AetherEsteemCount += 1;
+                            AetherBool = false;
+                            yield return new WaitForSeconds(textWaitSpeed);
+                        }
+                        if (GaledricBool == true)
+                        {
+                            dialogueText.text = " \tGaledric\n" +
+                            "I'll cover for you.";
+                            EsteemScript.GaledricEsteemCount += 1;
+                            GaledricBool = false;
+                            yield return new WaitForSeconds(textWaitSpeed);
+                        }
+                        if(XzciarBool == true)
+                        {
+                            dialogueText.text = " \tXzciar\n" +
+                           "I'll protect you.";
+                            EsteemScript.XzciarEsteemCount += 1;
+                            XzciarBool = false;
+                            yield return new WaitForSeconds(textWaitSpeed);
+                        }
+
 
                         //Checks to see if the enemy dies from the attack.
                         //Also calls the function to damage the enemy
@@ -702,9 +805,41 @@ public class BattleSystem : MonoBehaviour
 
                         yield return new WaitForSeconds(textWaitSpeed);
 
-                        dialogueText.text = " \tAriar\n" +
-                        "I've got this.";
-                        yield return new WaitForSeconds(textWaitSpeed);
+
+                        if (AriarBool == true)
+                        {
+                            dialogueText.text = " \tAriar\n" +
+                            "I've got this.";
+                            AriarBool = false;
+                            yield return new WaitForSeconds(textWaitSpeed);
+
+                        }
+                        if (AetherBool == true)
+                        {
+                            dialogueText.text = " \tAether\n" +
+                            "I've got your back.";
+                            EsteemScript.AetherEsteemCount += 1;
+                            AetherBool = false;
+                            yield return new WaitForSeconds(textWaitSpeed);
+                        }
+                        if (GaledricBool == true)
+                        {
+                            dialogueText.text = " \tGaledric\n" +
+                            "I'll cover for you.";
+                            EsteemScript.GaledricEsteemCount += 1;
+                            GaledricBool = false;
+                            yield return new WaitForSeconds(textWaitSpeed);
+                        }
+                        if (XzciarBool == true)
+                        {
+                            dialogueText.text = " \tXzciar\n" +
+                           "I'll protect you.";
+                            EsteemScript.XzciarEsteemCount += 1;
+                            XzciarBool = false;
+                            yield return new WaitForSeconds(textWaitSpeed);
+                        }
+
+
 
                         //Checks to see if the enemy dies from the attack.
                         //Also calls the function to damage the enemy
@@ -788,9 +923,41 @@ public class BattleSystem : MonoBehaviour
 
                 yield return new WaitForSeconds(textWaitSpeed);
 
-                dialogueText.text = " \tAriar\n" +
-                "I've got this.";
-                yield return new WaitForSeconds(textWaitSpeed);
+
+                if (AriarBool == true)
+                {
+                    dialogueText.text = " \tAriar\n" +
+                    "I've got this.";
+                    AriarBool = false;
+                    yield return new WaitForSeconds(textWaitSpeed);
+
+                }
+                if (AetherBool == true)
+                {
+                    dialogueText.text = " \tAether\n" +
+                    "I've got your back.";
+                    EsteemScript.AetherEsteemCount += 1;
+                    AetherBool = false;
+                    yield return new WaitForSeconds(textWaitSpeed);
+                }
+                if (GaledricBool == true)
+                {
+                    dialogueText.text = " \tGaledric\n" +
+                    "I'll cover for you.";
+                    EsteemScript.GaledricEsteemCount += 1;
+                    GaledricBool = false;
+                    yield return new WaitForSeconds(textWaitSpeed);
+                }
+                if (XzciarBool == true)
+                {
+                    dialogueText.text = " \tXzciar\n" +
+                   "I'll protect you.";
+                    EsteemScript.XzciarEsteemCount += 1;
+                    XzciarBool = false;
+                    yield return new WaitForSeconds(textWaitSpeed);
+                }
+
+
 
                 //Checks to see if the enemy dies from the attack.
                 //Also calls the function to damage the enemy
@@ -893,9 +1060,41 @@ public class BattleSystem : MonoBehaviour
 
                     yield return new WaitForSeconds(textWaitSpeed);
 
-                    dialogueText.text = " \tAriar\n" +
-                    "I've got this.";
-                    yield return new WaitForSeconds(textWaitSpeed);
+
+                    if (AriarBool == true)
+                    {
+                        dialogueText.text = " \tAriar\n" +
+                        "I've got this.";
+                        AriarBool = false;
+                        yield return new WaitForSeconds(textWaitSpeed);
+
+                    }
+                    if (AetherBool == true)
+                    {
+                        dialogueText.text = " \tAether\n" +
+                        "I've got your back.";
+                        EsteemScript.AetherEsteemCount += 1;
+                        AetherBool = false;
+                        yield return new WaitForSeconds(textWaitSpeed);
+                    }
+                    if (GaledricBool == true)
+                    {
+                        dialogueText.text = " \tGaledric\n" +
+                        "I'll cover for you.";
+                        EsteemScript.GaledricEsteemCount += 1;
+                        GaledricBool = false;
+                        yield return new WaitForSeconds(textWaitSpeed);
+                    }
+                    if (XzciarBool == true)
+                    {
+                        dialogueText.text = " \tXzciar\n" +
+                       "I'll protect you.";
+                        EsteemScript.XzciarEsteemCount += 1;
+                        XzciarBool = false;
+                        yield return new WaitForSeconds(textWaitSpeed);
+                    }
+
+
 
                     //Checks to see if the enemy dies from the attack.
                     //Also calls the function to damage the enemy
@@ -1006,9 +1205,41 @@ public class BattleSystem : MonoBehaviour
 
                     yield return new WaitForSeconds(textWaitSpeed);
 
-                    dialogueText.text = " \tAriar\n" +
-                    "I've got this.";
-                    yield return new WaitForSeconds(textWaitSpeed);
+
+                    if (AriarBool == true)
+                    {
+                        dialogueText.text = " \tAriar\n" +
+                        "I've got this.";
+                        AriarBool = false;
+                        yield return new WaitForSeconds(textWaitSpeed);
+
+                    }
+                    if (AetherBool == true)
+                    {
+                        dialogueText.text = " \tAether\n" +
+                        "I've got your back.";
+                        EsteemScript.AetherEsteemCount += 1;
+                        AetherBool = false;
+                        yield return new WaitForSeconds(textWaitSpeed);
+                    }
+                    if (GaledricBool == true)
+                    {
+                        dialogueText.text = " \tGaledric\n" +
+                        "I'll cover for you.";
+                        EsteemScript.GaledricEsteemCount += 1;
+                        GaledricBool = false;
+                        yield return new WaitForSeconds(textWaitSpeed);
+                    }
+                    if (XzciarBool == true)
+                    {
+                        dialogueText.text = " \tXzciar\n" +
+                       "I'll protect you.";
+                        EsteemScript.XzciarEsteemCount += 1;
+                        XzciarBool = false;
+                        yield return new WaitForSeconds(textWaitSpeed);
+                    }
+
+
 
                     //Checks to see if the enemy dies from the attack.
                     //Also calls the function to damage the enemy
