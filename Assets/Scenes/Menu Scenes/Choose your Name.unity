@@ -1522,12 +1522,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2265741763217423043, guid: 717a849d7a75c3c4db681ed448242838, type: 3}
       propertyPath: m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2265741763217423043, guid: 717a849d7a75c3c4db681ed448242838, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: cbd31cc9465480840bd923409611d264, type: 3}
+    - target: {fileID: 2265741763217423043, guid: 717a849d7a75c3c4db681ed448242838, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2265741763217423068, guid: 717a849d7a75c3c4db681ed448242838, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

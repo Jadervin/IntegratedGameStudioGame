@@ -647,7 +647,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 3145aee8cb6f79040bdf61e04a1923b9, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -655,7 +655,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 30
 --- !u!222 &821529484
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1086,3 +1086,24 @@ MonoBehaviour:
   soundSource: {fileID: 632128092}
   menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
   clickTimer: 0.3
+  saveData:
+    cherryBlossomEsteemCountVar: 0
+    HollyEsteemCountVar: 0
+    IvyEsteemCountVar: 0
+    SpiderLilyEsteemCountVar: 0
+    BelladonnaEsteemCountVar: 0
+    AetherEsteemCountVar: 0
+    GaledricEsteemCountVar: 0
+    XzciarEsteemCountVar: 0
+    InkStoryState: 
+    sceneName: 
+    characterName: 
+    CherryBlossomExcursionChoiceVar: 0
+    SpiderLilyExcursionChoiceVar: 0
+    HollyExcursionChoiceVar: 0
+    BelladonnaExcursionChoiceVar: 0
+    IvyExcursionChoiceVar: 0
+    XzciarExcursionChoiceVar: 0
+    GaledricExcursionChoiceVar: 0
+    AetherExcursionChoiceVar: 0
+    exbTaken: 0

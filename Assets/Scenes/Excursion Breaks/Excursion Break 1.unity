@@ -380,7 +380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 504, y: 23.944}
+  m_AnchoredPosition: {x: 504, y: -84}
   m_SizeDelta: {x: 85.463, y: 33.889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &102499266
@@ -609,8 +609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 504.58344, y: -77.87596}
-  m_SizeDelta: {x: 87.517, y: 30}
+  m_AnchoredPosition: {x: 504.58344, y: -283}
+  m_SizeDelta: {x: 85.463, y: 33.889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &724376152
 MonoBehaviour:
@@ -2417,8 +2417,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124, y: 134}
-  m_SizeDelta: {x: 160, y: 53.723}
+  m_AnchoredPosition: {x: 124, y: 118}
+  m_SizeDelta: {x: 160, y: 61.221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797050393
 MonoBehaviour:
@@ -2525,33 +2525,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 102499268}
-    - target: {fileID: 2565819623233106285, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnSaveButtonClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 181.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 105.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -22.791
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076165696392282078, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -8.195
-      objectReference: {fileID: 0}
     - target: {fileID: 3076165697413466868, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_Name
       value: Pause Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076165697413466868, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3076165697413466869, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_Pivot.x
@@ -2641,18 +2617,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1103827054}
-    - target: {fileID: 5777285490114579321, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MenuPressed
-      objectReference: {fileID: 0}
     - target: {fileID: 7535688349824218413, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1103827054}
-    - target: {fileID: 7535688349824218413, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UnPause
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
 --- !u!224 &1916125469 stripped
@@ -2701,8 +2669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 503.67328, y: 140.00002}
-  m_SizeDelta: {x: 82.339, y: 30}
+  m_AnchoredPosition: {x: 503.67328, y: 135.501}
+  m_SizeDelta: {x: 85.463, y: 33.889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2094273206
 MonoBehaviour:

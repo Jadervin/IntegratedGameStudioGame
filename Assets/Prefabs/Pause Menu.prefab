@@ -67,7 +67,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 569e9a34b84ca074886202eced76f859, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 30
 --- !u!114 &2565819623233106285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Sprite
@@ -411,6 +411,10 @@ PrefabInstance:
     - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Pivot.x
@@ -442,11 +446,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 184.5049
+      value: 184.505
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 144.0384
+      value: 80.673
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_LocalScale.x
@@ -494,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -385
+      value: -384.51
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -556,7 +560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Sprite
@@ -565,6 +569,10 @@ PrefabInstance:
     - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Pivot.x
@@ -596,11 +604,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 184.5049
+      value: 184.505
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 144.0384
+      value: 67.224
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_LocalScale.x
@@ -648,7 +656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -373
+      value: -374.43
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
