@@ -57,6 +57,9 @@ public class Scene7BattleSystem : MonoBehaviour
     public GameObject investigateButton;
     public GameObject magicButton;
     public GameObject magicCallButton;
+    public GameObject AetherButton;
+    public GameObject GaledricButton;
+    public GameObject XzciarButton;
 
     //[Header("Booleans")]
     //public bool isTimeForMagicCall = false;
@@ -77,6 +80,41 @@ public class Scene7BattleSystem : MonoBehaviour
         optionsPanel.SetActive(false);
         magicOptionsPanel.SetActive(false);
         magicCallOptionsPanel.SetActive(false);
+
+
+
+        if (MetCharacter.AetherMet == 0)
+        {
+            AetherButton.SetActive(false);
+
+        }
+        else
+        {
+            AetherButton.SetActive(true);
+        }
+
+        if (MetCharacter.GaledricMet == 0)
+        {
+            GaledricButton.SetActive(false);
+
+        }
+        else
+        {
+            GaledricButton.SetActive(true);
+        }
+
+
+        if (MetCharacter.XzciarMet == 0)
+        {
+            XzciarButton.SetActive(false);
+
+        }
+        else
+        {
+            XzciarButton.SetActive(true);
+        }
+
+
 
         state = BattleState.State.START;
         StartCoroutine(setUpBattle());

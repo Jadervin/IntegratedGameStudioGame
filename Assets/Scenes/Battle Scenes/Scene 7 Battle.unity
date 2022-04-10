@@ -2667,6 +2667,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5556028719617203810, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
   m_PrefabInstance: {fileID: 1854443104}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &755682977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8103579704055308923, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+  m_PrefabInstance: {fileID: 1854443104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &834037992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,6 +2817,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9fb5d41745be14386d77139407d897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &927738917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5557467025225338154, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+  m_PrefabInstance: {fileID: 1854443104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &935476240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,6 +4980,7 @@ MonoBehaviour:
   dialogueText: {fileID: 30183129}
   optionsPanel: {fileID: 2071116619}
   magicOptionsPanel: {fileID: 1478598055}
+  magicCallOptionsPanel: {fileID: 1854443105}
   PlayerUIParent: {fileID: 1075662125}
   textWaitSpeed: 3
   playerBattleStation: {fileID: 4377478}
@@ -4978,11 +4989,18 @@ MonoBehaviour:
   losingSceneName: Scene 7 After Battle
   sfxSource: {fileID: 1327619969}
   soundResource: {fileID: 164788478}
+  AetherBool: 0
+  AriarBool: 0
+  GaledricBool: 0
+  XzciarBool: 0
   attackButton: {fileID: 682415470}
   defendButton: {fileID: 692706524}
   investigateButton: {fileID: 1225464188}
   magicButton: {fileID: 1747593519}
   magicCallButton: {fileID: 1736653900}
+  AetherButton: {fileID: 927738917}
+  GaledricButton: {fileID: 1928244228}
+  XzciarButton: {fileID: 755682977}
   saveData:
     cherryBlossomEsteemCountVar: 0
     HollyEsteemCountVar: 0
@@ -5332,6 +5350,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 164331404}
     m_Modifications:
+    - target: {fileID: 2541460420375561757, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1637890514}
+    - target: {fileID: 2541460420375561757, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnGaledricMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541460420375561757, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene7BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2558036578703594837, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5448,6 +5478,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3551889216521695770, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1637890514}
+    - target: {fileID: 3551889216521695770, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnAriarMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551889216521695770, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene7BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3562404557624893778, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5504,6 +5546,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnDefendButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5557467025225338152, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1637890514}
+    - target: {fileID: 5557467025225338152, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnAetherMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557467025225338152, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene7BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6904762271839907385, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5516,6 +5570,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnInvestigateButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6910853662309842291, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1637890514}
+    - target: {fileID: 6910853662309842291, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnBackfromMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910853662309842291, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene7BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8092791165523210545, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5524,8 +5590,25 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnMagicCallButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8103579704055308921, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1637890514}
+    - target: {fileID: 8103579704055308921, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnXzciarMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103579704055308921, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene7BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+--- !u!1 &1854443105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3475556476142728280, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+  m_PrefabInstance: {fileID: 1854443104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1901327085 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1573499129612542658, guid: 7f780812008acb248af0e48c2293545c, type: 3}
@@ -5874,6 +5957,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f780812008acb248af0e48c2293545c, type: 3}
+--- !u!1 &1928244228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2541460420375561759, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+  m_PrefabInstance: {fileID: 1854443104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2045562436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1573499129612542658, guid: 7f780812008acb248af0e48c2293545c, type: 3}

@@ -306,6 +306,11 @@ public class DialogueManager : MonoBehaviour
                         SetWarDecision(param);
                         break;
                     }
+                case "boolean":
+                    {
+                        SetCharBoolean(param);
+                        break;
+                    }
 
             }
         }
@@ -468,6 +473,22 @@ public class DialogueManager : MonoBehaviour
         else
         {
             WarChoice.warChoice = 1;
+        }
+    }
+
+    void SetCharBoolean(string _charBool)
+    {
+        if (_charBool == "MetAether")
+        {
+            MetCharacter.AetherMet = 1;
+        }
+        else if (_charBool == "MetGaledric")
+        {
+            MetCharacter.GaledricMet = 1;
+        }
+        else
+        {
+            MetCharacter.XzciarMet = 1;
         }
     }
 

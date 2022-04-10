@@ -14,6 +14,7 @@ public class ExcursionBreakMenu : MonoBehaviour
     public GameObject XzciarButton;
     public GameObject GaledricButton;
     public GameObject AetherButton;
+    public GameObject CombatButton;
 
 
     [Header("Scene Names")]
@@ -25,7 +26,7 @@ public class ExcursionBreakMenu : MonoBehaviour
     public string Xzciar1SceneName;
     public string Galedric1SceneName;
     public string Aether1SceneName;
-
+    
 
     public string CherryBlossom2SceneName;
     public string SpiderLily2SceneName;
@@ -57,14 +58,51 @@ public class ExcursionBreakMenu : MonoBehaviour
     public GameData saveData;
 
 
+    [Header("Tags")]
+    public static string currentTag;
+
+
 
     void Start()
     {
+
+
         SaveStateManager.instance.SaveGame(saveData);
+
+        if (ExcursionBreaksTaken.EXBNum == (2 * ExcursionBreaksTaken.EXBNum) - 1) 
+        {
+            if (currentTag == "Inquiries")
+            {
+                
+                CherryBlossomButton.SetActive(false);
+                SpiderLilyButton.SetActive(false);
+                HollyButton.SetActive(false);
+                BelladonnaButton.SetActive(false);
+                IvyButton.SetActive(false);
+            }
+            else if(currentTag == "Hangouts")
+            {
+                XzciarButton.SetActive(false);
+                GaledricButton.SetActive(false);
+                AetherButton.SetActive(false);
+                
+            }
+            else
+            {
+                CombatButton.SetActive(false);
+            }
+        }
+        else
+        {
+            currentTag = "";
+        }
     }
 
     private void Awake()
     {
+
+
+
         if (ExcursionBreaksTaken.EXBNum < 2)
         {
             XzciarButton.SetActive(false);
@@ -150,8 +188,14 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         yield return new WaitForSeconds(duration);   //Wait
 
+        currentTag = CherryBlossomButton.tag;
+
+
         if (CherryBlossomExcursionChoice == 0)
         {
+
+
+
             CherryBlossomExcursionChoice++;
             SceneManager.LoadScene(CherryBlossom1SceneName);
         }
@@ -179,6 +223,8 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
+
+        currentTag = SpiderLilyButton.tag;
 
         if (SpiderLilyExcursionChoice == 0)
         {
@@ -209,6 +255,10 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         yield return new WaitForSeconds(duration);   //Wait
 
+
+        currentTag = HollyButton.tag;
+
+
         if (HollyExcursionChoice == 0)
         {
             HollyExcursionChoice++;
@@ -237,6 +287,9 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
+
+        currentTag = BelladonnaButton.tag;
+
 
 
         if (BelladonnaExcursionChoice == 0)
@@ -267,6 +320,7 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         yield return new WaitForSeconds(duration);   //Wait
 
+        currentTag = IvyButton.tag;
 
         if (IvyExcursionChoice == 0)
         {
@@ -293,6 +347,9 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
+
+        currentTag = XzciarButton.tag;
+
 
         if (XzciarExcursionChoice == 0)
         {
@@ -323,6 +380,9 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         yield return new WaitForSeconds(duration);   //Wait
 
+        currentTag = GaledricButton.tag;
+
+
         if (GaledricExcursionChoice == 0)
         {
             GaledricExcursionChoice++;
@@ -352,6 +412,10 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         yield return new WaitForSeconds(duration);   //Wait
 
+        currentTag = AetherButton.tag;
+
+
+
         if (AetherExcursionChoice == 0)
         {
             AetherExcursionChoice++;
@@ -378,6 +442,9 @@ public class ExcursionBreakMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(duration);   //Wait
+
+        currentTag = CombatButton.tag;
+
         SceneManager.LoadScene(BattleSceneName);
        
     }

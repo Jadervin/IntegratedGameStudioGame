@@ -560,6 +560,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8092791165523210547, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
   m_PrefabInstance: {fileID: 3106678947741915275}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &699161692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5557467025225338154, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+  m_PrefabInstance: {fileID: 3106678947741915275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &738328221
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +662,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738328221}
   m_CullTransparentMesh: 1
+--- !u!1 &769191838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8103579704055308923, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+  m_PrefabInstance: {fileID: 3106678947741915275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &796995877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1081,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3076165697413466868, guid: 260dbf991c562cb46b1b9efed2c21698, type: 3}
   m_PrefabInstance: {fileID: 1577027282}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1599253341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3475556476142728280, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+  m_PrefabInstance: {fileID: 3106678947741915275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1607063399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2541460420375561759, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+  m_PrefabInstance: {fileID: 3106678947741915275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1659286501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1239,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 1182234484}
   dialogueText: {fileID: 995329314}
   optionsPanel: {fileID: 1432414238}
+  magicCallOptionsPanel: {fileID: 1599253341}
   magicOptionsPanel: {fileID: 540355387}
   PlayerUIParent: {fileID: 2008534456}
   textWaitSpeed: 3
@@ -1233,6 +1254,13 @@ MonoBehaviour:
   investigateButton: {fileID: 223459582}
   magicButton: {fileID: 90905347}
   magicCallButton: {fileID: 690946301}
+  AetherButton: {fileID: 699161692}
+  GaledricButton: {fileID: 1607063399}
+  XzciarButton: {fileID: 769191838}
+  AetherBool: 0
+  AriarBool: 0
+  GaledricBool: 0
+  XzciarBool: 0
   isTimeForMagicCall: 0
   isTimeForInvestigation: 0
   isTimeForDefend: 0
@@ -1558,6 +1586,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1837787885}
     m_Modifications:
+    - target: {fileID: 2541460420375561757, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1832940629}
+    - target: {fileID: 2541460420375561757, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnGaledricMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541460420375561757, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene2BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2558036578703594837, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1658,6 +1698,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1832940629}
+    - target: {fileID: 3551889216521695770, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1832940629}
+    - target: {fileID: 3551889216521695770, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnAriarMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551889216521695770, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene2BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3562404557624893778, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1682,13 +1734,49 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1832940629}
+    - target: {fileID: 5557467025225338152, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1832940629}
+    - target: {fileID: 5557467025225338152, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnAetherMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557467025225338152, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene2BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6904762271839907387, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1832940629}
+    - target: {fileID: 6910853662309842291, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1832940629}
+    - target: {fileID: 6910853662309842291, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnBackfromMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910853662309842291, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene2BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8092791165523210545, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1832940629}
+    - target: {fileID: 8103579704055308921, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1832940629}
+    - target: {fileID: 8103579704055308921, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnXzciarMagicCallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103579704055308921, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene2BattleSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fad3a1a7b2bb4b4c84472fd962422d6, type: 3}

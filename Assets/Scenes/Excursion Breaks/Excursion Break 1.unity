@@ -877,6 +877,7 @@ MonoBehaviour:
   XzciarButton: {fileID: 2094273204}
   GaledricButton: {fileID: 724376150}
   AetherButton: {fileID: 87600655}
+  CombatButton: {fileID: 1797050391}
   CherryBlossom1SceneName: (EX1)Cherry Blossom 1
   SpiderLily1SceneName: (EX1)Spider Lily 1
   Holly1SceneName: (EX1)Holly 1
