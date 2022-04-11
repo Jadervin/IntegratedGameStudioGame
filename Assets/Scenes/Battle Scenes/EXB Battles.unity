@@ -1835,6 +1835,7 @@ MonoBehaviour:
   - {fileID: 815413136707400056, guid: ecce34c8cb1e9534d9d655a37bafb6ae, type: 3}
   - {fileID: 2925291057040725528, guid: 289966661e48cba438a9083d91659ae2, type: 3}
   - {fileID: 5861059418221842721, guid: e2293048a7b72894eadd1a51d870d9bd, type: 3}
+  - {fileID: 1026211056817540282, guid: 3dc53b71d8b3cdf418aadc55a457ca5d, type: 3}
   playerHUD: {fileID: 249833791}
   enemyHUD: {fileID: 667925442}
   dialogueText: {fileID: 476989556}
