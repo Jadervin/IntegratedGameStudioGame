@@ -129,7 +129,7 @@ public class EXBBattleSystem : MonoBehaviour
         playerUnit = playerGameObj.GetComponent<Unit>();
 
         //try to randomly spawn in 3 different enemies
-
+        playerUnit.unitName = CharacterNameScript.characterName;
 
         GameObject enemyGameObj = Instantiate(enemyPrefabList[prefabNum], enemyBattleStation);
         enemyUnit = enemyGameObj.GetComponent<Unit>();

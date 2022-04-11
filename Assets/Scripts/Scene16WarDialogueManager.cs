@@ -56,6 +56,11 @@ public class Scene16WarDialogueManager : MonoBehaviour
     [Range(0, 0.5f)]
     public float letterSpeed = 0.02f;
 
+
+    [Header("Sounds")]
+    public Queue<AudioClip> SoundQueue = new Queue<AudioClip>();
+
+
     //string[] splitArray;
 
     // Start is called before the first frame update
@@ -95,6 +100,17 @@ public class Scene16WarDialogueManager : MonoBehaviour
             {
 
                 OnContinueButtonPress();
+            }
+        }
+
+
+        if (SoundQueue.Count > 0)
+        {
+            if (audioSource.isPlaying == false)
+            {
+                audioSource.clip = SoundQueue.Dequeue();
+                audioSource.Play();
+
             }
         }
 
@@ -459,9 +475,15 @@ public class Scene16WarDialogueManager : MonoBehaviour
         }
         else
         {
-            audioSource.PlayOneShot(Resources.Load<AudioClip>(_sound));
-        }
+            SoundQueue.Enqueue(Resources.Load<AudioClip>(_sound));
 
+
+            //audioSource.PlayOneShot(Resources.Load<AudioClip>(_sound));
+            //StartCoroutine(SoundPlay());
+            //play sound
+            //Wait for length of sound
+            //continue/play
+        }
     }
     public void OnContinueButtonPress()
     {

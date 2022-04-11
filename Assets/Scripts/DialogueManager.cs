@@ -54,6 +54,10 @@ public class DialogueManager : MonoBehaviour
     [Range(0, 0.5f)]
     public float letterSpeed = 0.02f;
 
+
+    [Header("Sounds")]
+    public Queue<AudioClip> SoundQueue = new Queue<AudioClip>();
+
     //string[] splitArray;
 
     // Start is called before the first frame update
@@ -84,6 +88,16 @@ public class DialogueManager : MonoBehaviour
             {
 
                 OnContinueButtonPress();
+            }
+        }
+
+        if (SoundQueue.Count > 0)
+        {
+            if (audioSource.isPlaying == false)
+            {
+                 audioSource.clip = SoundQueue.Dequeue();
+                 audioSource.Play();
+              
             }
         }
 
@@ -125,7 +139,7 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in sentence.ToCharArray())
         {
-
+            audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
             message.text += letter;
 
             if (Input.GetKey(KeyCode.S) || completed == true)
@@ -452,16 +466,41 @@ public class DialogueManager : MonoBehaviour
 
     void SetSound(string _sound)
     {
+        //SoundQueue = new Queue();
+
+
+        //SoundQueue.Enqueue(Resources.Load<AudioClip>(_sound));
+
         if (_sound == "none")
         {
             audioSource.Stop();
         }
         else
         {
-            audioSource.PlayOneShot(Resources.Load<AudioClip>(_sound));
+            SoundQueue.Enqueue(Resources.Load<AudioClip>(_sound));
+
+
+            //audioSource.PlayOneShot(Resources.Load<AudioClip>(_sound));
+            //StartCoroutine(SoundPlay());
+            //play sound
+            //Wait for length of sound
+            //continue/play
         }
         
     }
+
+
+    //IEnumerator SoundPlay()
+    //{
+
+    //    if (audioSource.clip != null)
+    //    {
+    //        yield return new WaitForSeconds(audioSource.clip.length);
+
+    //        //audioSource.Stop();
+    //    }
+        
+    //}
 
     void SetWarDecision(string _decision)
     {
@@ -495,7 +534,7 @@ public class DialogueManager : MonoBehaviour
     public void OnContinueButtonPress()
     {
         //skipping = false;
-        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
+        //audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
 
         if (isShowingOptions == false)
         {
@@ -534,7 +573,7 @@ public class DialogueManager : MonoBehaviour
 
     public void OnSkipTextButtonPress()
     {
-        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
+        //audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
         skipping = true;
 
     }

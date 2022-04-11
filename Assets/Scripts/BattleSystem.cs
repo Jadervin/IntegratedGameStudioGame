@@ -130,6 +130,7 @@ public class BattleSystem : MonoBehaviour
     {
         GameObject playerGameObj = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGameObj.GetComponent<Unit>();
+        playerUnit.unitName = CharacterNameScript.characterName;
 
         //try to randomly spawn in 3 different enemies
 

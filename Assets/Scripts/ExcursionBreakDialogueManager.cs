@@ -57,10 +57,11 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
     //public static int excursionBreaksTaken = 0;
 
     [Header("Saving")]
-    //public SaveStateManager saveManager;
-    //[HideInInspector]
     public GameData saveData;
 
+
+    [Header("Sounds")]
+    public Queue<AudioClip> SoundQueue = new Queue<AudioClip>();
 
     // Start is called before the first frame update
     void Start()
@@ -89,6 +90,16 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
             {
 
                 OnContinueButtonPress();
+            }
+        }
+
+        if (SoundQueue.Count > 0)
+        {
+            if (audioSource.isPlaying == false)
+            {
+                audioSource.clip = SoundQueue.Dequeue();
+                audioSource.Play();
+
             }
         }
 
@@ -516,7 +527,14 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
         }
         else
         {
-            audioSource.PlayOneShot(Resources.Load<AudioClip>(_sound));
+            SoundQueue.Enqueue(Resources.Load<AudioClip>(_sound));
+
+
+            //audioSource.PlayOneShot(Resources.Load<AudioClip>(_sound));
+            //StartCoroutine(SoundPlay());
+            //play sound
+            //Wait for length of sound
+            //continue/play
         }
     }
 
