@@ -69,7 +69,7 @@ public class ExcursionBreakMenu : MonoBehaviour
 
         SaveStateManager.instance.SaveGame(saveData);
 
-        if (ExcursionBreaksTaken.EXBNum == (2 * ExcursionBreaksTaken.EXBNum) - 1) 
+        if (ExcursionBreaksTaken.EXBNum % 2 == 1) 
         {
             if (currentTag == "Inquiries")
             {
