@@ -53,8 +53,8 @@ public class Scene14DialogueManager : MonoBehaviour
     //[HideInInspector]
     public GameData saveData;
 
-    [Range(0, 0.5f)]
-    public float letterSpeed = 0.02f;
+    [Range(0, 0.05f)]
+    public float letterSpeed = 0.03f;
 
 
 

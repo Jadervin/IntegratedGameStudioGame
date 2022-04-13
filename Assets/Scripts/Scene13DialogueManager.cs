@@ -54,8 +54,9 @@ public class Scene13DialogueManager : MonoBehaviour
     //[HideInInspector]
     public GameData saveData;
 
-    [Range(0, 0.5f)]
-    public float letterSpeed = 0.02f;
+
+    [Range(0, 0.05f)]
+    public float letterSpeed = 0.03f;
 
     [Header("Sounds")]
     public Queue<AudioClip> SoundQueue = new Queue<AudioClip>();

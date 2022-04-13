@@ -50,9 +50,8 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
     string sentenceText;
     //public bool textFinished = false;
 
-
-    [Range(0, 0.5f)]
-    public float letterSpeed = 0.02f;
+    [Range(0, 0.05f)]
+    public float letterSpeed = 0.03f;
 
     //public static int excursionBreaksTaken = 0;
 
