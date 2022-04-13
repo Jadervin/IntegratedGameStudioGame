@@ -189,7 +189,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
 
         foreach (char letter in sentence.ToCharArray())
         {
-
+            audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
             message.text += letter;
 
             if (Input.GetKey(KeyCode.S) || completed == true)
@@ -540,7 +540,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
 
     public void OnContinueButtonPress()
     {
-        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
+        //audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
         //skipping = false;
 
         if (isShowingOptions == false)
@@ -580,7 +580,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
 
     public void OnSkipTextButtonPress()
     {
-        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
+        //audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
         skipping = true;
 
     }

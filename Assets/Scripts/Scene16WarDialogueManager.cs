@@ -152,7 +152,7 @@ public class Scene16WarDialogueManager : MonoBehaviour
 
         foreach (char letter in sentence.ToCharArray())
         {
-
+            audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
             message.text += letter;
 
             if (Input.GetKey(KeyCode.S) || completed == true)
@@ -488,7 +488,7 @@ public class Scene16WarDialogueManager : MonoBehaviour
     public void OnContinueButtonPress()
     {
         //skipping = false;
-        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
+        //audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
 
         if (isShowingOptions == false)
         {
@@ -527,7 +527,7 @@ public class Scene16WarDialogueManager : MonoBehaviour
 
     public void OnSkipTextButtonPress()
     {
-        audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
+        //audioSource.PlayOneShot(Resources.Load<AudioClip>("Dialogue Text"));
         skipping = true;
 
     }
