@@ -69,7 +69,10 @@ public class Scene13DialogueManager : MonoBehaviour
         //autosave function
         SaveStateManager.instance.SaveGame(saveData);
 
-        if(EsteemScript.HollyEsteemCount > EsteemScript.IvyEsteemCount &&
+        letterSpeed = PlayerPrefs.GetFloat("TextSpeed");
+
+
+        if (EsteemScript.HollyEsteemCount > EsteemScript.IvyEsteemCount &&
             EsteemScript.HollyEsteemCount > EsteemScript.SpiderLilyEsteemCount &&
             EsteemScript.HollyEsteemCount > EsteemScript.BelladonnaEsteemCount &&
             EsteemScript.HollyEsteemCount > EsteemScript.cherryBlossomEsteemCount)

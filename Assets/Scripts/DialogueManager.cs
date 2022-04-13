@@ -69,6 +69,8 @@ public class DialogueManager : MonoBehaviour
         story = new Story(inkFile.text);
 
 
+        letterSpeed = PlayerPrefs.GetFloat("TextSpeed");
+
         //How to change MC to character name
 
         

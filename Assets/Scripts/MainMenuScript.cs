@@ -12,6 +12,7 @@ public class MainMenuScript : MonoBehaviour
     public string ReferencesSceneName;
     public string PreviousSceneName;
     public string continueSceneName;
+    public string settingsSceneName;
 
     [Header("Sound Sources")]
     public AudioSource soundSource;
@@ -80,6 +81,17 @@ public class MainMenuScript : MonoBehaviour
 
 
     }
+
+    public void SettingsButtonPressed()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        soundSource.PlayOneShot(menuClick);
+        StartCoroutine(WaitforSettingsButton(clickTimer));
+
+
+    }
+
 
     public void CloseGame()
     {
@@ -155,6 +167,15 @@ public class MainMenuScript : MonoBehaviour
 
         yield return new WaitForSeconds(duration);   //Wait
         SceneManager.LoadScene(continueSceneName);
+    }
+
+
+
+    IEnumerator WaitforSettingsButton(float duration)
+    {
+
+        yield return new WaitForSeconds(duration);   //Wait
+        SceneManager.LoadScene(settingsSceneName);
     }
 
 }

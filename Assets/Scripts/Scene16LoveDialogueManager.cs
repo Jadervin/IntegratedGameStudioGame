@@ -69,6 +69,9 @@ public class Scene16LoveDialogueManager : MonoBehaviour
         //autosave function
         SaveStateManager.instance.SaveGame(saveData);
 
+
+        letterSpeed = PlayerPrefs.GetFloat("TextSpeed");
+
         if (EsteemScript.AetherEsteemCount > EsteemScript.XzciarEsteemCount &&
             EsteemScript.AetherEsteemCount > EsteemScript.GaledricEsteemCount)
         {

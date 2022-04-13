@@ -72,6 +72,7 @@ public class ExcursionBreakDialogueManager : MonoBehaviour
 
         //How to change MC to character name
 
+        letterSpeed = PlayerPrefs.GetFloat("TextSpeed");
 
         nametag = textBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         message = textBox.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
