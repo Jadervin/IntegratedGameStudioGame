@@ -117,7 +117,7 @@ public class EXBBattleSystem : MonoBehaviour
 
 
 
-        prefabNum = Random.Range(0, enemyPrefabList.Count - 1);
+        prefabNum = Random.Range(0, enemyPrefabList.Count);
 
         state = BattleState.State.START;
         StartCoroutine(setUpBattle());
