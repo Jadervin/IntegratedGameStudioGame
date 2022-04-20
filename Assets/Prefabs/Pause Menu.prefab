@@ -75,7 +75,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 30
+  m_PixelsPerUnitMultiplier: 15
 --- !u!114 &2565819623233106285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Pivot.x
@@ -572,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875082, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5940707859733875092, guid: 180d5a764a628ea4d82931da4f26c742, type: 3}
       propertyPath: m_Pivot.x

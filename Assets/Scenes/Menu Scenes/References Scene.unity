@@ -1251,8 +1251,8 @@ MonoBehaviour:
     Damp \r\nCharacter Art by Madeline Damp \nAdditional Art by Jenna Perkin \r\nScenario
     by Madeline Damp and Jenna Perkin \r\nStoryboard by Jenna Perkin and Rekka Campbell
     \r\nWritten by Jenna Perkin \r\nCustom Sound Effects made with Bfxr by Jenna
-    Perkin and Jonathan Dervin \r\nOriginal Score by Jenna Perkin UI Design by Jenna
-    Perkin"
+    Perkin and Jonathan Dervin \r\nOriginal Score by Jenna Perkin \nUI Design by
+    Jenna Perkin"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
