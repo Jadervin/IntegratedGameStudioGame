@@ -870,7 +870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -183}
+  m_AnchoredPosition: {x: 24, y: -152}
   m_SizeDelta: {x: 160, y: 62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1126962731
@@ -1256,6 +1256,7 @@ MonoBehaviour:
   ReferencesSceneName: References Scene
   PreviousSceneName: EXB Battles
   continueSceneName: 
+  settingsSceneName: 
   soundSource: {fileID: 367982138}
   menuClick: {fileID: 8300000, guid: 2c58b374f2efdef4eb08c844d00ce8c9, type: 3}
   clickTimer: 0.3
