@@ -73,7 +73,7 @@ public class DialogueManager : MonoBehaviour
 
         //How to change MC to character name
 
-        
+        //GameObject nametagBox = textBox.transform.GetComponentInParent<>
         nametag = textBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         message = textBox.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
         //Debug.Log(message.text);

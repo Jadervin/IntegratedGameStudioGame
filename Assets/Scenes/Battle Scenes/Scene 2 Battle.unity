@@ -1233,7 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  playerPrefab: {fileID: 3958377372304139921, guid: e566490f6f200f9479513e53be8d6431, type: 3}
+  playerPrefab: {fileID: 3958377372304139921, guid: 085db4381789eee49bd20e0b28ff1eb6, type: 3}
   enemyPrefab: {fileID: 1642976865680382927, guid: e927523d26df3ed4e997cf46ea6ccbd7, type: 3}
   playerHUD: {fileID: 2008534458}
   enemyHUD: {fileID: 1182234484}

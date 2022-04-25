@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6560942045226522878}
   - component: {fileID: 2076413924233813779}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player Scene 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,10 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: MC
   enemyBuildUpText: 
-  damage: 10
+  damage: 5
   largeDamage: 0
   magicCost: 1
-  fireDamage: 15
+  fireDamage: 7
   healamount: 10
   maxHP: 50
   currentHP: 0
@@ -59,10 +59,10 @@ MonoBehaviour:
   maxTurnUntilLargeAtck: 0
   currentTurnUntilLargeAtck: 0
   isBuildingUp: 0
-  maxTurnUntilMagicCall: 3
+  maxTurnUntilMagicCall: 5
   currentTurnUntilMagicCall: 0
   MagicCallState: 0
-  magicCallDamage: 25
+  magicCallDamage: 55
 --- !u!1 &5345406751869297549
 GameObject:
   m_ObjectHideFlags: 0
