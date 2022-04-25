@@ -369,7 +369,7 @@ public class Scene13DialogueManager : MonoBehaviour
 
         else
         {
-            nametag.text = _name;
+            nametag.text = _name.Replace('-', ' ');
         }
 
     }
